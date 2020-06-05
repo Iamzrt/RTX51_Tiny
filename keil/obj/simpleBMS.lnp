@@ -1,0 +1,6 @@
+"..\obj\Conf_tny.obj",
+"..\obj\main.obj",
+"..\obj\button.obj",
+"..\obj\led.obj" 
+TO "..\obj\simpleBMS" Rtx51Tiny 
+PRINT(".\simpleBMS.m51") RAMSIZE(256) 
