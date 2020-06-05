@@ -1721,19 +1721,19 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>1</ActiveTab>
+      <ActiveTab>0</ActiveTab>
       <Documents>
         <Doc>
           <Name>..\..\user\main.c</Name>
-          <ColumnNumber>34</ColumnNumber>
-          <TopLine>43</TopLine>
-          <CurrentLine>62</CurrentLine>
+          <ColumnNumber>18</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>7</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\..\user\button.c</Name>
-          <ColumnNumber>22</ColumnNumber>
-          <TopLine>19</TopLine>
-          <CurrentLine>39</CurrentLine>
+          <ColumnNumber>30</ColumnNumber>
+          <TopLine>1</TopLine>
+          <CurrentLine>1</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\..\USER\./MAIN.H</Name>

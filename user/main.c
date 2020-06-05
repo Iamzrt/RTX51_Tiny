@@ -56,7 +56,7 @@ u8_t   get_systick(void)
   * @return  
   * @note
   */
-void  startup_task (void)  _task_  STARTUP_TASK_PRIORITY
+void  startup_task (void)  _task_   STARTUP_TASK_PRIORITY
 {
   os_create_task (BUTTON_TASK_PRIORITY);     /* Create button Task */
 	os_create_task (LED_TASK_PRIORITY);        /* Create led Task */
