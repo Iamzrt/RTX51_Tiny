@@ -7,13 +7,3 @@ F:\share\open_source\simpleBMS\keil\project\simpleBMS.uvproj
 Project File Date:  05/29/2020
 
 <h2>Output:</h2>
-Build target 'simpleBMS'
-compiling button.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?GET_SYSTICK?MAIN
-Program Size: data=25.1 xdata=0 code=834
-creating hex file from "..\obj\simpleBMS"...
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
