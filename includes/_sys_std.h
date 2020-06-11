@@ -21,13 +21,6 @@ extern "C" {
  
 
 
-//#define   USE_IAR_IDE
-#define   USE_KEIL_IDE
-  
-
-/* 不同IDE需要修改以下类型定义 */
-#if defined(USE_IAR_IDE)
-  
 /*!< Signed integer types  */
 typedef         signed char             s8_t;
 typedef         signed int              s16_t;
@@ -37,20 +30,6 @@ typedef         signed long             s32_t;
 typedef         unsigned char           u8_t;
 typedef         unsigned int            u16_t;
 typedef         unsigned long           u32_t;
-
-#elif defined(USE_KEIL_IDE)
-
-/*!< Signed integer types  */
-typedef         signed char             s8_t;
-typedef         signed int              s16_t;
-typedef         signed long             s32_t;
-
-/*!< Unsigned integer types  */
-typedef         unsigned char           u8_t;
-typedef         unsigned int            u16_t;
-typedef         unsigned long           u32_t;
-
-#endif
 
 
 #define   		XDATA		 xdata
@@ -76,7 +55,7 @@ typedef  enum
   OPERATE_BUSY,
   OPERATE_TIMEOUT,
   OPERATE_FAIL,
-}SysStatusType;
+}OpsStatus;
 
 
 #ifndef  _IN_LINE_
@@ -84,7 +63,7 @@ typedef  enum
 #endif
 
 #ifndef   BOOL
-  #define   BOOL   u8_t
+  #define   BOOL      bool
 #endif
 
 #ifndef   NULL
@@ -104,13 +83,6 @@ typedef  enum
 #ifndef   VIRTUAL
   #define   VIRTUAL
 #endif
-
-
-/* 外部函数声明关键字 */
-#ifndef   EXTERN_FUNC
-  #define   EXTERN_FUNC         extern
-#endif
-
 
 
 

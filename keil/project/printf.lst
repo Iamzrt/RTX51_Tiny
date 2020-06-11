@@ -1,0 +1,126 @@
+C51 COMPILER V9.00   PRINTF                                                                06/10/2020 16:58:26 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE PRINTF
+OBJECT MODULE PLACED IN ..\obj\printf.obj
+COMPILER INVOKED BY: D:\Program Files\KEILC51\files\C51\BIN\C51.EXE ..\..\user\printf.c BROWSE DEBUG OBJECTEXTEND PRINT(
+                    -.\printf.lst) TABS(2) OBJECT(..\obj\printf.obj)
+
+line level    source
+
+   1          /**
+   2            ******************************************************************************
+   3            * @file    
+   4            * @author  
+   5            * @version 
+   6            * @date   
+   7            * @brief    
+   8                        %d               十进制有符号整数
+   9                        %u               十进制无符号整数
+  10                        %f               浮点数
+  11                        %s               字符串
+  12                        %c               单个字符
+  13                        %p               指针的值
+  14                        %e               指数形式的浮点数
+  15                        %x, %X           无符号以十六进制表示的整数
+  16                        %0               无符号以八进制表示的整数
+  17                        %g               自动选择合适的表示法
+  18                        %lf              表示输出double浮点数
+  19            ******************************************************************************  
+  20            * 
+  21            * 
+  22            ******************************************************************************
+  23            */
+  24          /*-- includes ----------------------------------------------------------------*/
+  25          #include "./printf.h"
+  26          
+  27          
+  28          /*-- defined -----------------------------------------------------------------*/
+  29          #define      DB_LOG(x)             LOG("[PRINTF]");LOG(x)
+  30          
+  31          
+  32          
+  33          
+  34          /*-- private variables -------------------------------------------------------*/
+  35          static  bit    BIT_TMP;
+  36          
+  37          
+  38          
+  39          /*-- functions ---------------------------------------------------------------*/
+  40          #if     LOG_ENABLE
+  41          
+  42          /**           
+  43            * @brief      for UART_printf      
+  44            * @param    
+  45            * @return  
+  46            * @note
+  47            */
+  48          char putchar (char c)
+  49          {
+  50   1        while (!TI);
+  51   1        TI = 0;
+  52   1        return (SBUF = c);
+  53   1      }
+  54          
+C51 COMPILER V9.00   PRINTF                                                                06/10/2020 16:58:26 PAGE 2   
+
+  55          
+  56          /**           
+  57            * @brief            
+  58            * @param    
+  59            * @return  
+  60            * @note
+  61            */
+  62          static  void  mcu_uart0_timer1(u32_t u32Baudrate)    //T1M = 1, SMOD = 1
+  63          {
+  64   1        P06_Quasi_Mode; /* Setting UART pin as Quasi mode for transmit */
+  65   1        P07_Quasi_Mode; /* Setting UART pin as Quasi mode for transmit */
+  66   1        
+  67   1        SCON = 0x50;      /* UART0 Mode1,REN=1,TI=1 */
+  68   1        TMOD |= 0x20;     /* Timer1 Mode1 */
+  69   1          
+  70   1        set_SMOD;         /* UART0 Double Rate Enable */
+  71   1        set_T1M;
+  72   1        clr_BRCK;         /* Serial port 0 baud rate clock source = Timer1 */
+  73   1       
+  74   1        TH1 = 256 - (1000000/u32Baudrate+1);          /*16 MHz */   
+  75   1      
+  76   1        set_TR1;
+  77   1        set_TI;       /* For printf function must setting TI = 1 */
+  78   1      }
+  79          
+  80          #endif
+  81          
+  82          /**           
+  83            * @brief            
+  84            * @param    
+  85            * @return  
+  86            * @note
+  87            */
+  88          void  printf_task (void)  _task_   PRINTF_TASK_PRIORITY
+  89          {
+  90   1      #if     LOG_ENABLE
+  91   1        mcu_uart0_timer1(115200);
+  92   1      #endif
+  93   1      
+  94   1        while(1)
+  95   1        {
+  96   2        
+  97   2        }
+  98   1      }
+  99          
+ 100          /*---------------------- end of file -----------------------------------------*/
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     78    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,1 @@
+"..\..\user\print.c" BROWSE DEBUG OBJECTEXTEND PRINT(.\print.lst) TABS (2) OBJECT(..\obj\print.obj)

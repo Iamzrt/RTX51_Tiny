@@ -1,0 +1,236 @@
+C51 COMPILER V9.00   SYSTEM                                                                06/10/2020 17:55:18 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE SYSTEM
+OBJECT MODULE PLACED IN ..\obj\system.obj
+COMPILER INVOKED BY: D:\Program Files\KEILC51\files\C51\BIN\C51.EXE ..\..\user\system.c BROWSE DEBUG OBJECTEXTEND PRINT(
+                    -.\system.lst) TABS(2) OBJECT(..\obj\system.obj)
+
+line level    source
+
+   1          /**
+   2            ******************************************************************************
+   3            * @file    
+   4            * @author  
+   5            * @version 
+   6            * @date   
+   7            * @brief    
+   8            ******************************************************************************  
+   9            * 
+  10            * 
+  11            ******************************************************************************
+  12            */
+  13          /*-- includes ----------------------------------------------------------------*/
+  14          #include "./system.h"
+  15          #include "./led.h"
+  16          #include "./button.h"
+  17          #include "./print.h"
+  18          
+  19          
+  20          /*-- defined -----------------------------------------------------------------*/
+  21          #define      DB_LOG(x)             LOG("[SYS]");LOG(x)
+  22          
+  23          #define      TIME_MS(x)                 (x)
+  24          
+  25          
+  26          /*-- private variables -------------------------------------------------------*/
+  27          static  bit    BIT_TMP;
+  28          
+  29          static  volatile   tick_size_t DATA _sysTickCnt = 0;
+  30          
+  31          static   tick_size_t XDATA systemTaskBaseTr = 0; 
+  32          
+  33          
+  34          /*-- functions ---------------------------------------------------------------*/
+  35          static    void    mcu_clk_init(void);
+  36          
+  37          static    void    system_task_timer_schedule(void);
+  38          static    void    system_task_logic_schedule(void);
+  39          
+  40          
+  41          
+  42          /**           
+  43            * @brief            
+  44            * @param    
+  45            * @return  
+  46            * @note
+  47            */
+  48          void   _systick_increase(void)
+  49          {
+  50   1        _sysTickCnt++;
+  51   1      }
+  52          
+  53          
+  54          /**           
+C51 COMPILER V9.00   SYSTEM                                                                06/10/2020 17:55:18 PAGE 2   
+
+  55            * @brief            
+  56            * @param    
+  57            * @return  
+  58            * @note
+  59            */
+  60          u8_t   get_systick(void)
+  61          {
+  62   1        return  _sysTickCnt;
+  63   1      }
+  64          
+  65          
+  66          /**           
+  67            * @brief          
+  68            * @param    
+  69            * @return  
+  70            * @note
+  71            */
+  72          void  mcu_reset(void)
+  73          {
+  74   1        TA = 0xAA;
+  75   1        TA = 0x55;
+  76   1        set_SWRST;
+  77   1      }
+  78          
+  79          
+  80          /**           
+  81            * @brief            
+  82            * @param    
+  83            * @return  
+  84            * @note
+  85            */
+  86          void   mcu_wdt_init(void)
+  87          {
+  88   1      #if   WDT_ENABLE
+  89   1        TA=0xAA; 
+  90   1        TA=0x55; 
+  91   1        WDCON |= 0x07;         /* Setting WDT prescale,1.638 s */
+  92   1      
+  93   1        set_WDTR;              /* WDT run */
+  94   1        set_WDCLR;             /* Clear WDT timer */
+  95   1        set_EWDT;              /* Enable wdt interrupt. */
+  96   1      #endif
+  97   1      }
+  98          
+  99          
+ 100          /**           
+ 101            * @brief            
+ 102            * @param    
+ 103            * @return  
+ 104            * @note
+ 105            */
+ 106          void   mcu_wdt_feed(void)
+ 107          {
+ 108   1      #if   WDT_ENABLE
+ 109   1        set_WDCLR;
+ 110   1      #endif
+ 111   1      }
+ 112          
+ 113          /**           
+ 114            * @brief            
+ 115            * @param    
+ 116            * @return  
+C51 COMPILER V9.00   SYSTEM                                                                06/10/2020 17:55:18 PAGE 3   
+
+ 117            * @note
+ 118            */
+ 119          void   mcu_gpio_all_deinit(void)
+ 120          {
+ 121   1        Set_All_GPIO_Quasi_Mode;
+ 122   1      }
+ 123          
+ 124          
+ 125          /**           
+ 126            * @brief   HIRC enable         
+ 127            * @param    
+ 128            * @return  
+ 129            * @note    MCU power on system clock is HIRC (16 MHz).
+ 130                       Please keep P3.0 HIGH before you want to modify Fsys to LIRC.
+ 131            */
+ 132          static   void  mcu_clk_init(void)
+ 133          {
+ 134   1        clr_EA;                /* disable interrupts*/
+ 135   1      
+ 136   1        set_HIRCEN;  /* HIRC 16MHz */
+ 137   1        while((CKSWT&SET_BIT5)==0);       /* check ready */
+ 138   1        clr_OSC1;
+ 139   1        clr_OSC0;
+ 140   1        while((CKEN&SET_BIT0)==1);        /* check system clock switching OK or NG */
+ 141   1      
+ 142   1        set_EA;                        /* enable interrupts*/
+ 143   1      }
+ 144          
+ 145          
+ 146          /**           
+ 147            * @brief            
+ 148            * @param    
+ 149            * @return  
+ 150            * @note
+ 151            */ 
+ 152          static  void  system_task_timer_schedule(void)
+ 153          {
+ 154   1        TASK_TIMER_BEGIN(systemTaskBaseTr, TIME_MS(100));
+ 155   3      
+ 156   3      
+ 157   3      
+ 158   3        TASK_TIMER_END(systemTaskBaseTr);
+ 159   1      }
+ 160          
+ 161          
+ 162          /**           
+ 163            * @brief            
+ 164            * @param    
+ 165            * @return  
+ 166            * @note
+ 167            */
+ 168          static  void  system_task_logic_schedule(void)
+ 169          {    
+ 170   1        mcu_wdt_feed(); 
+ 171   1      
+ 172   1      
+ 173   1      }
+ 174          
+ 175          /**           
+ 176            * @brief            
+ 177            * @param    
+ 178            * @return  
+C51 COMPILER V9.00   SYSTEM                                                                06/10/2020 17:55:18 PAGE 4   
+
+ 179            * @note
+ 180            */
+ 181          void  system_task (void)  _task_   SYSTEM_TASK_PRIORITY
+ 182          {
+ 183   1        mcu_clk_init();
+ 184   1        mcu_gpio_all_deinit();
+ 185   1      
+ 186   1        mcu_wdt_init();
+ 187   1        mcu_wdt_feed();
+ 188   1      
+ 189   1        os_create_task(BUTTON_TASK_PRIORITY);
+ 190   1        os_create_task(LED_TASK_PRIORITY);
+ 191   1        os_create_task(PRINT_TASK_PRIORITY);
+ 192   1      
+ 193   1        DB_LOG("System init finish.\r\n");
+ 194   1      
+ 195   1        while(1)
+ 196   1        {
+ 197   2          system_task_timer_schedule();
+ 198   2          system_task_logic_schedule();
+ 199   2        }
+ 200   1      }
+ 201          
+ 202          
+ 203          
+ 204          
+ 205          
+ 206          /*---------------------- end of file -----------------------------------------*/
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    267    ----
+   CONSTANT SIZE    =     28    ----
+   XDATA SIZE       =      1    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      1    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -30,10 +30,10 @@ $NOMOD51 DEBUG
 ;  controlling RTX-51 software timers).
 ;
 ;  Define the register bank used for the timer interrupt.
-INT_REGBANK	EQU	1	; default is Registerbank 1
+INT_REGBANK	EQU	    1	; default is Registerbank 1
 ;
 ;  Define Hardware-Timer tick time in 8051 machine cycles.
-INT_CLOCK	EQU	16000   ;(16MHZ)  ;10000	; default is 10000 cycles
+INT_CLOCK	EQU	    1000     ;10000	; default is 10000 cycles
 ;
 ;  Define Round-Robin Timeout in Hardware-Timer ticks.
 TIMESHARING	EQU     5	; default is 5 Hardware-Timer ticks.

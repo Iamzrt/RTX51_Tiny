@@ -70,9 +70,9 @@
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
           </BeforeMake>
           <AfterMake>
-            <RunUserProg1>0</RunUserProg1>
+            <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name></UserProg1Name>
+            <UserProg1Name>..\obj\hex2bin.exe ..\obj\simpleBMS.hex</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -163,7 +163,7 @@
             <DriverSelection>-1</DriverSelection>
           </Flash1>
           <Flash2></Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
         </Utilities>
         <Target51>
@@ -344,9 +344,6 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>mcu</GroupName>
-        </Group>
-        <Group>
           <GroupName>common</GroupName>
           <Files>
             <File>
@@ -354,16 +351,56 @@
               <FileType>2</FileType>
               <FilePath>..\..\common\Conf_tny.A51</FilePath>
             </File>
+            <File>
+              <FileName>ring_buffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\common\ring_buffer.c</FilePath>
+              <FileOption>
+                <CommonProperty>
+                  <UseCPPCompiler>2</UseCPPCompiler>
+                  <RVCTCodeConst>0</RVCTCodeConst>
+                  <RVCTZI>0</RVCTZI>
+                  <RVCTOtherData>0</RVCTOtherData>
+                  <ModuleSelection>0</ModuleSelection>
+                  <IncludeInBuild>0</IncludeInBuild>
+                  <AlwaysBuild>2</AlwaysBuild>
+                  <GenerateAssemblyFile>2</GenerateAssemblyFile>
+                  <AssembleAssemblyFile>2</AssembleAssemblyFile>
+                  <PublicsOnly>2</PublicsOnly>
+                  <StopOnExitCode>11</StopOnExitCode>
+                  <CustomArgument></CustomArgument>
+                  <IncludeLibraryModules></IncludeLibraryModules>
+                  <BankNo>65535</BankNo>
+                </CommonProperty>
+                <File51>
+                  <C51>
+                    <RegisterColoring>2</RegisterColoring>
+                    <VariablesInOrder>2</VariablesInOrder>
+                    <IntegerPromotion>2</IntegerPromotion>
+                    <uAregs>2</uAregs>
+                    <UseInterruptVector>2</UseInterruptVector>
+                    <Fuzzy>8</Fuzzy>
+                    <Optimize>10</Optimize>
+                    <WarningLevel>3</WarningLevel>
+                    <SizeSpeed>2</SizeSpeed>
+                    <ObjectExtend>2</ObjectExtend>
+                    <ACallAJmp>2</ACallAJmp>
+                    <InterruptVectorAddress>0</InterruptVectorAddress>
+                    <VariousControls>
+                      <MiscControls></MiscControls>
+                      <Define></Define>
+                      <Undefine></Undefine>
+                      <IncludePath></IncludePath>
+                    </VariousControls>
+                  </C51>
+                </File51>
+              </FileOption>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>user</GroupName>
           <Files>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\user\main.c</FilePath>
-            </File>
             <File>
               <FileName>button.c</FileName>
               <FileType>1</FileType>
@@ -373,6 +410,16 @@
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\user\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>system.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\system.c</FilePath>
+            </File>
+            <File>
+              <FileName>print.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\print.c</FilePath>
             </File>
           </Files>
         </Group>

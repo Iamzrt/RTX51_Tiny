@@ -1,0 +1,1 @@
+"..\..\user\system.c" BROWSE DEBUG OBJECTEXTEND PRINT(.\system.lst) TABS (2) OBJECT(..\obj\system.obj)
