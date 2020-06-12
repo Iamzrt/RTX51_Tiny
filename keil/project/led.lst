@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   LED                                                                   06/10/2020 17:50:12 PAGE 1   
+C51 COMPILER V9.00   LED                                                                   06/12/2020 10:50:50 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE LED
@@ -37,35 +37,35 @@ line level    source
   27          #define        IO_LED4_MODE()              P14_PushPull_Mode
   28                                                                         
   29          
-  30          
-  31          
-  32          /*-- private variables -------------------------------------------------------*/
-  33          static   tick_size_t XDATA ledTaskBaseTr = 0;
-  34          
-  35          
-  36          static  u8_t  XDATA  testLedTime = 0;
+  30          #define        LED1_ON()                   P11 = 1
+  31          #define        LED1_OFF()                  P11 = 0
+  32          #define        LED1_TOGGLE()               P11 = !P11    
+  33          
+  34          #define        LED2_ON()                   P12 = 1
+  35          #define        LED2_OFF()                  P12 = 0
+  36          #define        LED2_TOGGLE()               P12 = !P12 
   37          
-  38          /*-- functions ---------------------------------------------------------------*/
-  39          static    void    led_task_timer_schedule(void);
-  40          static    void    led_task_logic_schedule(void);
+  38          #define        LED3_ON()                   P13 = 1
+  39          #define        LED3_OFF()                  P13 = 0
+  40          #define        LED3_TOGGLE()               P13 = !P13 
   41          
-  42          
-  43          /**           
-  44            * @brief            
-  45            * @param    
-  46            * @return  
-  47            * @note
-  48            */
-  49          static  void  led_task_timer_schedule(void)
-  50          {
-  51   1        TASK_TIMER_BEGIN(ledTaskBaseTr, TIME_MS(100));
-  52   3      
-  53   3        if(testLedTime > 0)  testLedTime--;
-  54   3      
-C51 COMPILER V9.00   LED                                                                   06/10/2020 17:50:12 PAGE 2   
+  42          #define        LED4_ON()                   P14 = 1
+  43          #define        LED4_OFF()                  P14 = 0
+  44          #define        LED4_TOGGLE()               P14 = !P14
+  45          
+  46          
+  47          /*-- private variables -------------------------------------------------------*/
+  48          static   tick_size_t XDATA ledTaskBaseTr = 0;
+  49          
+  50          
+  51          static  u8_t  XDATA  testLedTime = 0;
+  52          
+  53          /*-- functions ---------------------------------------------------------------*/
+  54          static    void    led_task_timer_schedule(void);
+C51 COMPILER V9.00   LED                                                                   06/12/2020 10:50:50 PAGE 2   
 
-  55   3        TASK_TIMER_END(ledTaskBaseTr);
-  56   1      }
+  55          static    void    led_task_logic_schedule(void);
+  56          
   57          
   58          
   59          /**           
@@ -74,46 +74,108 @@ line level    source
   62            * @return  
   63            * @note
   64            */
-  65          static  void  led_task_logic_schedule(void)
+  65          void   led_write(LedDef led, LedWrType wr)
   66          {
-  67   1        if(testLedTime == 0)  
+  67   1        switch(led)
   68   1        {
-  69   2          testLedTime = 10;
-  70   2          //LED1_TOGGLE(); LED2_OFF(); LED3_OFF(); LED4_OFF();
-  71   2          //DB_LOG("led task running.\r\n");
-  72   2        }
-  73   1      }
-  74          
-  75          
-  76          /**           
-  77            * @brief            
-  78            * @param    
-  79            * @return  
-  80            * @note
-  81            */
-  82          void   led_task(void)  _task_   LED_TASK_PRIORITY
-  83          {
-  84   1        /* Led pin configure. */
-  85   1        IO_LED1_MODE(); IO_LED2_MODE(); IO_LED3_MODE(); IO_LED4_MODE();
-  86   1      
-  87   1        while(1)
-  88   1        {
-  89   2          led_task_timer_schedule();
-  90   2          led_task_logic_schedule();   
-  91   2        }
-  92   1      }
-  93          
-  94          
-  95          
-  96          
-  97          /*---------------------- end of file -----------------------------------------*/
-  98          
-  99          
- 100          
+  69   2          case LED1:
+  70   2          {
+  71   3            if(wr == LED_OFF)             LED1_OFF(); 
+  72   3            else if(wr == LED_ON)         LED1_ON();
+  73   3            else if(wr == LED_TOGGLE)     LED1_TOGGLE(); 
+  74   3          }break;
+  75   2      
+  76   2          case LED2:
+  77   2          {
+  78   3            if(wr == LED_OFF)             LED2_OFF(); 
+  79   3            else if(wr == LED_ON)         LED2_ON();
+  80   3            else if(wr == LED_TOGGLE)     LED2_TOGGLE();
+  81   3          }break;
+  82   2      
+  83   2          case LED3:
+  84   2          {
+  85   3            if(wr == LED_OFF)             LED3_OFF(); 
+  86   3            else if(wr == LED_ON)         LED3_ON();
+  87   3            else if(wr == LED_TOGGLE)     LED3_TOGGLE();    
+  88   3          }break;
+  89   2      
+  90   2          case LED4:
+  91   2          {
+  92   3            if(wr == LED_OFF)             LED4_OFF(); 
+  93   3            else if(wr == LED_ON)         LED4_ON();
+  94   3            else if(wr == LED_TOGGLE)     LED4_TOGGLE();    
+  95   3          }break;
+  96   2          
+  97   2          default:
+  98   2            break;  
+  99   2        }
+ 100   1      }
+ 101          
+ 102          
+ 103          /**           
+ 104            * @brief            
+ 105            * @param    
+ 106            * @return  
+ 107            * @note
+ 108            */
+ 109          static  void  led_task_timer_schedule(void)
+ 110          {
+ 111   1        TASK_TIMER_BEGIN(ledTaskBaseTr, TIME_MS(100));
+ 112   3      
+ 113   3        if(testLedTime > 0)  testLedTime--;
+ 114   3      
+ 115   3        TASK_TIMER_END(ledTaskBaseTr);
+ 116   1      }
+C51 COMPILER V9.00   LED                                                                   06/12/2020 10:50:50 PAGE 3   
+
+ 117          
+ 118          
+ 119          /**           
+ 120            * @brief            
+ 121            * @param    
+ 122            * @return  
+ 123            * @note
+ 124            */
+ 125          static  void  led_task_logic_schedule(void)
+ 126          {
+ 127   1        if(testLedTime == 0)  
+ 128   1        {
+ 129   2          testLedTime = 10;
+ 130   2          //LED1_TOGGLE(); LED2_OFF(); LED3_OFF(); LED4_OFF();
+ 131   2          //DB_LOG("led task running.\r\n");
+ 132   2        }
+ 133   1      }
+ 134          
+ 135          
+ 136          /**           
+ 137            * @brief            
+ 138            * @param    
+ 139            * @return  
+ 140            * @note
+ 141            */
+ 142          void   led_task(void)  _task_   LED_TASK_PRIORITY
+ 143          {
+ 144   1        /* Led pin configure. */
+ 145   1        IO_LED1_MODE(); IO_LED2_MODE(); IO_LED3_MODE(); IO_LED4_MODE();
+ 146   1      
+ 147   1        while(1)
+ 148   1        {
+ 149   2          led_task_timer_schedule();
+ 150   2          led_task_logic_schedule();   
+ 151   2        }
+ 152   1      }
+ 153          
+ 154          
+ 155          
+ 156          
+ 157          /*---------------------- end of file -----------------------------------------*/
+ 158          
+ 159          
+ 160          
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     77    ----
+   CODE SIZE        =    169    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =      2    ----
    PDATA SIZE       =   ----    ----

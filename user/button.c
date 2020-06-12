@@ -118,7 +118,10 @@ static  void  button_task_timer_schedule(void)
 	/* Button 1 trig action. */
 	if(buttonList.trigDown & (1<<0)) 
 	{
-	 	LED1_TOGGLE();
+	 	led_write(LED1, LED_TOGGLE);
+		led_write(LED2, LED_OFF);
+		led_write(LED3, LED_OFF);
+		led_write(LED4, LED_OFF);
 	}
 
 	/* Button 2 trig action. */

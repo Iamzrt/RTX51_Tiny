@@ -35,7 +35,7 @@ typedef      u8_t                             tick_size_t;
 #define      BUTTON_TASK_PRIORITY             1
 #define      LED_TASK_PRIORITY                2
 #define      PRINT_TASK_PRIORITY              3
-
+#define      CONSOLE_TASK_PRIORITY            4
 
 
 

@@ -39,6 +39,7 @@ static  bit    BIT_TMP;
 /*-- functions ---------------------------------------------------------------*/
 #if     LOG_ENABLE
 
+
 /**           
   * @brief      for UART_printf      
   * @param    
@@ -59,12 +60,14 @@ char putchar (char c)
   * @return  
   * @note
   */
-static  void  mcu_uart0_timer1(u32_t u32Baudrate)    //T1M = 1, SMOD = 1
+static  void  mcu_uart0_timer1(u32_t u32Baudrate)   
 {
-  P06_Quasi_Mode;	/* Setting UART pin as Quasi mode for transmit */
-  P07_Quasi_Mode;	/* Setting UART pin as Quasi mode for transmit */
+  clr_EA;
+
+  P06_Quasi_Mode;	  /* Setting UART pin as Quasi mode for transmit */
+  P07_Quasi_Mode;	  /* Setting UART pin as Quasi mode for transmit */
 	
-  SCON = 0x50;     	/* UART0 Mode1,REN=1,TI=1 */
+  SCON = 0x50;     	/* UART0 Mode1,REN=1,TI=0 */
   TMOD |= 0x20;    	/* Timer1 Mode1	*/
     
   set_SMOD;        	/* UART0 Double Rate Enable	*/
@@ -73,9 +76,44 @@ static  void  mcu_uart0_timer1(u32_t u32Baudrate)    //T1M = 1, SMOD = 1
  
   TH1 = 256 - (1000000/u32Baudrate+1);          /*16 MHz */ 	
 
-  set_TR1;
-  set_TI;		    /* For printf function must setting TI = 1 */
+	clr_ET1;
+  set_TR1;					/* Enable timer1. */
+	
+  set_TI;		        /* For printf function must setting TI = 1 */
+
+	set_ES;           /* Enable Uart interrupt. */
+	set_EA;           /* Enable global interrupt */ 
 }
+
+
+/**           
+  * @brief            
+  * @param    
+  * @return  
+  * @note
+  */
+void  uart0_interrupt_ISR(void)  interrupt  4
+{
+  u8_t  dat = 0;  
+
+  /* if reception occur */
+  if(RI)
+	{
+    clr_RI;	
+
+		dat = SBUF;
+	  if(dat == 0xAA)  P12 = !P12;
+	}
+
+	 /* if transmit occur */
+#if  0	   /* When use <stdio.h> printf function, this function must remove.  */
+	if(TI)
+	{
+    clr_TI;	
+	}
+#endif
+}
+
 
 #endif
 

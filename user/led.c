@@ -68,22 +68,30 @@ void   led_write(LedDef led, LedWrType wr)
 	{
     case LED1:
 		{
-		  
+      if(wr == LED_OFF)		          LED1_OFF(); 
+			else if(wr == LED_ON)		      LED1_ON();
+			else if(wr == LED_TOGGLE)		  LED1_TOGGLE(); 
 		}break;
 
     case LED2:
 		{
-		
+			if(wr == LED_OFF)		          LED2_OFF(); 
+			else if(wr == LED_ON)		      LED2_ON();
+			else if(wr == LED_TOGGLE)		  LED2_TOGGLE();
 		}break;
 
     case LED3:
 		{
-		
+      if(wr == LED_OFF)		          LED3_OFF(); 
+			else if(wr == LED_ON)		      LED3_ON();
+			else if(wr == LED_TOGGLE)		  LED3_TOGGLE();		
 		}break;
 
     case LED4:
 		{
-		
+      if(wr == LED_OFF)		          LED4_OFF(); 
+			else if(wr == LED_ON)		      LED4_ON();
+			else if(wr == LED_TOGGLE)		  LED4_TOGGLE();		
 		}break;
 		
 		default:

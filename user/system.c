@@ -189,6 +189,7 @@ void  system_task (void)  _task_   SYSTEM_TASK_PRIORITY
 	os_create_task(BUTTON_TASK_PRIORITY);
 	os_create_task(LED_TASK_PRIORITY);
 	os_create_task(PRINT_TASK_PRIORITY);
+	os_create_task(CONSOLE_TASK_PRIORITY);
 
 	DB_LOG("System init finish.\r\n");
 

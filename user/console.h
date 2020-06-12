@@ -10,8 +10,8 @@
   * 
   ******************************************************************************
   */
-#ifndef    LED_H
-#define    LED_H
+#ifndef    CONSOLE_H
+#define    CONSOLE_H
 
 
 /*-- includes  ---------------------------------------------------------------*/
@@ -20,27 +20,14 @@
 
 
 /*-- defined  ----------------------------------------------------------------*/
-typedef  enum
-{
-  LED1 = 0,
-  LED2,
-	LED3,
-	LED4,
-}LedDef;
 
 
-typedef  enum
-{
-  LED_OFF = 0,
-	LED_ON,
-	LED_TOGGLE,
-}LedWrType;
 
 
 /*-- functions  ---------------------------------------------------------------*/
-void   led_write(LedDef led, LedWrType wr);
 
 
-#endif   /* LED_H */
+
+#endif   /* CONSOLE_H */
 
 /*---------------------- end of file -----------------------------------------*/

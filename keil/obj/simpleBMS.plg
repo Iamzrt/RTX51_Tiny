@@ -4,2284 +4,20 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 F:\share\open_source\RTX51_Tiny\keil\project\simpleBMS.uvproj
-Project File Date:  06/09/2020
+Project File Date:  06/10/2020
 
 <h2>Output:</h2>
 Build target 'simpleBMS'
-compiling mcu.c...
-..\..\MCU\./MCU.H(25): warning C318: can't open file '../includes/N76E003.h'
-..\..\MCU\./MCU.H(26): warning C318: can't open file '../includes/SFR_Macro.h'
-..\..\MCU\./MCU.H(27): warning C318: can't open file '../includes/Function_define.h'
-..\..\MCU\MCU.C(86): error C202: 'TA': undefined identifier
-..\..\MCU\MCU.C(87): error C202: 'TA': undefined identifier
-..\..\MCU\MCU.C(88): error C202: 'set_SWRST': undefined identifier
-..\..\MCU\MCU.C(100): error C202: 'clr_EA': undefined identifier
-..\..\MCU\MCU.C(111): error C202: 'set_EA': undefined identifier
-..\..\MCU\MCU.C(126): error C202: 'set_HIRCEN': undefined identifier
-..\..\MCU\MCU.C(127): error C202: 'CKSWT': undefined identifier
-..\..\MCU\MCU.C(128): error C202: 'clr_OSC1': undefined identifier
-..\..\MCU\MCU.C(129): error C202: 'clr_OSC0': undefined identifier
-..\..\MCU\MCU.C(130): error C202: 'CKEN': undefined identifier
-..\..\MCU\MCU.C(143): error C202: 'Set_All_GPIO_Quasi_Mode': undefined identifier
-..\..\MCU\MCU.C(146): error C202: 'P03_PushPull_Mode': undefined identifier
-..\..\MCU\MCU.C(147): error C202: 'P03': undefined identifier
-..\..\MCU\MCU.C(150): error C202: 'P30_Input_Mode': undefined identifier
-..\..\MCU\MCU.C(153): error C202: 'P11': undefined identifier
-..\..\MCU\MCU.C(154): error C202: 'P12': undefined identifier
-..\..\MCU\MCU.C(155): error C202: 'P13': undefined identifier
-..\..\MCU\MCU.C(156): error C202: 'P14': undefined identifier
-..\..\MCU\MCU.C(157): error C202: 'P11_PushPull_Mode': undefined identifier
-..\..\MCU\MCU.C(158): error C202: 'P12_PushPull_Mode': undefined identifier
-..\..\MCU\MCU.C(159): error C202: 'P13_PushPull_Mode': undefined identifier
-..\..\MCU\MCU.C(160): error C202: 'P14_PushPull_Mode': undefined identifier
-..\..\MCU\MCU.C(180): error C202: 'set_T3PS2': undefined identifier
-..\..\MCU\MCU.C(181): error C202: 'clr_T3PS1': undefined identifier
-..\..\MCU\MCU.C(182): error C202: 'clr_T3PS0': undefined identifier
-..\..\MCU\MCU.C(184): error C202: 'RH3': undefined identifier
-..\..\MCU\MCU.C(185): error C202: 'RL3': undefined identifier
-..\..\MCU\MCU.C(187): error C202: 'set_ET3': undefined identifier
-..\..\MCU\MCU.C(188): error C202: 'set_TR3': undefined identifier
-compiling mcu_it.c...
-..\..\MCU\./MCU.H(25): warning C318: can't open file '../includes/N76E003.h'
-..\..\MCU\./MCU.H(26): warning C318: can't open file '../includes/SFR_Macro.h'
-..\..\MCU\./MCU.H(27): warning C318: can't open file '../includes/Function_define.h'
-Target not created
-Build target 'simpleBMS'
-compiling mcu.c...
-..\..\MCU\./MCU.H(25): warning C318: can't open file '../includes/N76E003.h'
-..\..\MCU\./MCU.H(26): warning C318: can't open file '../includes/SFR_Macro.h'
-..\..\MCU\./MCU.H(27): warning C318: can't open file '../includes/Function_define.h'
-..\..\MCU\MCU.C(84): error C202: 'clr_EA': undefined identifier
-..\..\MCU\MCU.C(94): error C202: 'set_EA': undefined identifier
-..\..\MCU\MCU.C(109): error C202: 'set_HIRCEN': undefined identifier
-..\..\MCU\MCU.C(110): error C202: 'CKSWT': undefined identifier
-..\..\MCU\MCU.C(111): error C202: 'clr_OSC1': undefined identifier
-..\..\MCU\MCU.C(112): error C202: 'clr_OSC0': undefined identifier
-..\..\MCU\MCU.C(113): error C202: 'CKEN': undefined identifier
-..\..\MCU\MCU.C(126): error C202: 'Set_All_GPIO_Quasi_Mode': undefined identifier
-..\..\MCU\MCU.C(129): error C202: 'P03_PushPull_Mode': undefined identifier
-..\..\MCU\MCU.C(130): error C202: 'P03': undefined identifier
-..\..\MCU\MCU.C(133): error C202: 'P30_Input_Mode': undefined identifier
-..\..\MCU\MCU.C(136): error C202: 'P11': undefined identifier
-..\..\MCU\MCU.C(137): error C202: 'P12': undefined identifier
-..\..\MCU\MCU.C(138): error C202: 'P13': undefined identifier
-..\..\MCU\MCU.C(139): error C202: 'P14': undefined identifier
-..\..\MCU\MCU.C(140): error C202: 'P11_PushPull_Mode': undefined identifier
-..\..\MCU\MCU.C(141): error C202: 'P12_PushPull_Mode': undefined identifier
-..\..\MCU\MCU.C(142): error C202: 'P13_PushPull_Mode': undefined identifier
-..\..\MCU\MCU.C(143): error C202: 'P14_PushPull_Mode': undefined identifier
-Target not created
-Build target 'simpleBMS'
-compiling mcu.c...
-compiling mcu_it.c...
-compiling main.c...
-compiling button.c...
-..\..\USER\BUTTON.C(85): error C202: 'P2': undefined identifier
-..\..\USER\BUTTON.C(87): error C202: 'P2': undefined identifier
-..\..\USER\BUTTON.C(89): error C202: 'P2': undefined identifier
-..\..\USER\BUTTON.C(91): error C202: 'P2': undefined identifier
-..\..\USER\BUTTON.C(106): error C202: 'P2_0': undefined identifier
-..\..\USER\BUTTON.C(112): error C202: 'P2_1': undefined identifier
-..\..\USER\BUTTON.C(118): error C202: 'P2_2': undefined identifier
-..\..\USER\BUTTON.C(124): error C202: 'P2_3': undefined identifier
-compiling led.c...
-Target not created
-Build target 'simpleBMS'
-compiling main.c...
-compiling button.c...
-..\..\USER\BUTTON.C(106): error C202: 'P2_0': undefined identifier
-..\..\USER\BUTTON.C(112): error C202: 'P2_1': undefined identifier
-..\..\USER\BUTTON.C(118): error C202: 'P2_2': undefined identifier
-..\..\USER\BUTTON.C(124): error C202: 'P2_3': undefined identifier
-Target not created
-Build target 'simpleBMS'
-compiling button.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_INIT?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=54.2 xdata=0 code=2070
-creating hex file from "..\obj\simpleBMS"...
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-..\..\MCU\MCU.C(108): error C202: 'BIT_TMP': undefined identifier
-..\..\MCU\MCU.C(108): error C202: 'BIT_TMP': undefined identifier
-..\..\MCU\MCU.C(110): error C202: 'BIT_TMP': undefined identifier
-..\..\MCU\MCU.C(110): error C202: 'BIT_TMP': undefined identifier
-..\..\MCU\MCU.C(111): error C202: 'BIT_TMP': undefined identifier
-..\..\MCU\MCU.C(111): error C202: 'BIT_TMP': undefined identifier
-Target not created
-Build target 'simpleBMS'
-compiling mcu.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_INIT?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=54.2 xdata=0 code=2070
-creating hex file from "..\obj\simpleBMS"...
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_INIT?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=54.2 xdata=0 code=2070
-creating hex file from "..\obj\simpleBMS"...
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-compiling mcu_it.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_INIT?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=54.2 xdata=0 code=2070
-creating hex file from "..\obj\simpleBMS"...
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-..\..\MCU\MCU.C(148): warning C280: 'u32Baudrate': unreferenced local variable
-compiling mcu_it.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_INIT?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2129
-creating hex file from "..\obj\simpleBMS"...
-"..\obj\simpleBMS" - 0 Error(s), 7 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-..\..\MCU\MCU.C(144): warning C280: 'u32Baudrate': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_INIT?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2121
-creating hex file from "..\obj\simpleBMS"...
-"..\obj\simpleBMS" - 0 Error(s), 7 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_INIT?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2121
-creating hex file from "..\obj\simpleBMS"...
-"..\obj\simpleBMS" - 0 Error(s), 6 Warning(s).
-Build target 'simpleBMS'
-compiling main.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2124
-creating hex file from "..\obj\simpleBMS"...
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-compiling main.c...
-compiling button.c...
-..\..\USER\BUTTON.C(85): error C202: 'P3_0': undefined identifier
-Target not created
-Build target 'simpleBMS'
-compiling main.c...
-compiling button.c...
-..\..\USER\BUTTON.C(85): error C202: 'P30': undefined identifier
-Target not created
-Build target 'simpleBMS'
-compiling main.c...
-compiling button.c...
-..\..\USER\BUTTON.C(85): error C202: 'P3': undefined identifier
-Target not created
-Build target 'simpleBMS'
-compiling main.c...
-compiling button.c...
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2124
-creating hex file from "..\obj\simpleBMS"...
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-compiling main.c...
-compiling button.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2125
-creating hex file from "..\obj\simpleBMS"...
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2132
-creating hex file from "..\obj\simpleBMS"...
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2132
-creating hex file from "..\obj\simpleBMS"...
-User command #1: .\hex2bin.exe .\simpleBMS.hex
---- Error: User Command terminated, Exit-Code = 1
-"..\obj\simpleBMS" - 1 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2132
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000853
-Pad Byte        = FF
-8-bit Checksum = 4C
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2132
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000853
-Pad Byte        = FF
-8-bit Checksum = 4D
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-compiling button.c...
-..\..\user\button.c - 0 Error(s), 0 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-..\..\MCU\MCU.C(144): warning C280: 'u32Baudrate': unreferenced local variable
-compiling mcu_it.c...
-assembling Conf_tny.A51...
-compiling ring_buffer.c...
-compiling main.c...
-compiling button.c...
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2125
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 0000084C
-Pad Byte        = FF
-8-bit Checksum = CE
-"..\obj\simpleBMS" - 0 Error(s), 6 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-..\..\MCU\MCU.C(143): warning C280: 'u32Baudrate': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2125
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 0000084C
-Pad Byte        = FF
-8-bit Checksum = C8
-"..\obj\simpleBMS" - 0 Error(s), 6 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2138
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000859
-Pad Byte        = FF
-8-bit Checksum = 8F
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=58.2 xdata=0 code=2127
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 0000084E
-Pad Byte        = FF
-8-bit Checksum = 27
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=38.2 xdata=0 code=1356
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 0000054B
-Pad Byte        = FF
-8-bit Checksum = 54
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=39.2 xdata=0 code=1372
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 0000055B
-Pad Byte        = FF
-8-bit Checksum = 7D
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=39.2 xdata=0 code=1375
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 0000055E
-Pad Byte        = FF
-8-bit Checksum = 36
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-..\..\MCU\MCU.C(144): warning C280: 'u32Baudrate': unreferenced local variable
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?MCU
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=39.2 xdata=0 code=1375
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 0000055E
-Pad Byte        = FF
-8-bit Checksum = 36
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-..\..\MCU\MCU.C(143): warning C280: 'u32Baudrate': unreferenced local variable
-compiling main.c...
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?STARTUP_TASK?MAIN
-    CALLER2: ?PR?LED_TASK?LED
-Program Size: data=77.4 xdata=0 code=2373
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000944
-Pad Byte        = FF
-8-bit Checksum = 35
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?STARTUP_TASK?MAIN
-    CALLER2: ?PR?LED_TASK?LED
-Program Size: data=77.4 xdata=0 code=2373
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000944
-Pad Byte        = FF
-8-bit Checksum = 35
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?STARTUP_TASK?MAIN
-    CALLER2: ?PR?LED_TASK?LED
-Program Size: data=77.4 xdata=0 code=2596
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A23
-Pad Byte        = FF
-8-bit Checksum = D6
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?STARTUP_TASK?MAIN
-    CALLER2: ?PR?LED_TASK?LED
-Program Size: data=77.4 xdata=0 code=2596
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A23
-Pad Byte        = FF
-8-bit Checksum = D6
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-compiling mcu_it.c...
-compiling main.c...
-compiling button.c...
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=35.2 xdata=0 code=1316
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000523
-Pad Byte        = FF
-8-bit Checksum = 08
-"..\obj\simpleBMS" - 0 Error(s), 1 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-compiling mcu_it.c...
-compiling main.c...
-compiling button.c...
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?STARTUP_TASK?MAIN
-    CALLER2: ?PR?LED_TASK?LED
-Program Size: data=77.4 xdata=0 code=2596
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A23
-Pad Byte        = FF
-8-bit Checksum = D6
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?STARTUP_TASK?MAIN
-    CALLER2: ?PR?LED_TASK?LED
-Program Size: data=77.4 xdata=0 code=2602
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A29
-Pad Byte        = FF
-8-bit Checksum = 42
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling main.c...
-..\..\USER\MAIN.C(24): error C129: missing ';' before '_sysTickCnt'
-Target not created
-Build target 'simpleBMS'
-compiling main.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?STARTUP_TASK?MAIN
-    CALLER2: ?PR?LED_TASK?LED
-Program Size: data=77.4 xdata=0 code=2602
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A29
-Pad Byte        = FF
-8-bit Checksum = 42
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?STARTUP_TASK?MAIN
-    CALLER2: ?PR?LED_TASK?LED
-Program Size: data=69.4 xdata=8 code=2622
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A3D
-Pad Byte        = FF
-8-bit Checksum = 7D
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?STARTUP_TASK?MAIN
-    CALLER2: ?PR?LED_TASK?LED
-Program Size: data=67.4 xdata=10 code=2663
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A66
-Pad Byte        = FF
-8-bit Checksum = 99
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?STARTUP_TASK?MAIN
-    CALLER2: ?PR?LED_TASK?LED
-Program Size: data=67.4 xdata=10 code=2663
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A66
-Pad Byte        = FF
-8-bit Checksum = 99
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling mcu.c...
-compiling mcu_it.c...
-compiling main.c...
-compiling button.c...
-compiling led.c...
-..\..\USER\LED.C(100): error C202: 'IO_LED1': undefined identifier
-..\..\USER\LED.C(100): error C202: 'IO_LED1': undefined identifier
-..\..\USER\LED.C(100): error C202: 'IO_LED1': undefined identifier
-..\..\USER\LED.C(100): error C202: 'IO_LED1': undefined identifier
-Target not created
-Build target 'simpleBMS'
-compiling mcu.c...
-compiling mcu_it.c...
-compiling main.c...
-compiling button.c...
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-Program Size: data=46.3 xdata=10 code=2611
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A32
-Pad Byte        = FF
-8-bit Checksum = A4
-"..\obj\simpleBMS" - 0 Error(s), 1 Warning(s).
-Build target 'simpleBMS'
-compiling main.c...
-compiling system.c...
-..\..\USER\SYSTEM.C(44): error C202: 'BIT_TMP': undefined identifier
-..\..\USER\SYSTEM.C(44): error C202: 'BIT_TMP': undefined identifier
-..\..\USER\SYSTEM.C(46): error C202: 'BIT_TMP': undefined identifier
-..\..\USER\SYSTEM.C(46): error C202: 'BIT_TMP': undefined identifier
-..\..\USER\SYSTEM.C(47): error C202: 'BIT_TMP': undefined identifier
-..\..\USER\SYSTEM.C(47): error C202: 'BIT_TMP': undefined identifier
-Target not created
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?MAIN
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_CLK_INIT?SYSTEM
-Program Size: data=46.4 xdata=10 code=2696
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A87
-Pad Byte        = FF
-8-bit Checksum = 8E
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-..\..\USER\./SYSTEM.H(21): warning C318: can't open file './SFR_Macro.h'
-..\..\USER\./SYSTEM.H(22): warning C318: can't open file './Function_define.h'
-..\..\USER\BUTTON.C(192): error C202: 'P30_Input_Mode': undefined identifier
-compiling led.c...
-..\..\USER\./SYSTEM.H(21): warning C318: can't open file './SFR_Macro.h'
-..\..\USER\./SYSTEM.H(22): warning C318: can't open file './Function_define.h'
-..\..\USER\LED.C(86): error C202: 'P13': undefined identifier
-..\..\USER\LED.C(86): error C202: 'P14': undefined identifier
-..\..\USER\LED.C(100): error C202: 'P11_PushPull_Mode': undefined identifier
-..\..\USER\LED.C(100): error C202: 'P12_PushPull_Mode': undefined identifier
-..\..\USER\LED.C(100): error C202: 'P13_PushPull_Mode': undefined identifier
-..\..\USER\LED.C(100): error C202: 'P14_PushPull_Mode': undefined identifier
-compiling system.c...
-..\..\USER\./SYSTEM.H(21): warning C318: can't open file './SFR_Macro.h'
-..\..\USER\./SYSTEM.H(22): warning C318: can't open file './Function_define.h'
-..\..\USER\SYSTEM.C(68): error C202: 'Set_All_GPIO_Quasi_Mode': undefined identifier
-..\..\USER\SYSTEM.C(70): error C202: 'clr_EA': undefined identifier
-..\..\USER\SYSTEM.C(72): error C202: 'set_HIRCEN': undefined identifier
-..\..\USER\SYSTEM.C(73): error C202: 'SET_BIT5': undefined identifier
-..\..\USER\SYSTEM.C(74): error C202: 'clr_OSC1': undefined identifier
-..\..\USER\SYSTEM.C(75): error C202: 'clr_OSC0': undefined identifier
-..\..\USER\SYSTEM.C(76): error C202: 'SET_BIT0': undefined identifier
-..\..\USER\SYSTEM.C(78): error C202: 'set_EA': undefined identifier
-compiling printf.c...
-..\..\USER\PRINTF.C(50): error C202: 'TI': undefined identifier
-..\..\USER\PRINTF.C(51): error C202: 'TI': undefined identifier
-..\..\USER\PRINTF.C(52): error C202: 'SBUF': undefined identifier
-..\..\USER\PRINTF.C(62): error C141: syntax error near 'u32Baudrate', expected ')'
-..\..\USER\PRINTF.C(64): error C202: 'P06_Quasi_Mode': undefined identifier
-..\..\USER\PRINTF.C(65): error C202: 'P07_Quasi_Mode': undefined identifier
-..\..\USER\PRINTF.C(67): error C202: 'SCON': undefined identifier
-..\..\USER\PRINTF.C(68): error C202: 'TMOD': undefined identifier
-..\..\USER\PRINTF.C(70): error C202: 'set_SMOD': undefined identifier
-..\..\USER\PRINTF.C(71): error C202: 'set_T1M': undefined identifier
-..\..\USER\PRINTF.C(72): error C202: 'clr_BRCK': undefined identifier
-..\..\USER\PRINTF.C(74): error C202: 'TH1': undefined identifier
-..\..\USER\PRINTF.C(76): error C202: 'set_TR1': undefined identifier
-..\..\USER\PRINTF.C(77): error C202: 'set_TI': undefined identifier
-..\..\USER\PRINTF.C(87): error C141: syntax error near 'PRINTF_TASK_PRIORITY', expected 'const'
-..\..\USER\PRINTF.C(88): error C129: missing ';' before '{'
-Target not created
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling printf.c...
-..\..\USER\PRINTF.C(50): error C202: 'TI': undefined identifier
-..\..\USER\PRINTF.C(51): error C202: 'TI': undefined identifier
-..\..\USER\PRINTF.C(52): error C202: 'SBUF': undefined identifier
-..\..\USER\PRINTF.C(62): error C141: syntax error near 'u32Baudrate', expected ')'
-..\..\USER\PRINTF.C(64): error C202: 'P06_Quasi_Mode': undefined identifier
-..\..\USER\PRINTF.C(65): error C202: 'P07_Quasi_Mode': undefined identifier
-..\..\USER\PRINTF.C(67): error C202: 'SCON': undefined identifier
-..\..\USER\PRINTF.C(68): error C202: 'TMOD': undefined identifier
-..\..\USER\PRINTF.C(70): error C202: 'set_SMOD': undefined identifier
-..\..\USER\PRINTF.C(71): error C202: 'set_T1M': undefined identifier
-..\..\USER\PRINTF.C(72): error C202: 'clr_BRCK': undefined identifier
-..\..\USER\PRINTF.C(74): error C202: 'TH1': undefined identifier
-..\..\USER\PRINTF.C(76): error C202: 'set_TR1': undefined identifier
-..\..\USER\PRINTF.C(77): error C202: 'set_TI': undefined identifier
-..\..\USER\PRINTF.C(87): error C141: syntax error near 'PRINTF_TASK_PRIORITY', expected 'const'
-..\..\USER\PRINTF.C(88): error C129: missing ';' before '{'
-Target not created
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling printf.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=10 code=1516
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000005EB
-Pad Byte        = FF
-8-bit Checksum = 45
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=10 code=1516
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000005EB
-Pad Byte        = FF
-8-bit Checksum = 45
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=10 code=1516
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000005EB
-Pad Byte        = FF
-8-bit Checksum = 45
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=10 code=1516
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000005EB
-Pad Byte        = FF
-8-bit Checksum = 45
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=10 code=1524
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000005F3
-Pad Byte        = FF
-8-bit Checksum = D2
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling printf.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=10 code=1550
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 0000060D
-Pad Byte        = FF
-8-bit Checksum = D7
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling printf.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=10 code=1560
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000617
-Pad Byte        = FF
-8-bit Checksum = A6
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=10 code=1564
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 0000061B
-Pad Byte        = FF
-8-bit Checksum = 9F
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-compiling system.c...
-..\..\user\system.c - 0 Error(s), 0 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=11 code=1589
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000634
-Pad Byte        = FF
-8-bit Checksum = 3B
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling printf.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=11 code=1658
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000679
-Pad Byte        = FF
-8-bit Checksum = DA
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling system.c...
-..\..\USER\SYSTEM.C(187): warning C206: 'LOG': missing function-prototype
-..\..\USER\SYSTEM.C(187): error C267: 'LOG': requires ANSI-style prototype
-Target not created
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\system.obj (SYSTEM)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\system.obj (SYSTEM)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\system.obj (SYSTEM)
-    ADDRESS: 051CH
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\system.obj (SYSTEM)
-    ADDRESS: 0525H
-Program Size: data=28.3 xdata=11 code=1701
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A4
-Pad Byte        = FF
-8-bit Checksum = 86
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 05BCH
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 05C5H
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\system.obj (SYSTEM)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\system.obj (SYSTEM)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\system.obj (SYSTEM)
-    ADDRESS: 051CH
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\system.obj (SYSTEM)
-    ADDRESS: 0525H
-Program Size: data=28.3 xdata=11 code=1745
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006D0
-Pad Byte        = FF
-8-bit Checksum = D0
-"..\obj\simpleBMS" - 0 Error(s), 12 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling printf.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=11 code=1658
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000679
-Pad Byte        = FF
-8-bit Checksum = DA
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=11 code=1658
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000679
-Pad Byte        = FF
-8-bit Checksum = DA
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling printf.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=28.3 xdata=11 code=1376
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 0000055F
-Pad Byte        = FF
-8-bit Checksum = 78
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling printf.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 05BCH
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 05C5H
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\system.obj (SYSTEM)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\system.obj (SYSTEM)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\system.obj (SYSTEM)
-    ADDRESS: 051CH
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\system.obj (SYSTEM)
-    ADDRESS: 0525H
-Program Size: data=28.3 xdata=11 code=1745
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006D0
-Pad Byte        = FF
-8-bit Checksum = D0
-"..\obj\simpleBMS" - 0 Error(s), 12 Warning(s).
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling printf.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling printf.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=11 code=1658
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000679
-Pad Byte        = FF
-8-bit Checksum = DA
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling printf.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=28.3 xdata=11 code=1376
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 0000055F
-Pad Byte        = FF
-8-bit Checksum = 78
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling printf.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=11 code=1658
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000679
-Pad Byte        = FF
-8-bit Checksum = DA
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=11 code=1658
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000679
-Pad Byte        = FF
-8-bit Checksum = DA
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-compiling printf.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-compiling printf.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling printf.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling printf.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-compiling printf.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-Program Size: data=28.3 xdata=11 code=1658
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000679
-Pad Byte        = FF
-8-bit Checksum = DA
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-compiling printf.c...
-linking...
-*** WARNING L7: MODULE NAME NOT UNIQUE
-    MODULE:  D:\PROGRAM FILES\KEILC51\FILES\C51\LIB\C51S.LIB (PRINTF)
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINTF
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
-    SYMBOL:  ?_PRINTF?BYTE
-    MODULE:  ..\obj\led.obj (LED)
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0587H
-*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
-    SYMBOL:  _PRINTF
-    MODULE:  ..\obj\led.obj (LED)
-    ADDRESS: 0590H
-Program Size: data=28.3 xdata=11 code=1702
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000006A5
-Pad Byte        = FF
-8-bit Checksum = 9D
-"..\obj\simpleBMS" - 0 Error(s), 8 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-compiling print.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=49.4 xdata=11 code=2616
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A37
-Pad Byte        = FF
-8-bit Checksum = AC
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling print.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=49.4 xdata=11 code=2616
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A37
-Pad Byte        = FF
-8-bit Checksum = AC
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling system.c...
-..\..\USER\SYSTEM.C(188): warning C206: 'LOG': missing function-prototype
-..\..\USER\SYSTEM.C(188): error C267: 'LOG': requires ANSI-style prototype
-Target not created
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?LED_TASK?LED
-    CALLER2: ?PR?SYSTEM_TASK?SYSTEM
-Program Size: data=70.5 xdata=11 code=2659
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A62
-Pad Byte        = FF
-8-bit Checksum = E3
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=49.4 xdata=11 code=2616
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A37
-Pad Byte        = FF
-8-bit Checksum = AC
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUTCHAR?PRINT
-Program Size: data=28.3 xdata=11 code=1658
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000679
-Pad Byte        = FF
-8-bit Checksum = DA
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling led.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=49.4 xdata=11 code=2616
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A37
-Pad Byte        = FF
-8-bit Checksum = AC
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
 assembling Conf_tny.A51...
 compiling button.c...
+..\..\USER\BUTTON.C(121): warning C206: 'LED1_TOGGLE': missing function-prototype
 compiling led.c...
+..\..\USER\LED.C(65): warning C280: 'wr': unreferenced local variable
 compiling system.c...
 compiling print.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=49.4 xdata=11 code=2616
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A37
-Pad Byte        = FF
-8-bit Checksum = AC
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?LED_TASK?LED
-    CALLER2: ?PR?SYSTEM_TASK?SYSTEM
-Program Size: data=70.5 xdata=11 code=2659
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A62
-Pad Byte        = FF
-8-bit Checksum = E3
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling print.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=49.4 xdata=11 code=2547
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000009F2
-Pad Byte        = FF
-8-bit Checksum = 3B
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=49.4 xdata=11 code=2547
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 000009F2
-Pad Byte        = FF
-8-bit Checksum = 3B
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?LED_TASK?LED
-    CALLER2: ?PR?SYSTEM_TASK?SYSTEM
-Program Size: data=70.5 xdata=11 code=2590
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A1D
-Pad Byte        = FF
-8-bit Checksum = 09
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?LED_TASK?LED
-    CALLER2: ?PR?SYSTEM_TASK?SYSTEM
-Program Size: data=70.5 xdata=11 code=2590
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A1D
-Pad Byte        = FF
-8-bit Checksum = 09
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?LED_TASK?LED
-    CALLER2: ?PR?SYSTEM_TASK?SYSTEM
-Program Size: data=70.5 xdata=11 code=2590
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A1D
-Pad Byte        = FF
-8-bit Checksum = 09
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-compiling led.c...
-compiling system.c...
-compiling print.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?LED_TASK?LED
-    CALLER2: ?PR?SYSTEM_TASK?SYSTEM
-Program Size: data=70.5 xdata=11 code=2659
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A62
-Pad Byte        = FF
-8-bit Checksum = E3
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling system.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-*** WARNING L15: MULTIPLE CALL TO SEGMENT
-    SEGMENT: ?PR?PRINTF?PRINTF
-    CALLER1: ?PR?LED_TASK?LED
-    CALLER2: ?PR?SYSTEM_TASK?SYSTEM
-Program Size: data=70.5 xdata=11 code=2662
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A65
-Pad Byte        = FF
-8-bit Checksum = 46
-"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-..\..\USER\BUTTON.C(120): warning C206: 'LED1_TOGGLE': missing function-prototype
-compiling led.c...
-compiling system.c...
-linking...
+    SEGMENT: ?PR?_LED_WRITE?LED
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
@@ -2293,169 +29,403 @@ linking...
     SYMBOL:  LED1_TOGGLE
     MODULE:  ..\obj\button.obj (BUTTON)
     ADDRESS: 0795H
-Program Size: data=49.4 xdata=11 code=2628
+Program Size: data=50.4 xdata=11 code=2623
 creating hex file from "..\obj\simpleBMS"...
 User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
 hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
 checksum extensions Copyright (C) 2004 Rockwell Automation
 improved P.G. 2007
 Lowest address  = 00000000
-Highest address = 00000A43
+Highest address = 00000A3E
 Pad Byte        = FF
-8-bit Checksum = B7
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
-Build target 'simpleBMS'
-compiling button.c...
-linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=49.4 xdata=11 code=2627
-creating hex file from "..\obj\simpleBMS"...
-User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
-hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
-checksum extensions Copyright (C) 2004 Rockwell Automation
-improved P.G. 2007
-Lowest address  = 00000000
-Highest address = 00000A42
-Pad Byte        = FF
-8-bit Checksum = C9
-"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+8-bit Checksum = FB
+"..\obj\simpleBMS" - 0 Error(s), 7 Warning(s).
 Build target 'simpleBMS'
 compiling led.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_LED_WRITE?LED
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=49.4 xdata=11 code=2619
+*** WARNING L1: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  LED1_TOGGLE
+    MODULE:  ..\obj\button.obj (BUTTON)
+*** WARNING L2: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  LED1_TOGGLE
+    MODULE:  ..\obj\button.obj (BUTTON)
+    ADDRESS: 0795H
+Program Size: data=49.4 xdata=11 code=2641
 creating hex file from "..\obj\simpleBMS"...
 User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
 hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
 checksum extensions Copyright (C) 2004 Rockwell Automation
 improved P.G. 2007
 Lowest address  = 00000000
-Highest address = 00000A3A
+Highest address = 00000A50
 Pad Byte        = FF
-8-bit Checksum = 22
+8-bit Checksum = 27
+"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
+Build target 'simpleBMS'
+compiling button.c...
+compiling led.c...
+compiling system.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=49.4 xdata=11 code=2737
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000AB0
+Pad Byte        = FF
+8-bit Checksum = F4
 "..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
 Build target 'simpleBMS'
-compiling button.c...
+compiling print.c...
 linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=69.4 xdata=11 code=3390
+Program Size: data=49.4 xdata=11 code=2735
 creating hex file from "..\obj\simpleBMS"...
 User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
 hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
 checksum extensions Copyright (C) 2004 Rockwell Automation
 improved P.G. 2007
 Lowest address  = 00000000
-Highest address = 00000D3D
+Highest address = 00000AAE
 Pad Byte        = FF
-8-bit Checksum = 46
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
+8-bit Checksum = 57
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
 Build target 'simpleBMS'
-compiling ring_buffer.c...
+compiling print.c...
 linking...
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=69.4 xdata=11 code=3390
+Program Size: data=49.4 xdata=11 code=2737
 creating hex file from "..\obj\simpleBMS"...
 User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
 hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
 checksum extensions Copyright (C) 2004 Rockwell Automation
 improved P.G. 2007
 Lowest address  = 00000000
-Highest address = 00000D3D
+Highest address = 00000AB0
 Pad Byte        = FF
-8-bit Checksum = 46
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
+8-bit Checksum = F4
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
 Build target 'simpleBMS'
-compiling ring_buffer.c...
-compiling button.c...
+compiling print.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=49.4 xdata=11 code=2753
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000AC0
+Pad Byte        = FF
+8-bit Checksum = CE
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+Build target 'simpleBMS'
+compiling print.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=49.4 xdata=11 code=2775
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000AD6
+Pad Byte        = FF
+8-bit Checksum = 8B
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+Build target 'simpleBMS'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=49.4 xdata=11 code=2775
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000AD6
+Pad Byte        = FF
+8-bit Checksum = 8B
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+Build target 'simpleBMS'
+compiling print.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=49.4 xdata=11 code=2773
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000AD4
+Pad Byte        = FF
+8-bit Checksum = DD
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+Build target 'simpleBMS'
+compiling print.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=49.4 xdata=11 code=2775
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000AD6
+Pad Byte        = FF
+8-bit Checksum = 8B
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+Build target 'simpleBMS'
+compiling print.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=49.4 xdata=11 code=2775
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000AD6
+Pad Byte        = FF
+8-bit Checksum = 8B
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+Build target 'simpleBMS'
+compiling print.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=49.4 xdata=11 code=2775
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000AD6
+Pad Byte        = FF
+8-bit Checksum = 8B
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+Build target 'simpleBMS'
+compiling print.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=49.4 xdata=11 code=2773
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000AD4
+Pad Byte        = FF
+8-bit Checksum = F0
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+Build target 'simpleBMS'
+compiling print.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=49.4 xdata=11 code=2781
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000ADC
+Pad Byte        = FF
+8-bit Checksum = 7A
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+Build target 'simpleBMS'
 compiling led.c...
 compiling system.c...
 compiling print.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=71.4 xdata=11 code=3608
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?PRINT
+Program Size: data=28.3 xdata=11 code=1819
 creating hex file from "..\obj\simpleBMS"...
 User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
 hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
 checksum extensions Copyright (C) 2004 Rockwell Automation
 improved P.G. 2007
 Lowest address  = 00000000
-Highest address = 00000E17
+Highest address = 0000071A
 Pad Byte        = FF
-8-bit Checksum = E8
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
+8-bit Checksum = 18
+"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
 Build target 'simpleBMS'
-compiling button.c...
+compiling print.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
-    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
-*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=77.4 xdata=5 code=3598
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?PRINT
+Program Size: data=28.3 xdata=11 code=1819
 creating hex file from "..\obj\simpleBMS"...
 User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
 hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
 checksum extensions Copyright (C) 2004 Rockwell Automation
 improved P.G. 2007
 Lowest address  = 00000000
-Highest address = 00000E0D
+Highest address = 0000071A
 Pad Byte        = FF
-8-bit Checksum = 0F
-"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).
+8-bit Checksum = 18
+"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
 Build target 'simpleBMS'
-compiling button.c...
+compiling print.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUTCHAR?PRINT
+Program Size: data=28.3 xdata=11 code=1814
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000715
+Pad Byte        = FF
+8-bit Checksum = A5
+"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
+Build target 'simpleBMS'
+compiling led.c...
 compiling system.c...
+compiling print.c...
 linking...
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?MCU_RESET?SYSTEM
-Program Size: data=49.4 xdata=11 code=2619
+Program Size: data=49.4 xdata=11 code=2776
 creating hex file from "..\obj\simpleBMS"...
 User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
 hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
 checksum extensions Copyright (C) 2004 Rockwell Automation
 improved P.G. 2007
 Lowest address  = 00000000
-Highest address = 00000A3A
+Highest address = 00000AD7
 Pad Byte        = FF
-8-bit Checksum = 22
+8-bit Checksum = DD
 "..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+Build target 'simpleBMS'
+compiling print.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=49.4 xdata=11 code=2776
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000AD7
+Pad Byte        = FF
+8-bit Checksum = DD
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+Build target 'simpleBMS'
+compiling button.c...
+compiling led.c...
+compiling system.c...
+compiling print.c...
+compiling console.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=52.4 xdata=11 code=2785
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000AE0
+Pad Byte        = FF
+8-bit Checksum = 3A
+"..\obj\simpleBMS" - 0 Error(s), 2 Warning(s).
+Build target 'simpleBMS'
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_CHECK_RING_BUFF?RING_BUFFER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_GET_RING_BUFF_DATA?RING_BUFFER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PUT_RING_BUFF_DATA?RING_BUFFER
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=74.4 xdata=11 code=3774
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000EBD
+Pad Byte        = FF
+8-bit Checksum = 6D
+"..\obj\simpleBMS" - 0 Error(s), 5 Warning(s).

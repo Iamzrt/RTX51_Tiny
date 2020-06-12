@@ -1,7 +1,9 @@
 "..\obj\Conf_tny.obj",
+"..\obj\ring_buffer.obj",
 "..\obj\button.obj",
 "..\obj\led.obj",
 "..\obj\system.obj",
-"..\obj\print.obj" 
+"..\obj\print.obj",
+"..\obj\console.obj" 
 TO "..\obj\simpleBMS" Rtx51Tiny 
 PRINT(".\simpleBMS.m51") RAMSIZE(256) 
