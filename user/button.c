@@ -16,7 +16,6 @@
 
 
 /*-- defined -----------------------------------------------------------------*/
-#define        DB_LOG(x)                  LOG("[BTN]");LOG(x)
 #define        TIME_MS(x)                 (x)
 
 
@@ -119,9 +118,6 @@ static  void  button_task_timer_schedule(void)
 	if(buttonList.trigDown & (1<<0)) 
 	{
 	 	led_write(LED1, LED_TOGGLE);
-		led_write(LED2, LED_OFF);
-		led_write(LED3, LED_OFF);
-		led_write(LED4, LED_OFF);
 	}
 
 	/* Button 2 trig action. */
@@ -199,6 +195,8 @@ void   button_task(void)	 _task_   BUTTON_TASK_PRIORITY
 	{
     button_task_timer_schedule();
 		button_task_logic_schedule();
+
+		os_switch_task();
 	}
 }
 

@@ -16,7 +16,7 @@
 
 
 /*-- defined -----------------------------------------------------------------*/
-#define        DB_LOG(x)                  LOG("[LED]");LOG(x)
+
 
 #define        TIME_MS(x)                 (x)
 
@@ -48,7 +48,6 @@
 static   tick_size_t XDATA ledTaskBaseTr = 0;
 
 
-static  u8_t  XDATA  testLedTime = 0;
 
 /*-- functions ---------------------------------------------------------------*/
 static    void    led_task_timer_schedule(void);
@@ -110,7 +109,7 @@ static  void  led_task_timer_schedule(void)
 {
 	TASK_TIMER_BEGIN(ledTaskBaseTr, TIME_MS(100));
 
-	if(testLedTime > 0)  testLedTime--;
+
 
 	TASK_TIMER_END(ledTaskBaseTr);
 }
@@ -124,12 +123,7 @@ static  void  led_task_timer_schedule(void)
   */
 static  void  led_task_logic_schedule(void)
 {
-  if(testLedTime == 0)  
-	{
-	  testLedTime = 10;
-	  //LED1_TOGGLE(); LED2_OFF(); LED3_OFF(); LED4_OFF();
-		//DB_LOG("led task running.\r\n");
-  }
+
 }
 
 
@@ -147,7 +141,9 @@ void   led_task(void)	 _task_   LED_TASK_PRIORITY
   while(1)
 	{
 	  led_task_timer_schedule();
-	  led_task_logic_schedule();   
+	  led_task_logic_schedule();  
+		
+		os_switch_task(); 
 	}
 }
 

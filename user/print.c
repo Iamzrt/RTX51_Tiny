@@ -5,8 +5,8 @@
   * @version 
   * @date   
   * @brief    
-              %d               十进制有符号整数
-              %u               十进制无符号整数
+              %bd              十进制有符号整数
+              %bu              十进制无符号整数
               %f               浮点数
               %s               字符串
               %c               单个字符
@@ -22,11 +22,13 @@
   ******************************************************************************
   */
 /*-- includes ----------------------------------------------------------------*/
+#include <stdarg.h>
 #include "./print.h"
 
 
+#if     LOG_ENABLE
+
 /*-- defined -----------------------------------------------------------------*/
-#define      DB_LOG(x)             LOG("[PRINTF]");LOG(x)
 
 
 
@@ -34,10 +36,9 @@
 /*-- private variables -------------------------------------------------------*/
 static  bit    BIT_TMP;
 
-
+static    PrintRxCallbackFunc   rxCallbackPt = NULL;
 
 /*-- functions ---------------------------------------------------------------*/
-#if     LOG_ENABLE
 
 
 /**           
@@ -102,7 +103,10 @@ void  uart0_interrupt_ISR(void)  interrupt  4
     clr_RI;	
 
 		dat = SBUF;
-	  if(dat == 0xAA)  P12 = !P12;
+		if(rxCallbackPt)
+		{
+		  rxCallbackPt(dat);
+		}
 	}
 
 	 /* if transmit occur */
@@ -115,7 +119,6 @@ void  uart0_interrupt_ISR(void)  interrupt  4
 }
 
 
-#endif
 
 /**           
   * @brief            
@@ -123,7 +126,19 @@ void  uart0_interrupt_ISR(void)  interrupt  4
   * @return  
   * @note
   */
-void  printf_task (void)  _task_   PRINT_TASK_PRIORITY
+void   print_rx_callback_register(PrintRxCallbackFunc  func)
+{
+  rxCallbackPt = func;
+}
+
+
+/**           
+  * @brief            
+  * @param    
+  * @return  
+  * @note
+  */
+void  print_task (void)  _task_   PRINT_TASK_PRIORITY
 {
 #if     LOG_ENABLE
   mcu_uart0_timer1(115200);
@@ -131,8 +146,13 @@ void  printf_task (void)  _task_   PRINT_TASK_PRIORITY
 
   while(1)
 	{
-	
+	  os_switch_task();
 	}
 }
+
+
+#endif   /* endif  LOG_ENABLE */
+
+
 
 /*---------------------- end of file -----------------------------------------*/

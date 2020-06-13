@@ -15,11 +15,11 @@
 #include "./led.h"
 #include "./button.h"
 #include "./print.h"
+#include "./console.h"
+
 
 
 /*-- defined -----------------------------------------------------------------*/
-#define      DB_LOG(x)             LOG("[SYS]");LOG(x)
-
 #define      TIME_MS(x)                 (x)
 
 
@@ -36,6 +36,7 @@ static    void    mcu_clk_init(void);
 
 static    void    system_task_timer_schedule(void);
 static    void    system_task_logic_schedule(void);
+
 
 
 
@@ -131,15 +132,15 @@ void   mcu_gpio_all_deinit(void)
   */
 static   void  mcu_clk_init(void)
 {
-  clr_EA;				         /* disable interrupts*/
+  clr_EA;				                    /* disable interrupts*/
 
-  set_HIRCEN;  /* HIRC 16MHz */
+  set_HIRCEN;                       /* HIRC 16MHz */
   while((CKSWT&SET_BIT5)==0);				/* check ready */
   clr_OSC1;
   clr_OSC0;
   while((CKEN&SET_BIT0)==1);				/* check system clock switching OK or NG */
 
-	set_EA;                        /* enable interrupts*/
+	set_EA;                           /* enable interrupts*/
 }
 
 
@@ -152,7 +153,6 @@ static   void  mcu_clk_init(void)
 static  void  system_task_timer_schedule(void)
 {
 	TASK_TIMER_BEGIN(systemTaskBaseTr, TIME_MS(100));
-
 
 
 	TASK_TIMER_END(systemTaskBaseTr);
@@ -168,8 +168,6 @@ static  void  system_task_timer_schedule(void)
 static  void  system_task_logic_schedule(void)
 {		 
   mcu_wdt_feed();	
-
-
 }
 
 /**           
@@ -188,15 +186,22 @@ void  system_task (void)  _task_   SYSTEM_TASK_PRIORITY
 
 	os_create_task(BUTTON_TASK_PRIORITY);
 	os_create_task(LED_TASK_PRIORITY);
-	os_create_task(PRINT_TASK_PRIORITY);
-	os_create_task(CONSOLE_TASK_PRIORITY);
 
-	DB_LOG("System init finish.\r\n");
+#if  LOG_ENABLE
+	os_create_task(PRINT_TASK_PRIORITY);
+#endif
+
+#if  CONSOLE_ENABLE
+	os_create_task(CONSOLE_TASK_PRIORITY);
+#endif
+
 
 	while(1)
 	{
 	  system_task_timer_schedule();
 		system_task_logic_schedule();
+
+		os_switch_task();
 	}
 }
 

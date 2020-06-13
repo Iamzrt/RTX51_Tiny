@@ -1,0 +1,74 @@
+C51 COMPILER V9.00   CONSOLE_CMD                                                           06/13/2020 13:58:00 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE CONSOLE_CMD
+OBJECT MODULE PLACED IN ..\obj\console_cmd.obj
+COMPILER INVOKED BY: D:\Program Files\KEILC51\files\C51\BIN\C51.EXE ..\..\user\console_cmd.c BROWSE DEBUG OBJECTEXTEND L
+                    -ISTINCLUDE SYMBOLS PRINT(.\console_cmd.lst) TABS(2) OBJECT(..\obj\console_cmd.obj)
+
+line level    source
+
+   1          /**
+   2            ******************************************************************************
+   3            * @file    
+   4            * @author  
+   5            * @version 
+   6            * @date   
+   7            * @brief 
+   8            ******************************************************************************  
+   9            * 
+  10            * 
+  11            ******************************************************************************
+  12            */
+  13          /*-- includes ----------------------------------------------------------------*/
+  14          
+  15          
+  16          /*-- defined -----------------------------------------------------------------*/
+  17          
+  18          
+  19          
+  20          /*-- private variables -------------------------------------------------------*/
+  21          static    void    help(void);
+  22          static    void    reset(void);
+  23          static    void    time(void);
+  24          
+  25          
+  26          ConsoleItemDef  CODE cmdList[] = 
+*** ERROR C129 IN LINE 26 OF ..\..\USER\CONSOLE_CMD.C: missing ';' before 'CODE'
+  27          {
+  28            { "?HELP",      "--Lists all user commands",       help              },
+  29            { "?RESET",     "--Reset system",                  reset             },
+  30            { "?TIME",      "--Show the system time",          time              },
+  31          };
+  32          
+  33          #define   CONSOLE_CMD_SIZE   sizeof(cmdList)/sizeof(ConsoleItemDef)
+  34          
+  35          /*-- functions ---------------------------------------------------------------*/
+  36          
+  37          static  void  help(void)
+  38          {
+  39            u8_t XDATA i = 0;
+  40          
+  41            for(i=0; i<CONSOLE_CMD_SIZE; i++)
+  42            {
+  43              LOG("%s\t%s\r\n", cmdList[i].name, cmdList[i].brief);    
+  44            }   
+  45          }
+  46          
+  47          static  void  reset(void)
+  48          {
+  49            mcu_reset();  
+  50          }
+  51          
+  52          static  void  time(void)
+  53          {
+C51 COMPILER V9.00   CONSOLE_CMD                                                           06/13/2020 13:58:00 PAGE 2   
+
+  54          
+  55          }
+  56          
+  57          
+  58          
+  59          /*---------------------- end of file -----------------------------------------*/
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

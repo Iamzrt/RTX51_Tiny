@@ -16,12 +16,18 @@
 
 
 /*-- defined -----------------------------------------------------------------*/    
-#define   DB_LOG(fmt)      
-#define   ASSERT(fmt)
 
 
 /*-- typedef -----------------------------------------------------------------*/
-
+//struct  RingBuffStruct  
+//{
+//  rb_depth_t      posPut;    /* The current location of the ring buffer. */
+//	rb_depth_t      posGet;    /* The current fetch position of the buffer. */
+//	rb_depth_t      depth;     /* The total number of elements in the ring buffer. */
+//	rb_depth_t      remain;
+//	
+//	rb_data_type*   ptBuffer;  /* Ring buffer pointer. */
+//};
 
 
 /*-- private variables -------------------------------------------------------*/
@@ -37,11 +43,11 @@
   * @param       
   * @return  
   */
-static  u32_t location(RingBuffObj* thiz, rb_depth_t i)
+static  rb_depth_t location(RingBuffObj* thiz, rb_depth_t i)
 {
   rb_depth_t  j = 0;
 
-	ASSERT(thiz);
+	//ASSERT(thiz);
 	
   j = ((i+1) >= thiz->depth) ? 0 : (i+1);
 
@@ -56,7 +62,7 @@ static  u32_t location(RingBuffObj* thiz, rb_depth_t i)
   */
 rb_depth_t  check_ring_buff(RingBuffObj* thiz)
 {
-  ASSERT(thiz);
+  //ASSERT(thiz);
 
   return  thiz->remain;
 }
@@ -68,11 +74,11 @@ rb_depth_t  check_ring_buff(RingBuffObj* thiz)
   */
 rb_data_type  get_ring_buff_data(RingBuffObj* thiz)
 {
-	rb_data_type  ret = 0;
-  rb_depth_t    pos = 0;
+	rb_data_type XDATA ret = 0;
+  rb_depth_t   XDATA pos = 0;
 
-	ASSERT(thiz);
-	ASSERT(thiz->ptBuffer);
+	//ASSERT(thiz);
+	//ASSERT(thiz->ptBuffer);
 	
   if(thiz->remain > 0)
   {
@@ -84,7 +90,7 @@ rb_data_type  get_ring_buff_data(RingBuffObj* thiz)
   else 
   {
     ret = 0;
-		DB_LOG("Ring buffer is empty.\r\n");
+		//DB_LOG("Ring buffer is empty.\r\n");
   }
 	
 	return ret;
@@ -98,8 +104,8 @@ rb_data_type  get_ring_buff_data(RingBuffObj* thiz)
   */
 void  put_ring_buff_data(RingBuffObj* thiz, rb_data_type dat)
 {
-	ASSERT(thiz);
-	ASSERT(thiz->ptBuffer);
+	//ASSERT(thiz);
+	//ASSERT(thiz->ptBuffer);
 	
   if(thiz->remain < thiz->depth)
   {
@@ -109,8 +115,26 @@ void  put_ring_buff_data(RingBuffObj* thiz, rb_data_type dat)
   }
   else
   {
-	  DB_LOG("buffer is full.\r\n");
+	  //DB_LOG("buffer is full.\r\n");
   }
+}
+
+/** @function  
+  * @brief   
+  * @param       
+  * @return  
+  */
+void  ring_buff_create(RingBuffObj* obj, rb_depth_t  depth, \
+                       rb_data_type* ptBuffer)
+{
+  if(obj)
+	{
+    obj->depth = depth;
+		obj->posPut = 0;
+		obj->posGet = 0;
+		obj->remain = 0;
+		obj->ptBuffer = ptBuffer;	
+	}
 }
 
 /*------------------ end of file ---------------------------------------------*/

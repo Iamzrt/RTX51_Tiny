@@ -24,14 +24,20 @@
 
 /*< Log configuration. >*/
 #if   LOG_ENABLE
-  #define         LOG(x)              printf(x) 
+  #define         LOG              printf 
 #else 
-  #define         LOG(x) 
+  #define         LOG 
 #endif 
 
 
-/*-- functions  ---------------------------------------------------------------*/
 
+typedef   void  (*PrintRxCallbackFunc)(u8_t dat);
+
+
+
+/*-- functions  ---------------------------------------------------------------*/
+extern   void     print_rx_callback_register(PrintRxCallbackFunc  func);
+extern   void     my_printf(char * c, ...);
 
 
 #endif   /* PRINT_H */

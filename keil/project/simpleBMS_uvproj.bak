@@ -381,6 +381,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\user\print.c</FilePath>
             </File>
+            <File>
+              <FileName>console.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\console.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

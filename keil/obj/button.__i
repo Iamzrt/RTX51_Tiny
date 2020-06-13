@@ -1,1 +1,1 @@
-"..\..\user\button.c" BROWSE DEBUG OBJECTEXTEND PRINT(.\button.lst) TABS (2) OBJECT(..\obj\button.obj)
+"..\..\user\button.c" BROWSE DEBUG OBJECTEXTEND LISTINCLUDE SYMBOLS PRINT(.\button.lst) TABS (2) OBJECT(..\obj\button.obj)

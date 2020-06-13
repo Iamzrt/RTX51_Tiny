@@ -1,1 +1,1 @@
-"..\..\user\led.c" BROWSE DEBUG OBJECTEXTEND PRINT(.\led.lst) TABS (2) OBJECT(..\obj\led.obj)
+"..\..\user\led.c" BROWSE DEBUG OBJECTEXTEND LISTINCLUDE SYMBOLS PRINT(.\led.lst) TABS (2) OBJECT(..\obj\led.obj)

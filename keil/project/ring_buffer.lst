@@ -1,10 +1,10 @@
-C51 COMPILER V9.00   RING_BUFFER                                                           06/10/2020 17:50:11 PAGE 1   
+C51 COMPILER V9.00   RING_BUFFER                                                           06/13/2020 13:45:02 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE RING_BUFFER
 OBJECT MODULE PLACED IN ..\obj\ring_buffer.obj
 COMPILER INVOKED BY: D:\Program Files\KEILC51\files\C51\BIN\C51.EXE ..\..\common\ring_buffer.c BROWSE DEBUG OBJECTEXTEND
-                    - PRINT(.\ring_buffer.lst) TABS(2) OBJECT(..\obj\ring_buffer.obj)
+                    - LISTINCLUDE SYMBOLS PRINT(.\ring_buffer.lst) TABS(2) OBJECT(..\obj\ring_buffer.obj)
 
 line level    source
 
@@ -23,119 +23,346 @@ line level    source
   13            */
   14          /*-- includes ----------------------------------------------------------------*/
   15          #include "./ring_buffer.h"
+   1      =1  /**
+   2      =1    ******************************************************************************
+   3      =1    * @file    
+   4      =1    * @author  
+   5      =1    * @version 
+   6      =1    * @date   
+   7      =1    * @brief   
+   8      =1    ******************************************************************************  
+   9      =1    * 
+  10      =1    * 
+  11      =1    ******************************************************************************
+  12      =1    */
+  13      =1  #ifndef  RING_BUFFER_H
+  14      =1  #define  RING_BUFFER_H
+  15      =1  
+  16      =1  /*-- includes ----------------------------------------------------------------*/
+  17      =1  #include "../includes/_sys_std.h"
+   1      =2  /**
+   2      =2    ******************************************************************************
+   3      =2    * @file    
+   4      =2    * @author  
+   5      =2    * @version 
+   6      =2    * @date   
+   7      =2    * @brief   
+   8      =2    ******************************************************************************  
+   9      =2    * 
+  10      =2    * 
+  11      =2    ******************************************************************************
+  12      =2    */
+  13      =2  #ifndef  _SYS_STD_H
+  14      =2  #define  _SYS_STD_H
+  15      =2  
+  16      =2  
+  17      =2  /* C++支持 */
+  18      =2  #ifdef __cplusplus
+           =2 extern "C" {
+           =2 #endif
+  21      =2   
+  22      =2  
+C51 COMPILER V9.00   RING_BUFFER                                                           06/13/2020 13:45:02 PAGE 2   
+
+  23      =2  
+  24      =2  /*!< Signed integer types  */
+  25      =2  typedef         signed char             s8_t;
+  26      =2  typedef         signed int              s16_t;
+  27      =2  typedef         signed long             s32_t;
+  28      =2  
+  29      =2  /*!< Unsigned integer types  */
+  30      =2  typedef         unsigned char           u8_t;
+  31      =2  typedef         unsigned int            u16_t;
+  32      =2  typedef         unsigned long           u32_t;
+  33      =2  
+  34      =2  
+  35      =2  #define       XDATA    xdata
+  36      =2  #define       IDATA    idata
+  37      =2  #define       BDATA    bdata
+  38      =2  #define       DATA     data
+  39      =2  #define       CODE     code
+  40      =2  
+  41      =2  
+  42      =2  /* 把宏参数变为一个字符串 */
+  43      =2  #define     _STRING(x)                  #x
+  44      =2  #define     STRING(x)                   _STRING(x)
+  45      =2  
+  46      =2  /* 把宏参数连接在一起 */
+  47      =2  #define     _CONNECT_MACRO(x,y)         x##y
+  48      =2  #define     CONNECT_MACRO(x,y)          _CONNECT_MACRO(x,y)
+  49      =2  
+  50      =2  
+  51      =2  /* 状态类型 */
+  52      =2  typedef  enum
+  53      =2  {
+  54      =2    OPERATE_OK  = 0,
+  55      =2    OPERATE_BUSY,
+  56      =2    OPERATE_TIMEOUT,
+  57      =2    OPERATE_FAIL,
+  58      =2  }OpsStatus;
+  59      =2  
+  60      =2  
+  61      =2  #ifndef  _IN_LINE_
+  62      =2    #define  _IN_LINE_   inline
+  63      =2  #endif
+  64      =2  
+  65      =2  #ifndef   BOOL
+  66      =2    #define   BOOL      bool
+  67      =2  #endif
+  68      =2  
+  69      =2  #ifndef   NULL
+  70      =2    #define   NULL     (void*)0
+  71      =2  #endif
+  72      =2  
+  73      =2  
+  74      =2  #ifndef  TRUE
+  75      =2    #define   TRUE    1
+  76      =2  #endif
+  77      =2  
+  78      =2  #ifndef  FALSE
+  79      =2    #define   FALSE    0
+  80      =2  #endif
+  81      =2  
+  82      =2  /* 纯虚函数关键字 */
+  83      =2  #ifndef   VIRTUAL
+  84      =2    #define   VIRTUAL
+C51 COMPILER V9.00   RING_BUFFER                                                           06/13/2020 13:45:02 PAGE 3   
+
+  85      =2  #endif
+  86      =2  
+  87      =2  
+  88      =2  
+  89      =2  
+  90      =2  #ifdef __cplusplus
+           =2 }
+           =2 #endif
+  93      =2  
+  94      =2  #endif    /* _SYS_STD_H */
+  95      =2  
+  96      =2  /*------------------ end of file ---------------------------------------------*/
+  18      =1  
+  19      =1  
+  20      =1  /*-- defined -----------------------------------------------------------------*/
+  21      =1  
+  22      =1  
+  23      =1  
+  24      =1  
+  25      =1  /*-- typedef -----------------------------------------------------------------*/
+  26      =1  typedef    u8_t     rb_depth_t;
+  27      =1  typedef    u8_t     rb_data_type;
+  28      =1  
+  29      =1  
+  30      =1  //struct  RingBuffStruct;
+  31      =1  
+  32      =1  struct  RingBuffStruct  
+  33      =1  {
+  34      =1    rb_depth_t      posPut;    /* The current location of the ring buffer. */
+  35      =1    rb_depth_t      posGet;    /* The current fetch position of the buffer. */
+  36      =1    rb_depth_t      depth;     /* The total number of elements in the ring buffer. */
+  37      =1    rb_depth_t      remain;
+  38      =1    
+  39      =1    rb_data_type*   ptBuffer;  /* Ring buffer pointer. */
+  40      =1  };
+  41      =1  
+  42      =1  typedef  struct  RingBuffStruct  RingBuffObj;
+  43      =1  
+  44      =1  
+  45      =1  /*-- functions ---------------------------------------------------------------*/
+  46      =1  extern    void            ring_buff_create(RingBuffObj* obj, rb_depth_t depth, \
+  47      =1                                             rb_data_type* ptBuffer);
+  48      =1  extern    rb_depth_t      check_ring_buff(RingBuffObj* thiz);
+  49      =1  extern    rb_data_type    get_ring_buff_data(RingBuffObj* thiz);
+  50      =1  extern    void            put_ring_buff_data(RingBuffObj* thiz, rb_data_type dat);
+  51      =1  
+  52      =1  
+  53      =1  #endif    /* RING_BUFFER_H */
+  54      =1  
+  55      =1  /*------------------ end of file ---------------------------------------------*/
   16          
   17          
   18          /*-- defined -----------------------------------------------------------------*/    
-  19          #define   DB_LOG(fmt)      
-  20          #define   ASSERT(fmt)
-  21          
-  22          
-  23          /*-- typedef -----------------------------------------------------------------*/
-  24          
-  25          
-  26          
-  27          /*-- private variables -------------------------------------------------------*/
-  28          
-  29          
-  30          /*-- private functions -------------------------------------------------------*/
+  19          
+  20          
+  21          /*-- typedef -----------------------------------------------------------------*/
+  22          //struct  RingBuffStruct  
+  23          //{
+  24          //  rb_depth_t      posPut;    /* The current location of the ring buffer. */
+  25          //  rb_depth_t      posGet;    /* The current fetch position of the buffer. */
+  26          //  rb_depth_t      depth;     /* The total number of elements in the ring buffer. */
+  27          //  rb_depth_t      remain;
+C51 COMPILER V9.00   RING_BUFFER                                                           06/13/2020 13:45:02 PAGE 4   
+
+  28          //  
+  29          //  rb_data_type*   ptBuffer;  /* Ring buffer pointer. */
+  30          //};
   31          
   32          
-  33          /*-- functions ---------------------------------------------------------------*/
-  34            
-  35          /** @function  
-  36            * @brief   
-  37            * @param       
-  38            * @return  
-  39            */
-  40          static  u32_t location(RingBuffObj* thiz, rb_depth_t i)
-  41          {
-  42   1        rb_depth_t  j = 0;
-  43   1      
-  44   1        ASSERT(thiz);
-  45   1        
-  46   1        j = ((i+1) >= thiz->depth) ? 0 : (i+1);
-  47   1      
-  48   1        return j;
-  49   1      }
-  50          
-  51          
-  52          /** @function  
-  53            * @brief   
-  54            * @param       
-C51 COMPILER V9.00   RING_BUFFER                                                           06/10/2020 17:50:11 PAGE 2   
+  33          /*-- private variables -------------------------------------------------------*/
+  34          
+  35          
+  36          /*-- private functions -------------------------------------------------------*/
+  37          
+  38          
+  39          /*-- functions ---------------------------------------------------------------*/
+  40            
+  41          /** @function  
+  42            * @brief   
+  43            * @param       
+  44            * @return  
+  45            */
+  46          static  rb_depth_t location(RingBuffObj* thiz, rb_depth_t i)
+  47          {
+  48   1        rb_depth_t  j = 0;
+  49   1      
+  50   1        //ASSERT(thiz);
+  51   1        
+  52   1        j = ((i+1) >= thiz->depth) ? 0 : (i+1);
+  53   1      
+  54   1        return j;
+  55   1      }
+  56          
+  57          
+  58          /** @function  
+  59            * @brief   
+  60            * @param       
+  61            * @return  
+  62            */
+  63          rb_depth_t  check_ring_buff(RingBuffObj* thiz)
+  64          {
+  65   1        //ASSERT(thiz);
+  66   1      
+  67   1        return  thiz->remain;
+  68   1      }
+  69          
+  70          /** @function  
+  71            * @brief   
+  72            * @param       
+  73            * @return  
+  74            */
+  75          rb_data_type  get_ring_buff_data(RingBuffObj* thiz)
+  76          {
+  77   1        rb_data_type XDATA ret = 0;
+  78   1        rb_depth_t   XDATA pos = 0;
+  79   1      
+  80   1        //ASSERT(thiz);
+  81   1        //ASSERT(thiz->ptBuffer);
+  82   1        
+  83   1        if(thiz->remain > 0)
+  84   1        {
+  85   2          pos = thiz->posGet;
+  86   2          thiz->posGet = location(thiz, thiz->posGet);
+  87   2          thiz->remain--;
+  88   2          ret = thiz->ptBuffer[pos];
+  89   2        }
+C51 COMPILER V9.00   RING_BUFFER                                                           06/13/2020 13:45:02 PAGE 5   
 
-  55            * @return  
-  56            */
-  57          rb_depth_t  check_ring_buff(RingBuffObj* thiz)
-  58          {
-  59   1        ASSERT(thiz);
-  60   1      
-  61   1        return  thiz->remain;
-  62   1      }
-  63          
-  64          /** @function  
-  65            * @brief   
-  66            * @param       
-  67            * @return  
-  68            */
-  69          rb_data_type  get_ring_buff_data(RingBuffObj* thiz)
-  70          {
-  71   1        rb_data_type  ret = 0;
-  72   1        rb_depth_t    pos = 0;
-  73   1      
-  74   1        ASSERT(thiz);
-  75   1        ASSERT(thiz->ptBuffer);
-  76   1        
-  77   1        if(thiz->remain > 0)
-  78   1        {
-  79   2          pos = thiz->posGet;
-  80   2          thiz->posGet = location(thiz, thiz->posGet);
-  81   2          thiz->remain--;
-  82   2          ret = thiz->ptBuffer[pos];
-  83   2        }
-  84   1        else 
-  85   1        {
-  86   2          ret = 0;
-  87   2          DB_LOG("Ring buffer is empty.\r\n");
-  88   2        }
-  89   1        
-  90   1        return ret;
-  91   1      }
-  92          
-  93           
-  94          /** @function  
-  95            * @brief   
-  96            * @param       
-  97            * @return  
-  98            */
-  99          void  put_ring_buff_data(RingBuffObj* thiz, rb_data_type dat)
- 100          {
- 101   1        ASSERT(thiz);
- 102   1        ASSERT(thiz->ptBuffer);
- 103   1        
- 104   1        if(thiz->remain < thiz->depth)
- 105   1        {
- 106   2          thiz->ptBuffer[thiz->posPut] = dat;
- 107   2          thiz->posPut = location(thiz, thiz->posPut);
- 108   2          thiz->remain++;
- 109   2        }
- 110   1        else
+  90   1        else 
+  91   1        {
+  92   2          ret = 0;
+  93   2          //DB_LOG("Ring buffer is empty.\r\n");
+  94   2        }
+  95   1        
+  96   1        return ret;
+  97   1      }
+  98          
+  99           
+ 100          /** @function  
+ 101            * @brief   
+ 102            * @param       
+ 103            * @return  
+ 104            */
+ 105          void  put_ring_buff_data(RingBuffObj* thiz, rb_data_type dat)
+ 106          {
+ 107   1        //ASSERT(thiz);
+ 108   1        //ASSERT(thiz->ptBuffer);
+ 109   1        
+ 110   1        if(thiz->remain < thiz->depth)
  111   1        {
- 112   2          DB_LOG("buffer is full.\r\n");
- 113   2        }
- 114   1      }
- 115          
- 116          /*------------------ end of file ---------------------------------------------*/
-C51 COMPILER V9.00   RING_BUFFER                                                           06/10/2020 17:50:11 PAGE 3   
+ 112   2          thiz->ptBuffer[thiz->posPut] = dat;
+ 113   2          thiz->posPut = location(thiz, thiz->posPut);
+ 114   2          thiz->remain++;
+ 115   2        }
+ 116   1        else
+ 117   1        {
+ 118   2          //DB_LOG("buffer is full.\r\n");
+ 119   2        }
+ 120   1      }
+ 121          
+ 122          /** @function  
+ 123            * @brief   
+ 124            * @param       
+ 125            * @return  
+ 126            */
+ 127          void  ring_buff_create(RingBuffObj* obj, rb_depth_t  depth, \
+ 128                                 rb_data_type* ptBuffer)
+ 129          {
+ 130   1        if(obj)
+ 131   1        {
+ 132   2          obj->depth = depth;
+ 133   2          obj->posPut = 0;
+ 134   2          obj->posGet = 0;
+ 135   2          obj->remain = 0;
+ 136   2          obj->ptBuffer = ptBuffer; 
+ 137   2        }
+ 138   1      }
+ 139          
+ 140          /*------------------ end of file ---------------------------------------------*/
+C51 COMPILER V9.00   RING_BUFFER                                                           06/13/2020 13:45:02 PAGE 6   
 
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
+s8_t . . . . . . . . . . . . . . . . .  TYPEDEF  -----  CHAR     -----  1
+u8_t . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+OPERATE_OK . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+_ring_buff_create. . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  obj. . . . . . . . . . . . . . . . .  AUTO     DATA   PTR      0000H  3
+  depth. . . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0005H  1
+  ptBuffer . . . . . . . . . . . . . .  AUTO     DATA   PTR      0004H  3
+OPERATE_FAIL . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+_check_ring_buff . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  thiz . . . . . . . . . . . . . . . .  * REG *  DATA   PTR      0001H  3
+OPERATE_TIMEOUT. . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+RingBuffStruct . . . . . . . . . . . .  * TAG *  -----  STRUCT   -----  7
+  posPut . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
+  posGet . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
+  depth. . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
+  remain . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0003H  1
+  ptBuffer . . . . . . . . . . . . . .  MEMBER   -----  PTR      0004H  3
+rb_depth_t . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+s32_t. . . . . . . . . . . . . . . . .  TYPEDEF  -----  LONG     -----  4
+u32_t. . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
+s16_t. . . . . . . . . . . . . . . . .  TYPEDEF  -----  INT      -----  2
+u16_t. . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
+RingBuffObj. . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  7
+  posPut . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
+  posGet . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
+  depth. . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
+  remain . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0003H  1
+  ptBuffer . . . . . . . . . . . . . .  MEMBER   -----  PTR      0004H  3
+OPERATE_BUSY . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+OpsStatus. . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+_get_ring_buff_data. . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  thiz . . . . . . . . . . . . . . . .  AUTO     DATA   PTR      0000H  3
+  ret. . . . . . . . . . . . . . . . .  AUTO     XDATA  U_CHAR   0000H  1
+  pos. . . . . . . . . . . . . . . . .  AUTO     XDATA  U_CHAR   0001H  1
+_location. . . . . . . . . . . . . . .  STATIC   CODE   PROC     0000H  -----
+  thiz . . . . . . . . . . . . . . . .  * REG *  DATA   PTR      0001H  3
+  i. . . . . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0000H  1
+  j. . . . . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0001H  1
+_put_ring_buff_data. . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  thiz . . . . . . . . . . . . . . . .  AUTO     DATA   PTR      0000H  3
+  dat. . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
+rb_data_type . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    373    ----
+   CODE SIZE        =    300    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----    ----
+   XDATA SIZE       =   ----       2
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----      22
+   DATA SIZE        =   ----      15
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

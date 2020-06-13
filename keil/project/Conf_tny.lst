@@ -1,4 +1,4 @@
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE     1
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE     1
 
 
 MACRO ASSEMBLER A51 V8.01
@@ -46,7 +46,7 @@ LOC  OBJ            LINE     SOURCE
   03E8                36     INT_CLOCK       EQU         1000     ;10000     ; default is 10000 cycles
                       37     ;
                       38     ;  Define Round-Robin Timeout in Hardware-Timer ticks.
-  0005                39     TIMESHARING     EQU     5       ; default is 5 Hardware-Timer ticks.
+  0000                39     TIMESHARING     EQU     0       ; default is 5 Hardware-Timer ticks.
                       40     ;                               ; 0 disables Round-Robin Task Switching
                       41     ;
                       42     ;  Long User Interrupt Routines: set to 1 if your application contains 
@@ -65,7 +65,7 @@ LOC  OBJ            LINE     SOURCE
                       55     ;
                       56     ;  Define instructions executed on a hardware timer interrupt.
                       57     EXTRN CODE (_systick_increase)
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE     2
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE     2
 
                       58     
                       59     HW_TIMER_CODE   MACRO
@@ -133,7 +133,7 @@ LOC  OBJ            LINE     SOURCE
                      121     ;
                      122     ;------------------------------------------------------------------------------
                      123     ;----------------- !!! End of User Configuration Part    !!! ------------------
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE     3
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE     3
 
                      124     ;----------------- !!! Do not modify code sections below !!! ------------------
                      125     ;------------------------------------------------------------------------------
@@ -196,12 +196,12 @@ LOC  OBJ            LINE     SOURCE
   REG                182     currenttask       EQU   R4    ; for access in interrupt service routine
                      183     
                      184     IF (TIMESHARING <> 0)
-000D                 185     ?RTX_ROBINTIME:   DS    1
-  REG                186     robintime         EQU   R5    ; for access in interrupt service routine
-                     187     ENDIF
+                             ?RTX_ROBINTIME:   DS    1
+                             robintime         EQU   R5    ; for access in interrupt service routine
+                             ENDIF
                      188     
                      189     IF (CODE_BANKING <> 0)
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE     4
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE     4
 
                              EXTRN   DATA    (?B_CURRENTBANK)
                              EXTRN   CODE    (?B_RESTORE_BANK)
@@ -269,18 +269,18 @@ LOC  OBJ            LINE     SOURCE
   0006               253     B_ROBIN         EQU     6
   0007               254     B_IVL           EQU     7    ; not a task state bit; only used in os_wait
   0007               255     B_RDY           EQU     7
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE     5
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE     5
 
                      256     
                      257     
                      258     IF (TIMESHARING OR CPU_IDLE_CODE)
-                     259     ?RTX?BITS       SEGMENT BIT
-----                 260                     RSEG    ?RTX?BITS
-                     261     ENDIF
+                             ?RTX?BITS       SEGMENT BIT
+                                             RSEG    ?RTX?BITS
+                             ENDIF
                      262     
                      263     IF (TIMESHARING)
-0000                 264     ?RTX_TS_DELAY:  DBIT    1       ; Status bit set when task switch in progress
-                     265     ENDIF
+                             ?RTX_TS_DELAY:  DBIT    1       ; Status bit set when task switch in progress
+                             ENDIF
                      266     
                      267     IF (CPU_IDLE_CODE)
                              ?RTX_ISR_SIG:   DBIT    1       ; Status bit set when interrupt or os_set_signal
@@ -337,7 +337,7 @@ LOC  OBJ            LINE     SOURCE
 0024 2400     F      323                     ADD     A,#?RTX?TASKSP?S+1
 0026 F8              324                     MOV     R0,A
 0027 E6              325                     MOV     A,@R0
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE     6
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE     6
 
 0028 BC0002   F      326                     CJNE    currenttask,#?RTX_MAXTASKN,checkstack
 002B 74FF            327                     MOV     A,#RAMTOP
@@ -368,59 +368,59 @@ LOC  OBJ            LINE     SOURCE
                      352                     USING   0               ; Registerbank 0 for following code
                      353     
                      354     IF (TIMESHARING == 0)
-                             ; Round Robin Task Switching not required.  System Interrupt ends here
+                     355     ; Round Robin Task Switching not required.  System Interrupt ends here
+004F                 356     ?RTX?SET_ISR:   
+                     357     IF (CPU_IDLE_CODE)
+                                             SETB    ?RTX_ISR_SIG
+                             ENDIF
+004F 22              360                     RET     
+                     361     ENDIF
+                     362     
+                     363     IF (TIMESHARING)
+                             ; Round Robin Task Switching required.  Check if task generates timeout
+                             ; Check for Round Robin Timeout on the current task
+                                             JNB     ?RTX_TS_DELAY,CheckRobinTime
+                             NoRobinTimeout: 
                              ?RTX?SET_ISR:   
                              IF (CPU_IDLE_CODE)
                                              SETB    ?RTX_ISR_SIG
                              ENDIF
                                              RET     
-                             ENDIF
-                     362     
-                     363     IF (TIMESHARING)
-                     364     ; Round Robin Task Switching required.  Check if task generates timeout
-                     365     ; Check for Round Robin Timeout on the current task
-004F 300001   F      366                     JNB     ?RTX_TS_DELAY,CheckRobinTime
-0052                 367     NoRobinTimeout: 
-0052                 368     ?RTX?SET_ISR:   
-                     369     IF (CPU_IDLE_CODE)
-                                             SETB    ?RTX_ISR_SIG
-                             ENDIF
-0052 22              372                     RET     
-0053 D50DFC          373     CheckRobinTime: DJNZ     ?RTX_ROBINTIME,NoRobinTimeout
-                     374     
-0056                 375     ?RTX_TASKSWITCHING:
-0056 C0E0            376                     PUSH    ACC
-0058 C0D0            377                     PUSH    PSW
-005A C0F0            378                     PUSH    B
-005C C083            379                     PUSH    DPH
-005E C082            380                     PUSH    DPL
-0060 C000            381                     PUSH    AR0
-0062 C001            382                     PUSH    AR1
-0064 C002            383                     PUSH    AR2
-0066 C003            384                     PUSH    AR3
-0068 C004            385                     PUSH    AR4
-006A C005            386                     PUSH    AR5
-006C C006            387                     PUSH    AR6
-006E C007            388                     PUSH    AR7
-                     389     IF (CODE_BANKING <> 0)
+                             CheckRobinTime: DJNZ     ?RTX_ROBINTIME,NoRobinTimeout
+                             
+                             ?RTX_TASKSWITCHING:
+                                             PUSH    ACC
+                                             PUSH    PSW
+                                             PUSH    B
+                                             PUSH    DPH
+                                             PUSH    DPL
+                                             PUSH    AR0
+                                             PUSH    AR1
+                                             PUSH    AR2
+                                             PUSH    AR3
+                                             PUSH    AR4
+                                             PUSH    AR5
+                                             PUSH    AR6
+                                             PUSH    AR7
+                             IF (CODE_BANKING <> 0)
                                              PUSH    ?B_CURRENTBANK
                              ENDIF
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE     7
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE     7
 
-                     392     
-0070 E50C            393                     MOV     A,?RTX_CURRENTTASK
-0072 23              394                     RL      A
-0073 2400     F      395                     ADD     A,#?RTX?TASKSTATE?S+1
-0075 F8              396                     MOV     R0,A
-0076 7440            397                     MOV     A,#K_ROBIN
-0078 C2AF            398                     CLR     EA
-007A 46              399                     ORL     A,@R0
-007B F6              400                     MOV     @R0,A
-007C D2AF            401                     SETB    EA
-                     402     IF (CODE_BANKING <> 0)
+                             
+                                             MOV     A,?RTX_CURRENTTASK
+                                             RL      A
+                                             ADD     A,#?RTX?TASKSTATE?S+1
+                                             MOV     R0,A
+                                             MOV     A,#K_ROBIN
+                                             CLR     EA
+                                             ORL     A,@R0
+                                             MOV     @R0,A
+                                             SETB    EA
+                             IF (CODE_BANKING <> 0)
                                              SJMP    os_switch_task1
                              ENDIF
-                     405     ENDIF
+                             ENDIF
                      406     
                      407     ;------------------------------------------------
                      408     ; Perform a Task-Switch
@@ -435,29 +435,29 @@ LOC  OBJ            LINE     SOURCE
                      417     ;
                      418     ;------------------------------------------------
                      419     
-007E                 420     os_switch_task:
+0050                 420     os_switch_task:
                      421     
                      422     IF (CODE_BANKING <> 0)
                                              PUSH    ?B_CURRENTBANK
                              ENDIF
                      425     
-007E                 426     os_switch_task1:
+0050                 426     os_switch_task1:
                      427     
                      428     ;      next = current;
                      429     IF (TIMESHARING <> 0)
-007E D200     F      430                     SETB    ?RTX_TS_DELAY           ; Delay Task Switching
-                     431     ENDIF
-0080 E50C            432                     MOV     A,?RTX_CURRENTTASK
-0082 FF              433                     MOV     R7,A
+                                             SETB    ?RTX_TS_DELAY           ; Delay Task Switching
+                             ENDIF
+0050 E50C            432                     MOV     A,?RTX_CURRENTTASK
+0052 FF              433                     MOV     R7,A
                      434     ;      while (1)  {
-0083 23              435                     RL      A
-0084 2400     F      436                     ADD     A,#?RTX?TASKSTATE?S+1
-0086 F8              437                     MOV     R0,A
-0087                 438     ?C0001:
+0053 23              435                     RL      A
+0054 2400     F      436                     ADD     A,#?RTX?TASKSTATE?S+1
+0056 F8              437                     MOV     R0,A
+0057                 438     ?C0001:
                      439     ;        if (++next == MAXTASKN+1)  next = 0;
-0087 0F              440                     INC     R7
-0088 08              441                     INC     R0
-0089 08              442                     INC     R0
+0057 0F              440                     INC     R7
+0058 08              441                     INC     R0
+0059 08              442                     INC     R0
                      443     IF (CPU_IDLE_CODE)
                                              MOV     A,R7
                                              CJNE    A,?RTX_CURRENTTASK,NoIDLE
@@ -465,15 +465,15 @@ LOC  OBJ            LINE     SOURCE
                                              CPU_IDLE          ; CPU sleep
                              NoIDLE:
                              ENDIF
-008A BF0004   F      450                     CJNE    R7,#?RTX_MAXTASKN+1,?C0003
-008D 7F00            451                     MOV     R7,#0
-008F 7800     F      452                     MOV     R0,#?RTX?TASKSTATE?S+1
-0091                 453     ?C0003:
+005A BF0004   F      450                     CJNE    R7,#?RTX_MAXTASKN+1,?C0003
+005D 7F00            451                     MOV     R7,#0
+005F 7800     F      452                     MOV     R0,#?RTX?TASKSTATE?S+1
+0061                 453     ?C0003:
                      454     ;        if (STATE[next].st & K_READY)  break;
-0091 E6              455                     MOV     A,@R0
-0092 30E4F2          456                     JNB     ACC.B_READY,?C0001
+0061 E6              455                     MOV     A,@R0
+0062 30E4F2          456                     JNB     ACC.B_READY,?C0001
                      457     ;      }
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE     8
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE     8
 
                      458     ;
                      459     
@@ -481,182 +481,182 @@ LOC  OBJ            LINE     SOURCE
                      461     PUBLIC  ?RTX_NEXTTASK
                      462     
   0007               463     ?RTX_NEXTID     EQU     AR7
-0095 00              464     ?RTX_NEXTTASK:  NOP             ; for Debugging
+0065 00              464     ?RTX_NEXTTASK:  NOP             ; for Debugging
                      465     
                      466     ;      while (current < next)  {
-0096                 467     ?C0005:
-0096 E50C            468                     MOV     A,?RTX_CURRENTTASK
-0098 C3              469                     CLR     C
-0099 9F              470                     SUBB    A,R7
-009A 5020            471                     JNC     ?C0011
+0066                 467     ?C0005:
+0066 E50C            468                     MOV     A,?RTX_CURRENTTASK
+0068 C3              469                     CLR     C
+0069 9F              470                     SUBB    A,R7
+006A 5020            471                     JNC     ?C0011
                      472     
                      473     ;        current++;
-009C 050C            474                     INC     ?RTX_CURRENTTASK
+006C 050C            474                     INC     ?RTX_CURRENTTASK
                      475     ;        i = STKP[current];
-009E 7400     F      476                     MOV     A,#?RTX?TASKSP?S
-00A0 250C            477                     ADD     A,?RTX_CURRENTTASK
-00A2 F8              478                     MOV     R0,A
-00A3 E6              479                     MOV     A,@R0
-00A4 FD              480                     MOV     R5,A
+006E 7400     F      476                     MOV     A,#?RTX?TASKSP?S
+0070 250C            477                     ADD     A,?RTX_CURRENTTASK
+0072 F8              478                     MOV     R0,A
+0073 E6              479                     MOV     A,@R0
+0074 FD              480                     MOV     R5,A
                      481     ;        STKP[current] = SP;
-00A5 A681            482                     MOV     @R0,SP
+0075 A681            482                     MOV     @R0,SP
                      483     ;        if (current == MAXTASKN) limit = RAMTOP;
-00A7 08              484                     INC     R0
-00A8 E6              485                     MOV     A,@R0
-00A9 AE0C            486                     MOV     R6,?RTX_CURRENTTASK
-00AB BE0002   F      487                     CJNE    R6,#?RTX_MAXTASKN,?C0007
-00AE 74FF            488                     MOV     A,#RAMTOP
-00B0                 489     ?C0007:
-00B0 CD              490                     XCH     A,R5
-00B1 F8              491                     MOV     R0,A
+0077 08              484                     INC     R0
+0078 E6              485                     MOV     A,@R0
+0079 AE0C            486                     MOV     R6,?RTX_CURRENTTASK
+007B BE0002   F      487                     CJNE    R6,#?RTX_MAXTASKN,?C0007
+007E 74FF            488                     MOV     A,#RAMTOP
+0080                 489     ?C0007:
+0080 CD              490                     XCH     A,R5
+0081 F8              491                     MOV     R0,A
                      492     ;        else                       limit = STKP[current+1];
                      493     ;
                      494     ;        while (i != limit)  {
-00B2                 495     ?C0009:
-00B2 E8              496                     MOV     A,R0
-00B3 6D              497                     XRL     A,R5
-00B4 60E0            498                     JZ      ?C0005
+0082                 495     ?C0009:
+0082 E8              496                     MOV     A,R0
+0083 6D              497                     XRL     A,R5
+0084 60E0            498                     JZ      ?C0005
                      499     ;          SP++;
                      500     ;          i++;
                      501     ;          STACK[SP] = STACK[i];
-00B6 08              502                     INC     R0
-00B7 E6              503                     MOV     A,@R0
-00B8 C0E0            504                     PUSH    ACC
-00BA 80F6            505                     SJMP    ?C0009
+0086 08              502                     INC     R0
+0087 E6              503                     MOV     A,@R0
+0088 C0E0            504                     PUSH    ACC
+008A 80F6            505                     SJMP    ?C0009
                      506     ;        }
                      507     ;      }
-00BC                 508     ?C0011:
+008C                 508     ?C0011:
                      509     ;
                      510     ;      while (current > next)  {
-00BC E50C            511                     MOV     A,?RTX_CURRENTTASK
-00BE D3              512                     SETB    C
-00BF 9F              513                     SUBB    A,R7
-00C0 4027            514                     JC      ?C0012
+008C E50C            511                     MOV     A,?RTX_CURRENTTASK
+008E D3              512                     SETB    C
+008F 9F              513                     SUBB    A,R7
+0090 4027            514                     JC      ?C0012
                      515             
-00C2 E50C            516                     MOV     A,?RTX_CURRENTTASK
-00C4 2400     F      517                     ADD     A,#?RTX?TASKSP?S+1
-00C6 F8              518                     MOV     R0,A
-00C7 E6              519                     MOV     A,@R0
+0092 E50C            516                     MOV     A,?RTX_CURRENTTASK
+0094 2400     F      517                     ADD     A,#?RTX?TASKSP?S+1
+0096 F8              518                     MOV     R0,A
+0097 E6              519                     MOV     A,@R0
                      520     ;        if (current == (MAXTASKN)) i = RAMTOP;
                      521     ;        else                       i = STKP[current+1];
-00C8 AE0C            522                     MOV     R6,?RTX_CURRENTTASK
-00CA BE0002   F      523                     CJNE    R6,#?RTX_MAXTASKN,?C0013
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE     9
+0098 AE0C            522                     MOV     R6,?RTX_CURRENTTASK
+009A BE0002   F      523                     CJNE    R6,#?RTX_MAXTASKN,?C0013
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE     9
 
-00CD 74FF            524                     MOV     A,#RAMTOP
-00CF                 525     ?C0013:
-00CF FD              526                     MOV     R5,A
+009D 74FF            524                     MOV     A,#RAMTOP
+009F                 525     ?C0013:
+009F FD              526                     MOV     R5,A
                      527     ;        limit = STKP[current];
-00D0 18              528                     DEC     R0
-00D1 E6              529                     MOV     A,@R0
-00D2 CD              530                     XCH     A,R5
-00D3 F8              531                     MOV     R0,A
+00A0 18              528                     DEC     R0
+00A1 E6              529                     MOV     A,@R0
+00A2 CD              530                     XCH     A,R5
+00A3 F8              531                     MOV     R0,A
                      532     ;
                      533     ;        while (SP != limit)  {
-00D4                 534     ?C0015:
-00D4 E581            535                     MOV     A,SP
-00D6 6D              536                     XRL     A,R5
-00D7 6006            537                     JZ      ?C0016
+00A4                 534     ?C0015:
+00A4 E581            535                     MOV     A,SP
+00A6 6D              536                     XRL     A,R5
+00A7 6006            537                     JZ      ?C0016
                      538     ;          STACK[i] = STACK[SP];
                      539     ;          i--;
                      540     ;          SP--;
-00D9 D0E0            541                     POP     ACC
-00DB F6              542                     MOV     @R0,A
-00DC 18              543                     DEC     R0
+00A9 D0E0            541                     POP     ACC
+00AB F6              542                     MOV     @R0,A
+00AC 18              543                     DEC     R0
                      544     
-00DD 80F5            545                     SJMP    ?C0015
-00DF                 546     ?C0016:
+00AD 80F5            545                     SJMP    ?C0015
+00AF                 546     ?C0016:
                      547     ;        }
                      548     ;        STKP[current] = i;
-00DF E50C            549                     MOV     A,?RTX_CURRENTTASK
-00E1 2400     F      550                     ADD     A,#?RTX?TASKSP?S
-00E3 C8              551                     XCH     A,R0
-00E4 F6              552                     MOV     @R0,A
+00AF E50C            549                     MOV     A,?RTX_CURRENTTASK
+00B1 2400     F      550                     ADD     A,#?RTX?TASKSP?S
+00B3 C8              551                     XCH     A,R0
+00B4 F6              552                     MOV     @R0,A
                      553     ;        current--;
-00E5 150C            554                     DEC     ?RTX_CURRENTTASK
-00E7 80D3            555                     SJMP    ?C0011
-00E9                 556     ?C0012:
+00B5 150C            554                     DEC     ?RTX_CURRENTTASK
+00B7 80D3            555                     SJMP    ?C0011
+00B9                 556     ?C0012:
                      557     ;      }
                      558     
                      559     ;      RoundRobinTime = ?RTX_TIMESHARING
                      560     IF (TIMESHARING)
-00E9 750D05          561                     MOV     ?RTX_ROBINTIME,#TIMESHARING
-                     562     ENDIF
+                                             MOV     ?RTX_ROBINTIME,#TIMESHARING
+                             ENDIF
                      563              
                      564     ;       if (STATE[current].st & K_ROBIN)  goto RobinOn;
-00EC E50C            565                     MOV     A,?RTX_CURRENTTASK
-00EE 23              566                     RL      A
-00EF 2400     F      567                     ADD     A,#?RTX?TASKSTATE?S+1
-00F1 F8              568                     MOV     R0,A
-00F2 7F04            569                     MOV     R7,#SIG_EVENT
-00F4 C2AF            570                     CLR     EA
-00F6 E6              571                     MOV     A,@R0
+00B9 E50C            565                     MOV     A,?RTX_CURRENTTASK
+00BB 23              566                     RL      A
+00BC 2400     F      567                     ADD     A,#?RTX?TASKSTATE?S+1
+00BE F8              568                     MOV     R0,A
+00BF 7F04            569                     MOV     R7,#SIG_EVENT
+00C1 C2AF            570                     CLR     EA
+00C3 E6              571                     MOV     A,@R0
                      572     IF (TIMESHARING)
-00F7 10E61E          573                     JBC     ACC.B_ROBIN,RobinOn
-                     574     ENDIF
+                                             JBC     ACC.B_ROBIN,RobinOn
+                             ENDIF
                      575     ;       if ((STATE[current].st & K_SIG) && (STATE[current].st & SIG_EVENT)
                      576     ;          goto SignalOn;
-00FA 30E003          577                     JNB     ACC.B_WAITSIG,SignalOff
-00FD 10E20C          578                     JBC     ACC.B_SIGNAL,SignalOn
-0100                 579     SignalOff:
+00C4 30E003          577                     JNB     ACC.B_WAITSIG,SignalOff
+00C7 10E20C          578                     JBC     ACC.B_SIGNAL,SignalOn
+00CA                 579     SignalOff:
                      580     ;       if ((STATE[current].st & K_TMO) && (STATE[current].st & TMO_EVENT)
                      581     ;          goto TimeOutOn;
-0100 7F00            582                     MOV     R7,#0           ; No Event
-0102 30E107          583                     JNB     ACC.B_WAITTIM,NoEvent
-0105 30E304          584                     JNB     ACC.B_TIMEOUT,NoEvent
-0108                 585     TimeOutOn:      
-0108 7F08            586                     MOV     R7,#TMO_EVENT
-010A 54F4            587                     ANL     A,#0F4H
-010C                 588     SignalOn:
-010C 547C            589     NoEvent:        ANL     A,#NOT (K_RDY + K_TMO + K_SIG)  ; Clear RDY + Wait bits
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE    10
+00CA 7F00            582                     MOV     R7,#0           ; No Event
+00CC 30E107          583                     JNB     ACC.B_WAITTIM,NoEvent
+00CF 30E304          584                     JNB     ACC.B_TIMEOUT,NoEvent
+00D2                 585     TimeOutOn:      
+00D2 7F08            586                     MOV     R7,#TMO_EVENT
+00D4 54F4            587                     ANL     A,#0F4H
+00D6                 588     SignalOn:
+00D6 547C            589     NoEvent:        ANL     A,#NOT (K_RDY + K_TMO + K_SIG)  ; Clear RDY + Wait bits
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE    10
 
-010E C6              590                     XCH     A,@R0
-010F D2AF            591                     SETB    EA
+00D8 C6              590                     XCH     A,@R0
+00D9 D2AF            591                     SETB    EA
                      592     
-0111 5480            593                     ANL     A,#K_RDY
-0113 4207            594                     ORL     AR7,A
+00DB 5480            593                     ANL     A,#K_RDY
+00DD 4207            594                     ORL     AR7,A
                      595     IF (TIMESHARING <> 0)
-                     596       IF (CODE_BANKING)
+                               IF (CODE_BANKING)
                                              POP     ACC
                                              CALL    ?B_RESTORE_BANK
                                ENDIF
-0115 C200     F      600                     CLR     ?RTX_TS_DELAY
-0117 22              601                     RET
-                     602     ELSE
-                               IF (CODE_BANKING)
+                                             CLR     ?RTX_TS_DELAY
+                                             RET
+                             ELSE
+                     603       IF (CODE_BANKING)
                                              POP     ACC
                                              JMP     ?B_RESTORE_BANK
                                ENDIF
-                                             RET
-                             ENDIF
+00DF 22              607                     RET
+                     608     ENDIF
                      609                     
                      610                     
                      611     
                      612     ;------------------------------------------------
                      613     IF (TIMESHARING <> 0)
-0118 F6              614     RobinOn:        MOV     @R0,A
-0119 D2AF            615                     SETB    EA
-                     616     IF (CODE_BANKING)
+                             RobinOn:        MOV     @R0,A
+                                             SETB    EA
+                             IF (CODE_BANKING)
                                              POP     ACC
                                              CALL    ?B_RESTORE_BANK
                              ENDIF
-011B D007            620                     POP     AR7
-011D D006            621                     POP     AR6
-011F D005            622                     POP     AR5
-0121 D004            623                     POP     AR4
-0123 D003            624                     POP     AR3
-0125 D002            625                     POP     AR2
-0127 D001            626                     POP     AR1
-0129 D000            627                     POP     AR0
-012B D082            628                     POP     DPL
-012D D083            629                     POP     DPH
-012F D0F0            630                     POP     B
-0131 D0D0            631                     POP     PSW
-0133 D0E0            632                     POP     ACC
-0135 C200     F      633                     CLR     ?RTX_TS_DELAY
-0137 22              634                     RET                     ; Restart Task
-                     635     ENDIF
+                                             POP     AR7
+                                             POP     AR6
+                                             POP     AR5
+                                             POP     AR4
+                                             POP     AR3
+                                             POP     AR2
+                                             POP     AR1
+                                             POP     AR0
+                                             POP     DPL
+                                             POP     DPH
+                                             POP     B
+                                             POP     PSW
+                                             POP     ACC
+                                             CLR     ?RTX_TS_DELAY
+                                             RET                     ; Restart Task
+                             ENDIF
                      636     ;    }
                      637     ;  }
                      638     
@@ -669,52 +669,52 @@ LOC  OBJ            LINE     SOURCE
                      645     EXTRN CODE (?C_STARTUP)
                      646     PUBLIC  main
                      647     
-0138 7800     F      648     main:           MOV     R0,#?RTX?TASKSP?S
-013A A681            649                     MOV     @R0,SP
-013C 7400     F      650                     MOV     A,#?RTX_MAXTASKN
-013E 6006            651                     JZ      main2
-0140 FF              652                     MOV     R7,A
-0141 08              653     main1:          INC     R0
-0142 76FF            654                     MOV     @R0,#RAMTOP
-0144 DFFB            655                     DJNZ    R7,main1
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE    11
+00E0 7800     F      648     main:           MOV     R0,#?RTX?TASKSP?S
+00E2 A681            649                     MOV     @R0,SP
+00E4 7400     F      650                     MOV     A,#?RTX_MAXTASKN
+00E6 6006            651                     JZ      main2
+00E8 FF              652                     MOV     R7,A
+00E9 08              653     main1:          INC     R0
+00EA 76FF            654                     MOV     @R0,#RAMTOP
+00EC DFFB            655                     DJNZ    R7,main1
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE    11
 
-0146 7F00     F      656     main2:          MOV     R7,#?RTX_MAXTASKN+1
-0148 E4              657                     CLR     A
-0149 7800     F      658                     MOV     R0,#?RTX?TASKSTATE?S
-014B F6              659     main1x:         MOV     @R0,A
-014C 08              660                     INC     R0
-014D F6              661                     MOV     @R0,A
-014E 08              662                     INC     R0
-014F DFFA            663                     DJNZ    R7,main1x
-0151 7800     F      664                     MOV     R0,#?RTX?TASKSTATE?S+1
-0153 7630            665                     MOV     @R0,#K_ACTIVE+K_READY
-0155 900000   F      666                     MOV     DPTR,#?RTX?TASKENT?S
-0158 7401            667                     MOV     A,#1
-015A 93              668                     MOVC    A,@A+DPTR
-015B C0E0            669                     PUSH    ACC
-015D E4              670                     CLR     A
-015E 93              671                     MOVC    A,@A+DPTR
-015F C0E0            672                     PUSH    ACC
+00EE 7F00     F      656     main2:          MOV     R7,#?RTX_MAXTASKN+1
+00F0 E4              657                     CLR     A
+00F1 7800     F      658                     MOV     R0,#?RTX?TASKSTATE?S
+00F3 F6              659     main1x:         MOV     @R0,A
+00F4 08              660                     INC     R0
+00F5 F6              661                     MOV     @R0,A
+00F6 08              662                     INC     R0
+00F7 DFFA            663                     DJNZ    R7,main1x
+00F9 7800     F      664                     MOV     R0,#?RTX?TASKSTATE?S+1
+00FB 7630            665                     MOV     @R0,#K_ACTIVE+K_READY
+00FD 900000   F      666                     MOV     DPTR,#?RTX?TASKENT?S
+0100 7401            667                     MOV     A,#1
+0102 93              668                     MOVC    A,@A+DPTR
+0103 C0E0            669                     PUSH    ACC
+0105 E4              670                     CLR     A
+0106 93              671                     MOVC    A,@A+DPTR
+0107 C0E0            672                     PUSH    ACC
                      673     IF (TIMESHARING <> 0)
-0161 750D05          674                     MOV     ?RTX_ROBINTIME,#TIMESHARING
-                     675     ENDIF
-0164 438901          676                     ORL     TMOD,#01H       ; Timer 0 Mode 1
-0167 758A18          677                     MOV     TL0,#LOW (?RTX_CLOCK)
-016A 758CFC          678                     MOV     TH0,#HIGH (?RTX_CLOCK)
-016D D28C            679                     SETB    TR0
-016F D2AF            680                     SETB    EA
-0171 D2A9            681                     SETB    ET0
-0173 22              682                     RET             ; Start Task 0
+                                             MOV     ?RTX_ROBINTIME,#TIMESHARING
+                             ENDIF
+0109 438901          676                     ORL     TMOD,#01H       ; Timer 0 Mode 1
+010C 758A18          677                     MOV     TL0,#LOW (?RTX_CLOCK)
+010F 758CFC          678                     MOV     TH0,#HIGH (?RTX_CLOCK)
+0112 D28C            679                     SETB    TR0
+0114 D2AF            680                     SETB    EA
+0116 D2A9            681                     SETB    ET0
+0118 22              682                     RET             ; Start Task 0
                      683     
                      684     
                      685     ;------------------------------------------------
                      686     
                      687     PUBLIC ?RTX_TASKIDX
-0174 00       F      688     ?RTX_TASKIDX:   DB      ?RTX_MAXTASKN           ; for Debugging
+0119 00       F      688     ?RTX_TASKIDX:   DB      ?RTX_MAXTASKN           ; for Debugging
                      689     
                      690                     END
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE    12
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE    12
 
 SYMBOL TABLE LISTING
 ------ ----- -------
@@ -722,21 +722,20 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES
 
-?C0001 . . . . . .  C ADDR   0087H   R   SEG=?RTX?CODE
-?C0003 . . . . . .  C ADDR   0091H   R   SEG=?RTX?CODE
-?C0005 . . . . . .  C ADDR   0096H   R   SEG=?RTX?CODE
-?C0007 . . . . . .  C ADDR   00B0H   R   SEG=?RTX?CODE
-?C0009 . . . . . .  C ADDR   00B2H   R   SEG=?RTX?CODE
-?C0011 . . . . . .  C ADDR   00BCH   R   SEG=?RTX?CODE
-?C0012 . . . . . .  C ADDR   00E9H   R   SEG=?RTX?CODE
-?C0013 . . . . . .  C ADDR   00CFH   R   SEG=?RTX?CODE
-?C0015 . . . . . .  C ADDR   00D4H   R   SEG=?RTX?CODE
-?C0016 . . . . . .  C ADDR   00DFH   R   SEG=?RTX?CODE
+?C0001 . . . . . .  C ADDR   0057H   R   SEG=?RTX?CODE
+?C0003 . . . . . .  C ADDR   0061H   R   SEG=?RTX?CODE
+?C0005 . . . . . .  C ADDR   0066H   R   SEG=?RTX?CODE
+?C0007 . . . . . .  C ADDR   0080H   R   SEG=?RTX?CODE
+?C0009 . . . . . .  C ADDR   0082H   R   SEG=?RTX?CODE
+?C0011 . . . . . .  C ADDR   008CH   R   SEG=?RTX?CODE
+?C0012 . . . . . .  C ADDR   00B9H   R   SEG=?RTX?CODE
+?C0013 . . . . . .  C ADDR   009FH   R   SEG=?RTX?CODE
+?C0015 . . . . . .  C ADDR   00A4H   R   SEG=?RTX?CODE
+?C0016 . . . . . .  C ADDR   00AFH   R   SEG=?RTX?CODE
 ?C_STARTUP . . . .  C ADDR   -----       EXT
 ?RTX51_TINY_KERNAL  N NUMB   -----       
-?RTX?BITS. . . . .  B SEG    0001H       REL=UNIT
-?RTX?CODE. . . . .  C SEG    0175H       REL=UNIT
-?RTX?SET_ISR . . .  C ADDR   0052H   R   SEG=?RTX?CODE
+?RTX?CODE. . . . .  C SEG    011AH       REL=UNIT
+?RTX?SET_ISR . . .  C ADDR   004FH   R   SEG=?RTX?CODE
 ?RTX?TASKENT?S . .  C SEG    0002H       REL=UNIT
 ?RTX?TASKSP?S. . .  I SEG    0001H       REL=UNIT
 ?RTX?TASKSTATE?S .  I SEG    0002H       REL=UNIT
@@ -744,27 +743,17 @@ N A M E             T Y P E  V A L U E   ATTRIBUTES
 ?RTX_CURRENTTASK .  D ADDR   000CH   A   
 ?RTX_MAXTASKN. . .  N ADDR   -----       EXT
 ?RTX_NEXTID. . . .  D ADDR   0007H   A   
-?RTX_NEXTTASK. . .  C ADDR   0095H   R   SEG=?RTX?CODE
+?RTX_NEXTTASK. . .  C ADDR   0065H   R   SEG=?RTX?CODE
 ?RTX_RAMTOP. . . .  N NUMB   00FFH   A   
 ?RTX_REGISTERBANK.  N NUMB   0008H   A   
-?RTX_ROBINTIME . .  D ADDR   000DH   A   
 ?RTX_SAVEACC . . .  D ADDR   000AH   A   
 ?RTX_SAVEPSW . . .  D ADDR   000BH   A   
 ?RTX_STACKERROR. .  C ADDR   0000H   R   SEG=?RTX?CODE
 ?RTX_TASKENTRY . .  C ADDR   0000H   R   SEG=?RTX?TASKENT?S
-?RTX_TASKIDX . . .  C ADDR   0174H   R   SEG=?RTX?CODE
+?RTX_TASKIDX . . .  C ADDR   0119H   R   SEG=?RTX?CODE
 ?RTX_TASKSP. . . .  I ADDR   0000H   R   SEG=?RTX?TASKSP?S
 ?RTX_TASKSTATUS. .  I ADDR   0000H   R   SEG=?RTX?TASKSTATE?S
-?RTX_TASKSWITCHING  C ADDR   0056H   R   SEG=?RTX?CODE
-?RTX_TS_DELAY. . .  B ADDR   0000H.0 R   SEG=?RTX?BITS
 ACC. . . . . . . .  D ADDR   00E0H   A   
-AR0. . . . . . . .  D ADDR   0000H   A   
-AR1. . . . . . . .  D ADDR   0001H   A   
-AR2. . . . . . . .  D ADDR   0002H   A   
-AR3. . . . . . . .  D ADDR   0003H   A   
-AR4. . . . . . . .  D ADDR   0004H   A   
-AR5. . . . . . . .  D ADDR   0005H   A   
-AR6. . . . . . . .  D ADDR   0006H   A   
 AR7. . . . . . . .  D ADDR   0007H   A   
 B. . . . . . . . .  D ADDR   00F0H   A   
 B_ACTIVE . . . . .  N NUMB   0005H   A   
@@ -776,14 +765,11 @@ B_SIGNAL . . . . .  N NUMB   0002H   A
 B_TIMEOUT. . . . .  N NUMB   0003H   A   
 B_WAITSIG. . . . .  N NUMB   0000H   A   
 B_WAITTIM. . . . .  N NUMB   0001H   A   
-CHECKROBINTIME . .  C ADDR   0053H   R   SEG=?RTX?CODE
 CHECKSTACK . . . .  C ADDR   002DH   R   SEG=?RTX?CODE
 CODE_BANKING . . .  N NUMB   0000H   A   
 CPU_IDLE_CODE. . .  N NUMB   0000H   A   
 CURRENTTASK. . . .    REG    R4          
 DPH. . . . . . . .  D ADDR   0083H   A   
-A51 MACRO ASSEMBLER  CONF_TNY                                                             06/12/2020 09:04:05 PAGE    13
-
 DPL. . . . . . . .  D ADDR   0082H   A   
 EA . . . . . . . .  B ADDR   00A8H.7 A   
 ES . . . . . . . .  B ADDR   00A8H.4 A   
@@ -796,6 +782,8 @@ HW_TIMER . . . . .  C ADDR   0004H   R   SEG=?RTX?CODE
 IE . . . . . . . .  D ADDR   00A8H   A   
 IE0. . . . . . . .  B ADDR   0088H.1 A   
 IE1. . . . . . . .  B ADDR   0088H.3 A   
+A51 MACRO ASSEMBLER  CONF_TNY                                                             06/13/2020 13:45:02 PAGE    13
+
 INT_CLOCK. . . . .  N NUMB   03E8H   A   
 INT_REGBANK. . . .  N NUMB   0001H   A   
 IT0. . . . . . . .  B ADDR   0088H.0 A   
@@ -808,26 +796,23 @@ K_ROBIN. . . . . .  N NUMB   0040H   A
 K_SIG. . . . . . .  N NUMB   0001H   A   
 K_TMO. . . . . . .  N NUMB   0002H   A   
 LONG_USR_INTR. . .  N NUMB   0000H   A   
-MAIN . . . . . . .  C ADDR   0138H   R   SEG=?RTX?CODE
-MAIN1. . . . . . .  C ADDR   0141H   R   SEG=?RTX?CODE
-MAIN1X . . . . . .  C ADDR   014BH   R   SEG=?RTX?CODE
-MAIN2. . . . . . .  C ADDR   0146H   R   SEG=?RTX?CODE
-NOEVENT. . . . . .  C ADDR   010CH   R   SEG=?RTX?CODE
-NOROBINTIMEOUT . .  C ADDR   0052H   R   SEG=?RTX?CODE
+MAIN . . . . . . .  C ADDR   00E0H   R   SEG=?RTX?CODE
+MAIN1. . . . . . .  C ADDR   00E9H   R   SEG=?RTX?CODE
+MAIN1X . . . . . .  C ADDR   00F3H   R   SEG=?RTX?CODE
+MAIN2. . . . . . .  C ADDR   00EEH   R   SEG=?RTX?CODE
+NOEVENT. . . . . .  C ADDR   00D6H   R   SEG=?RTX?CODE
 NOTIMEOUT. . . . .  C ADDR   0049H   R   SEG=?RTX?CODE
 NOWAITTIMEOUT. . .  C ADDR   0047H   R   SEG=?RTX?CODE
-OS_SWITCH_TASK . .  C ADDR   007EH   R   SEG=?RTX?CODE
-OS_SWITCH_TASK1. .  C ADDR   007EH   R   SEG=?RTX?CODE
+OS_SWITCH_TASK . .  C ADDR   0050H   R   SEG=?RTX?CODE
+OS_SWITCH_TASK1. .  C ADDR   0050H   R   SEG=?RTX?CODE
 PCON . . . . . . .  D ADDR   0087H   A   
 PSW. . . . . . . .  D ADDR   00D0H   A   
 RAMTOP . . . . . .  N NUMB   00FFH   A   
 RDY_EVENT. . . . .  N NUMB   0080H   A   
-ROBINON. . . . . .  C ADDR   0118H   R   SEG=?RTX?CODE
-ROBINTIME. . . . .    REG    R5          
 SAVEACC. . . . . .    REG    R2          
 SAVEPSW. . . . . .    REG    R3          
-SIGNALOFF. . . . .  C ADDR   0100H   R   SEG=?RTX?CODE
-SIGNALON . . . . .  C ADDR   010CH   R   SEG=?RTX?CODE
+SIGNALOFF. . . . .  C ADDR   00CAH   R   SEG=?RTX?CODE
+SIGNALON . . . . .  C ADDR   00D6H   R   SEG=?RTX?CODE
 SIG_EVENT. . . . .  N NUMB   0004H   A   
 SP . . . . . . . .  D ADDR   0081H   A   
 TASKSTATE. . . . .  I ADDR   0001H   R   SEG=?RTX?TASKSTATE?S
@@ -836,11 +821,11 @@ TF0. . . . . . . .  B ADDR   0088H.5 A
 TF1. . . . . . . .  B ADDR   0088H.7 A   
 TH0. . . . . . . .  D ADDR   008CH   A   
 TH1. . . . . . . .  D ADDR   008DH   A   
-TIMEOUTON. . . . .  C ADDR   0108H   R   SEG=?RTX?CODE
+TIMEOUTON. . . . .  C ADDR   00D2H   R   SEG=?RTX?CODE
 TIMERINT . . . . .  C ADDR   0008H   R   SEG=?RTX?CODE
 TIMERLOOP. . . . .  C ADDR   0039H   R   SEG=?RTX?CODE
 TIMERVAL . . . . .  I ADDR   0000H   R   SEG=?RTX?TASKSTATE?S
-TIMESHARING. . . .  N NUMB   0005H   A   
+TIMESHARING. . . .  N NUMB   0000H   A   
 TL0. . . . . . . .  D ADDR   008AH   A   
 TL1. . . . . . . .  D ADDR   008BH   A   
 TMOD . . . . . . .  D ADDR   0089H   A   

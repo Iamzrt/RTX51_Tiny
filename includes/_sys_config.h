@@ -30,7 +30,7 @@ extern "C" {
 #define     LOG_ENABLE                                 1
 
 /*< Console configuration. 0: disable; 1:enable. >*/
-#define     CONSOLE_ENABLE                             0
+#define     CONSOLE_ENABLE                             1
 
 
 
