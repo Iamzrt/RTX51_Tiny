@@ -200,8 +200,6 @@ void  system_task (void)  _task_   SYSTEM_TASK_PRIORITY
 	{
 	  system_task_timer_schedule();
 		system_task_logic_schedule();
-
-		os_switch_task();
 	}
 }
 

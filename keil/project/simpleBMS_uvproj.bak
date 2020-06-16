@@ -386,6 +386,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\user\console.c</FilePath>
             </File>
+            <File>
+              <FileName>console_cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\user\console_cmd.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

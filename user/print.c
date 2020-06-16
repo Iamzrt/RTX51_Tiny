@@ -146,7 +146,7 @@ void  print_task (void)  _task_   PRINT_TASK_PRIORITY
 
   while(1)
 	{
-	  os_switch_task();
+	  
 	}
 }
 

@@ -195,8 +195,6 @@ void   button_task(void)	 _task_   BUTTON_TASK_PRIORITY
 	{
     button_task_timer_schedule();
 		button_task_logic_schedule();
-
-		os_switch_task();
 	}
 }
 

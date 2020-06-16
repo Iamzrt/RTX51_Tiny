@@ -168,7 +168,7 @@ void  console_task (void)  _task_   CONSOLE_TASK_PRIORITY
 	  console_task_timer_schedule();
 	  console_task_logic_schedule();
 		
-		os_switch_task(); 																 
+		os_switch_task();																 
 	}
 }
 

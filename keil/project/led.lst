@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 1   
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE LED
@@ -62,7 +62,7 @@ line level    source
    2      =3  STDIO.H
    3      =3  
    4      =3  Prototypes for standard I/O functions.
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 2   
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 2   
 
    5      =3  Copyright (c) 1988-2002 Keil Elektronik GmbH and Keil Software, Inc.
    6      =3  All rights reserved.
@@ -126,7 +126,7 @@ line level    source
            =3 #endif
   21      =3  
   22      =3  
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 3   
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 3   
 
   23      =3  #include "./_sys_std.h"
    1      =4  /**
@@ -190,7 +190,7 @@ line level    source
   59      =4  
   60      =4  
   61      =4  #ifndef  _IN_LINE_
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 4   
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 4   
 
   62      =4    #define  _IN_LINE_   inline
   63      =4  #endif
@@ -254,7 +254,7 @@ line level    source
    1      =3  /*--------------------------------------------------------------------------
    2      =3  N76E003.H
    3      =3  
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 5   
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 5   
 
    4      =3  Header file for Nuvoton N76E003
    5      =3  --------------------------------------------------------------------------*/
@@ -318,7 +318,7 @@ line level    source
   63      =3  sfr P0M2        = 0xB2;
   64      =3  sfr P0SR        = 0xB2; //Page1
   65      =3  sfr P1M1        = 0xB3;
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 6   
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 6   
 
   66      =3  sfr P1S         = 0xB3; //Page1
   67      =3  sfr P1M2        = 0xB4;
@@ -382,7 +382,7 @@ line level    source
  125      =3  sfr ADCCON2     = 0xE2;
  126      =3  sfr ADCDLY      = 0xE3;
  127      =3  sfr C0L         = 0xE4;
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 7   
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 7   
 
  128      =3  sfr C0H         = 0xE5;
  129      =3  sfr C1L         = 0xE6;
@@ -446,7 +446,7 @@ line level    source
  187      =3  
  188      =3  /*  PSW */
  189      =3  sbit CY         = PSW^7;
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 8   
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 8   
 
  190      =3  sbit AC         = PSW^6;
  191      =3  sbit F0         = PSW^5;
@@ -510,7 +510,7 @@ line level    source
  249      =3  sbit P16  = P1^6;
  250      =3  sbit TXD_1  = P1^6; 
  251      =3  sbit P15  = P1^5;
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 9   
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 9   
 
  252      =3  sbit P14  = P1^4;
  253      =3  sbit SDA  = P1^4;    
@@ -574,7 +574,7 @@ line level    source
    6      =3  #define set_P03     P03   =   1
    7      =3  #define set_P04     P04   =   1
    8      =3  #define set_P05     P05   =   1
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 10  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 10  
 
    9      =3  #define set_P06     P06   =   1
   10      =3  #define set_P07     P07   =   1
@@ -638,7 +638,7 @@ line level    source
   68      =3  #define set_CT_T0     TMOD    |=  SET_BIT2
   69      =3  #define set_M1_T0     TMOD    |=  SET_BIT1
   70      =3  #define set_M0_T0     TMOD    |=  SET_BIT0
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 11  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 11  
 
   71      =3                              
   72      =3  #define clr_GATE_T1   TMOD    &=  ~SET_BIT7
@@ -702,7 +702,7 @@ line level    source
  130      =3  
  131      =3  //****SFRS    91H ****
  132      =3  #define set_SFRPAGE  BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;SFRS|=SET_BIT0;EA=BIT_TMP
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 12  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 12  
 
  133      =3  #define clr_SFRPAGE  BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;SFRS&=~SET_BIT0;EA=BIT_TMP
  134      =3  
@@ -766,7 +766,7 @@ line level    source
  192      =3  #define set_HIRCEN  BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN|=SET_BIT5;EA=BIT_TMP;
  193      =3  #define set_CKSWTF  BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN|=SET_BIT0;EA=BIT_TMP;
  194      =3         
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 13  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 13  
 
  195      =3  #define clr_EXTEN1  BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=~SET_BIT7;EA=BIT_TMP;
  196      =3  #define clr_EXTEN0  BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CKEN&=~SET_BIT6;EA=BIT_TMP;
@@ -830,7 +830,7 @@ line level    source
  254      =3  #define set_IAPEN   BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON|=SET_BIT0 ;EA=BIT_TMP
  255      =3         
  256      =3  #define clr_SWRST   BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=~SET_BIT7;EA=BIT_TMP
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 14  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 14  
 
  257      =3  #define clr_IAPFF   BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=~SET_BIT6;EA=BIT_TMP
  258      =3  #define clr_BS      BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;CHPCON&=~SET_BIT1;EA=BIT_TMP
@@ -894,7 +894,7 @@ line level    source
  316      =3  #define set_ES      ES       = 1
  317      =3  #define set_ET1     ET1      = 1
  318      =3  #define set_EX1     EX1      = 1
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 15  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 15  
 
  319      =3  #define set_ET0     ET0      = 1
  320      =3  #define set_EX0     EX0      = 1
@@ -958,7 +958,7 @@ line level    source
  375      =3  #define clr_P3SR_0  BIT_TMP=EA;TA=0xAA;TA=0x55;SFRS=0x01;P3SR&=~SET_BIT0;TA=0xAA;TA=0x55;SFRS=0x00;EA=BIT_
              -TMP
  376      =3  
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 16  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 16  
 
  377      =3  //**** IAPFD  AEH ****
  378      =3  
@@ -1022,7 +1022,7 @@ line level    source
              -MP
  428      =3  #define clr_P0S_6   BIT_TMP=EA;TA=0xAA;TA=0x55;SFRS=0x01;P0S&=~SET_BIT6;TA=0xAA;TA=0x55;SFRS=0x00;EA=BIT_T
              -MP
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 17  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 17  
 
  429      =3  #define clr_P0S_5   BIT_TMP=EA;TA=0xAA;TA=0x55;SFRS=0x01;P0S&=~SET_BIT5;TA=0xAA;TA=0x55;SFRS=0x00;EA=BIT_T
              -MP
@@ -1086,7 +1086,7 @@ line level    source
  470      =3  #define clr_P0SR_3  BIT_TMP=EA;TA=0xAA;TA=0x55;SFRS=0x01;P0SR&=~SET_BIT3;TA=0xAA;TA=0x55;SFRS=0x00;EA=BIT_
              -TMP
  471      =3  #define clr_P0SR_2  BIT_TMP=EA;TA=0xAA;TA=0x55;SFRS=0x01;P0SR&=~SET_BIT2;TA=0xAA;TA=0x55;SFRS=0x00;EA=BIT_
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 18  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 18  
 
              -TMP
  472      =3  #define clr_P0SR_1  BIT_TMP=EA;TA=0xAA;TA=0x55;SFRS=0x01;P0SR&=~SET_BIT1;TA=0xAA;TA=0x55;SFRS=0x00;EA=BIT_
@@ -1150,7 +1150,7 @@ line level    source
  517      =3  #define set_P1M2_0  P1M2    |= SET_BIT0
  518      =3                              
  519      =3  #define clr_P12UP   P1M2    &= ~SET_BIT2
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 19  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 19  
 
  520      =3  #define clr_P1M2_1  P1M2    &= ~SET_BIT1
  521      =3  #define clr_P1M2_0  P1M2    &= ~SET_BIT0
@@ -1214,7 +1214,7 @@ line level    source
  563      =3  
  564      =3  //**** PWMINTC B7H PAGE1 **** SFRS must set as 1 to modify this register  
  565      =3  #define set_INTTYP1   BIT_TMP=EA;TA=0xAA;TA=0x55;SFRS=0x01;PWMINTC|=SET_BIT5;TA=0xAA;TA=0x55;SFRS=0x00;EA=B
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 20  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 20  
 
              -IT_TMP
  566      =3  #define set_INTTYP0   BIT_TMP=EA;TA=0xAA;TA=0x55;SFRS=0x01;PWMINTC|=SET_BIT4;TA=0xAA;TA=0x55;SFRS=0x00;EA=B
@@ -1278,7 +1278,7 @@ line level    source
  615      =3  #define set_AA        AA      = 1
  616      =3  #define set_I2CPX     I2CPX   = 1
  617      =3  
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 21  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 21  
 
  618      =3  #define clr_I2CEN     I2CEN   = 0
  619      =3  #define clr_STA       STA     = 0
@@ -1342,7 +1342,7 @@ line level    source
  669      =3  #define set_TR2     TR2      = 1
  670      =3  #define set_CMRL2   CMRL2    = 1
  671      =3  
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 22  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 22  
 
  672      =3  #define clr_TF2     TF2      = 0
  673      =3  #define clr_TR2     TR2      = 0
@@ -1406,7 +1406,7 @@ line level    source
  731      =3  #define set_PNP2    PNP     |= SET_BIT2
  732      =3  #define set_PNP1    PNP     |= SET_BIT1
  733      =3  #define set_PNP0    PNP     |= SET_BIT0
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 23  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 23  
 
  734      =3  
  735      =3  #define clr_PNP5    PNP     &= ~SET_BIT5
@@ -1470,7 +1470,7 @@ line level    source
  793      =3  //**** PWMCON1  DFH ****
  794      =3  #define set_PWMMOD1   PWMCON1  |= SET_BIT7
  795      =3  #define set_PWMMOD0   PWMCON1  |= SET_BIT6
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 24  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 24  
 
  796      =3  #define set_GP        PWMCON1  |= SET_BIT5
  797      =3  #define set_PWMTYP    PWMCON1  |= SET_BIT4
@@ -1534,7 +1534,7 @@ line level    source
  855      =3  #define clr_ADCS    ADCS     = 0
  856      =3  #define clr_ETGSEL1 ETGSEL1  = 0
  857      =3  #define clr_ETGSEL0 ETGSEL0  = 0
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 25  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 25  
 
  858      =3  #define clr_ADCHS3  ADCHS3   = 0
  859      =3  #define clr_ADCHS2  ADCHS2   = 0
@@ -1598,7 +1598,7 @@ line level    source
  917      =3  #define clr_PIPEN1  PIPEN   &= ~SET_BIT1
  918      =3  #define clr_PIPEN0  PIPEN   &= ~SET_BIT0
  919      =3     
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 26  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 26  
 
  920      =3  //**** PIF  ECH ****
  921      =3  #define set_PIF7    PIF     |= SET_BIT7
@@ -1662,7 +1662,7 @@ line level    source
  979      =3  #define clr_CAP01   CAPCON3    &= ~SET_BIT1
  980      =3  #define clr_CAP00   CAPCON3    &= ~SET_BIT0
  981      =3  
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 27  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 27  
 
  982      =3  //**** CAPCON4    F2H ****
  983      =3  #define set_CAP23    CAPCON4    |= SET_BIT3
@@ -1726,7 +1726,7 @@ line level    source
 1037      =3  #define set_P04DIDS AINDIDS  |= SET_BIT5
 1038      =3  #define set_P05DIDS AINDIDS  |= SET_BIT4
 1039      =3  #define set_P06DIDS AINDIDS  |= SET_BIT3
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 28  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 28  
 
 1040      =3  #define set_P07DIDS AINDIDS  |= SET_BIT2
 1041      =3  #define set_P30DIDS AINDIDS  |= SET_BIT1
@@ -1790,7 +1790,7 @@ line level    source
 1099      =3  
 1100      =3  //**** PDTCNT   FAH ****
 1101      =3  
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 29  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 29  
 
 1102      =3  //**** PMEN     FBH ****                   
 1103      =3  #define set_PMEN5   PMEN    |= SET_BIT5
@@ -1854,7 +1854,7 @@ line level    source
 1161      =3  
 1162      =3  
 1163      =3                              
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 30  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 30  
 
 1164      =3                 
 1165      =3  
@@ -1918,7 +1918,7 @@ line level    source
            =4  #define EOF -1
            =4 #endif
            =4 
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 31  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 31  
 
            =4 #ifndef NULL
            =4  #define NULL ((void *) 0)
@@ -1982,7 +1982,7 @@ line level    source
   40      =3  #define SET_BIT11       0x0800
   41      =3  #define SET_BIT12       0x1000
   42      =3  #define SET_BIT13       0x2000
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 32  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 32  
 
   43      =3  #define SET_BIT14       0x4000
   44      =3  #define SET_BIT15       0x8000
@@ -2046,7 +2046,7 @@ line level    source
  102      =3  #define P15_PushPull_Mode     P1M1&=~SET_BIT5;P1M2|=SET_BIT5
  103      =3  #define P16_PushPull_Mode     P1M1&=~SET_BIT6;P1M2|=SET_BIT6
  104      =3  #define P17_PushPull_Mode     P1M1&=~SET_BIT7;P1M2|=SET_BIT7
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 33  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 33  
 
  105      =3  #define P30_PushPull_Mode     P3M1&=~SET_BIT0;P3M2|=SET_BIT0
  106      =3  #define GPIO1_PushPull_Mode   P1M1&=~SET_BIT0;P1M2|=SET_BIT0
@@ -2110,7 +2110,7 @@ line level    source
  164      =3  #define   Enable_BIT2_LowLevel_Trig     PICON&=0xEF;PINEN|=0x04;PIPEN&=0xFB
  165      =3  #define   Enable_BIT1_LowLevel_Trig     PICON&=0xF7;PINEN|=0x02;PIPEN&=0xFD
  166      =3  #define   Enable_BIT0_LowLevel_Trig     PICON&=0xFD;PINEN|=0x01;PIPEN&=0xFE
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 34  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 34  
 
  167      =3  /*****************************************************************************
  168      =3   Enable each bit high level trig mode
@@ -2174,7 +2174,7 @@ line level    source
            =3     #define TIMER_DIV12_VALUE_1ms       65536-1334  //1334*12/16000000 = 1 mS,      // Timer divider = 12 
            =3     #define TIMER_DIV12_VALUE_10ms      65536-13334 //13334*12/16000000 = 10 mS     // Timer divider = 12 
            =3     #define TIMER_DIV12_VALUE_40ms      65536-53336 //53336*12/16000000 = 40 ms     // Timer divider = 12 
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 35  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 35  
 
            =3     #define TIMER_DIV4_VALUE_10us       65536-40    //40*4/16000000 = 10 uS,        // Timer divider = 4  for TM2/TM
              -3
@@ -2238,7 +2238,7 @@ line level    source
  285      =3  #define   TIMER1_MODE1_ENABLE   TMOD&=0x0F;TMOD|=0x10
  286      =3  #define   TIMER1_MODE2_ENABLE   TMOD&=0x0F;TMOD|=0x20
  287      =3  #define   TIMER1_MODE3_ENABLE   TMOD&=0x0F;TMOD|=0x30
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 36  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 36  
 
  288      =3  //-------------------- Timer1 function define --------------------
  289      =3  #define   TIMER0_MODE0_ENABLE   TMOD&=0xF0
@@ -2302,7 +2302,7 @@ line level    source
  331      =3  #define IC1_P11_CAP2_FallingEdge_Capture    CAPCON1&=0x0F;CAPCON4&=0xF0;CAPCON4|=0x10;CAPCON0|=SET_BIT6;CAPC
              -ON2|=SET_BIT6
  332      =3  #define IC2_P10_CAP2_FallingEdge_Capture    CAPCON1&=0x0F;CAPCON4&=0xF0;CAPCON4|=0x20;CAPCON0|=SET_BIT6;CAPC
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 37  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 37  
 
              -ON2|=SET_BIT6
  333      =3  #define IC3_P00_CAP2_FallingEdge_Capture    CAPCON1&=0x0F;CAPCON4&=0xF0;CAPCON4|=0x30;CAPCON0|=SET_BIT6;CAPC
@@ -2366,7 +2366,7 @@ line level    source
  364      =3  #define IC3_P00_CAP3_RisingEdge_Capture     CAPCON1&=0x0F;CAPCON1|=0x10;CAPCON4&=0xF0;CAPCON4|=0x03;CAPCON0|
              -=SET_BIT6;CAPCON2|=SET_BIT6;
  365      =3  #define IC3_P04_CAP3_RisingEdge_Capture     CAPCON1&=0x0F;CAPCON1|=0x10;CAPCON4&=0xF0;CAPCON4|=0x04;CAPCON0|
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 38  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 38  
 
              -=SET_BIT6;CAPCON2|=SET_BIT6;
  366      =3  #define IC4_P01_CAP3_RisingEdge_Capture     CAPCON1&=0x0F;CAPCON1|=0x10;CAPCON4&=0xF0;CAPCON4|=0x05;CAPCON0|
@@ -2430,7 +2430,7 @@ line level    source
  397      =3  #define IC4_P01_CAP3_BothEdge_Capture       CAPCON1&=0x0F;CAPCON1|=0x20;CAPCON4&=0xF0;CAPCON4|=0x05;CAPCON0|=
              -SET_BIT6;CAPCON2|=SET_BIT6;
  398      =3  #define IC5_P03_CAP3_BothEdge_Capture       CAPCON1&=0x0F;CAPCON1|=0x20;CAPCON4&=0xF0;CAPCON4|=0x06;CAPCON0|=
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 39  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 39  
 
              -SET_BIT6;CAPCON2|=SET_BIT6;
  399      =3  #define IC6_P05_CAP3_BothEdge_Capture       CAPCON1&=0x0F;CAPCON1|=0x20;CAPCON4&=0xF0;CAPCON4|=0x07;CAPCON0|=
@@ -2494,7 +2494,7 @@ line level    source
  447      =3  #define   PWM2_OUTPUT_INVERSE     PNP|=0x04       
  448      =3  #define   PWM1_OUTPUT_INVERSE     PNP|=0x02       
  449      =3  #define   PWM0_OUTPUT_INVERSE     PNP|=0x01       
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 40  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 40  
 
  450      =3  #define   PWM_OUTPUT_ALL_INVERSE  PNP=0xFF
  451      =3  #define   PWM5_OUTPUT_NORMAL      PNP&=0xDF       
@@ -2558,7 +2558,7 @@ line level    source
  493      =3  #define Enable_ADC_AIN6     ADCCON0&=0xF0;ADCCON0|=0x06;P03_Input_Mode;AINDIDS=0x00;AINDIDS|=SET_BIT6;ADCCON
              -1|=SET_BIT0    //P03
  494      =3  #define Enable_ADC_AIN7     ADCCON0&=0xF0;ADCCON0|=0x07;P11_Input_Mode;AINDIDS=0x00;AINDIDS|=SET_BIT7;ADCCON
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 41  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 41  
 
              -1|=SET_BIT0    //P11
  495      =3  #define Enable_ADC_BandGap  ADCCON0|=SET_BIT3;ADCCON0&=0xF8;ADCCON1|=SET_BIT0                                             //Band-
@@ -2622,7 +2622,7 @@ line level    source
   11      =3    * 
   12      =3    ******************************************************************************
   13      =3    */
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 42  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 42  
 
   14      =3  #ifndef    TASK_DEF_H
   15      =3  #define    TASK_DEF_H
@@ -2686,7 +2686,7 @@ line level    source
    6      =4  All rights reserved.
    7      =4  --------------------------------------------------------------------------*/
    8      =4  
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 43  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 43  
 
    9      =4  #ifndef __RTX51TNY_H__
   10      =4  #define __RTX51TNY_H__
@@ -2750,7 +2750,7 @@ line level    source
   43      =3                   }                                                             \                
   44      =3               }while(0)
   45      =3  
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 44  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 44  
 
   46      =3  
   47      =3  
@@ -2814,7 +2814,7 @@ line level    source
            =4 #define       XDATA    xdata
            =4 #define       IDATA    idata
            =4 #define       BDATA    bdata
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 45  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 45  
 
            =4 #define       DATA     data
            =4 #define       CODE     code
@@ -2878,7 +2878,7 @@ line level    source
   18      =3  
   19      =3  
   20      =3  /*-- defined -----------------------------------------------------------------*/
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 46  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 46  
 
   21      =3  
   22      =3  
@@ -2942,7 +2942,7 @@ line level    source
   50      =2  #endif   /* SYSTEM_H */
   51      =2  
   52      =2  /*---------------------- end of file -----------------------------------------*/
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 47  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 47  
 
   19      =1  
   20      =1  
@@ -3006,7 +3006,7 @@ line level    source
   13      =2  #ifndef    SYSTEM_H
            =2 #define    SYSTEM_H
            =2 
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 48  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 48  
 
            =2 
            =2 /*-- includes  ---------------------------------------------------------------*/
@@ -3070,7 +3070,7 @@ line level    source
   41      =1  
   42      =1  
   43      =1  #endif   /* PRINT_H */
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 49  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 49  
 
   44      =1  
   45      =1  /*---------------------- end of file -----------------------------------------*/
@@ -3134,7 +3134,7 @@ line level    source
   73   3          }break;
   74   2      
   75   2          case LED2:
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 50  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 50  
 
   76   2          {
   77   3            if(wr == LED_OFF)             LED2_OFF(); 
@@ -3198,7 +3198,7 @@ line level    source
  135            */
  136          void   led_task(void)  _task_   LED_TASK_PRIORITY
  137          {
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 51  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 51  
 
  138   1        /* Led pin configure. */
  139   1        IO_LED1_MODE(); IO_LED2_MODE(); IO_LED3_MODE(); IO_LED4_MODE();
@@ -3207,19 +3207,17 @@ line level    source
  142   1        {
  143   2          led_task_timer_schedule();
  144   2          led_task_logic_schedule();  
- 145   2          
- 146   2          os_switch_task(); 
- 147   2        }
- 148   1      }
+ 145   2        }
+ 146   1      }
+ 147          
+ 148          
  149          
  150          
- 151          
+ 151          /*---------------------- end of file -----------------------------------------*/
  152          
- 153          /*---------------------- end of file -----------------------------------------*/
+ 153          
  154          
- 155          
- 156          
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 52  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 52  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -3282,7 +3280,7 @@ _led_write . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
 SCON_1 . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00F8H  1
 led_task . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
 LED_ON . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
-C51 COMPILER V9.00   LED                                                                   06/13/2020 14:37:38 PAGE 53  
+C51 COMPILER V9.00   LED                                                                   06/13/2020 16:27:46 PAGE 53  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -3291,7 +3289,6 @@ NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ADCCON0. . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E8H  1
 I2CON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C0H  1
 T2CON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C8H  1
-os_switch_task . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
 led_task_logic_schedule. . . . . . . .  STATIC   CODE   PROC     0000H  -----
 rb_data_type . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
 LED_TOGGLE . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
@@ -3300,7 +3297,7 @@ PrintRxCallbackFunc. . . . . . . . . .  TYPEDEF  -----  PTR      -----  3
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    153    ----
+   CODE SIZE        =    150    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =      1    ----
    PDATA SIZE       =   ----    ----

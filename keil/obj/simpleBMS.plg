@@ -2394,3 +2394,144 @@ Pad Byte        = FF
 "..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
 compiling console.c...
 ..\..\user\console.c - 0 Error(s), 0 Warning(s).
+Build target 'simpleBMS'
+assembling Conf_tny.A51...
+compiling button.c...
+compiling led.c...
+compiling system.c...
+compiling print.c...
+compiling console.c...
+linking...
+*** WARNING L13: RECURSIVE CALL TO SEGMENT
+    SEGMENT: ?CO?CONSOLE
+    CALLER:  ?PR?HELP?CONSOLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=55.4 xdata=155 code=4072
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000FE7
+Pad Byte        = FF
+8-bit Checksum = 47
+"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
+Build target 'simpleBMS'
+assembling Conf_tny.A51...
+compiling ring_buffer.c...
+compiling button.c...
+compiling led.c...
+compiling system.c...
+compiling print.c...
+compiling console.c...
+linking...
+*** WARNING L13: RECURSIVE CALL TO SEGMENT
+    SEGMENT: ?CO?CONSOLE
+    CALLER:  ?PR?HELP?CONSOLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+*** WARNING L15: MULTIPLE CALL TO SEGMENT
+    SEGMENT: ?PR?PRINTF?PRINTF
+    CALLER1: ?PR?PRINT_TASK?PRINT
+    CALLER2: ?PR?CONSOLE_TASK?CONSOLE
+Program Size: data=76.5 xdata=155 code=4249
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00001098
+Pad Byte        = FF
+8-bit Checksum = FF
+"..\obj\simpleBMS" - 0 Error(s), 4 Warning(s).
+Build target 'simpleBMS'
+compiling print.c...
+linking...
+*** WARNING L13: RECURSIVE CALL TO SEGMENT
+    SEGMENT: ?CO?CONSOLE
+    CALLER:  ?PR?HELP?CONSOLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=55.4 xdata=155 code=4072
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000FE7
+Pad Byte        = FF
+8-bit Checksum = 47
+"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
+Build target 'simpleBMS'
+assembling Conf_tny.A51...
+linking...
+*** WARNING L13: RECURSIVE CALL TO SEGMENT
+    SEGMENT: ?CO?CONSOLE
+    CALLER:  ?PR?HELP?CONSOLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=55.4 xdata=155 code=4072
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000FE7
+Pad Byte        = FF
+8-bit Checksum = 41
+"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
+Build target 'simpleBMS'
+assembling Conf_tny.A51...
+compiling console.c...
+linking...
+*** WARNING L13: RECURSIVE CALL TO SEGMENT
+    SEGMENT: ?CO?CONSOLE
+    CALLER:  ?PR?HELP?CONSOLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=55.4 xdata=155 code=4075
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000FEA
+Pad Byte        = FF
+8-bit Checksum = 3B
+"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).
+Build target 'simpleBMS'
+linking...
+*** WARNING L13: RECURSIVE CALL TO SEGMENT
+    SEGMENT: ?CO?CONSOLE
+    CALLER:  ?PR?HELP?CONSOLE
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_SYSTICK_INCREASE?SYSTEM
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MCU_RESET?SYSTEM
+Program Size: data=55.4 xdata=155 code=4075
+creating hex file from "..\obj\simpleBMS"...
+User command #1: ..\obj\hex2bin.exe ..\obj\simpleBMS.hex
+hex2bin v1.0.8, Copyright (C) 1998 Jacques Pelletier
+checksum extensions Copyright (C) 2004 Rockwell Automation
+improved P.G. 2007
+Lowest address  = 00000000
+Highest address = 00000FEA
+Pad Byte        = FF
+8-bit Checksum = 3B
+"..\obj\simpleBMS" - 0 Error(s), 3 Warning(s).

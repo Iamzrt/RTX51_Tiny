@@ -1,4 +1,4 @@
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 1   
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 1   
 
 
 C51 COMPILER V9.00, COMPILATION OF MODULE PRINT
@@ -62,7 +62,7 @@ line level    source
    1      =1  /**
    2      =1    ******************************************************************************
    3      =1    * @file    
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 2   
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 2   
 
    4      =1    * @author  
    5      =1    * @version 
@@ -126,7 +126,7 @@ line level    source
   27      =3  extern char _getkey (void);
   28      =3  extern char getchar (void);
   29      =3  extern char ungetchar (char);
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 3   
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 3   
 
   30      =3  extern char putchar (char);
   31      =3  extern int printf   (const char *, ...);
@@ -190,7 +190,7 @@ line level    source
   22      =4  
   23      =4  
   24      =4  /*!< Signed integer types  */
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 4   
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 4   
 
   25      =4  typedef         signed char             s8_t;
   26      =4  typedef         signed int              s16_t;
@@ -254,7 +254,7 @@ line level    source
   84      =4    #define   VIRTUAL
   85      =4  #endif
   86      =4  
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 5   
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 5   
 
   87      =4  
   88      =4  
@@ -318,7 +318,7 @@ line level    source
   26      =3  sfr SFRS        = 0x91; //TA Protection
   27      =3  sfr CAPCON0     = 0x92;
   28      =3  sfr CAPCON1     = 0x93;
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 6   
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 6   
 
   29      =3  sfr CAPCON2     = 0x94;
   30      =3  sfr CKDIV       = 0x95;
@@ -382,7 +382,7 @@ line level    source
   88      =3  sfr RL3         = 0xC5;
   89      =3  sfr PWM5H       = 0xC5; //Page1
   90      =3  sfr RH3         = 0xC6;
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 7   
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 7   
 
   91      =3  sfr PIOCON1     = 0xC6; //Page1
   92      =3  sfr TA          = 0xC7;
@@ -446,7 +446,7 @@ line level    source
  150      =3  
  151      =3  sfr SCON_1      = 0xF8;
  152      =3  sfr PDTEN       = 0xF9; //TA Protection
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 8   
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 8   
 
  153      =3  sfr PDTCNT      = 0xFA; //TA Protection
  154      =3  sfr PMEN        = 0xFB;
@@ -510,7 +510,7 @@ line level    source
  212      =3  sbit PBOD       = IP^5;
  213      =3  sbit PS         = IP^4;
  214      =3  sbit PT1        = IP^3;
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 9   
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 9   
 
  215      =3  sbit PX1        = IP^2;
  216      =3  sbit PT0        = IP^1;
@@ -574,7 +574,7 @@ line level    source
  274      =3  sbit P06        = P0^6;
  275      =3  sbit TXD        = P0^6;
  276      =3  sbit P05        = P0^5;
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 10  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 10  
 
  277      =3  sbit P04        = P0^4;
  278      =3  sbit STADC        = P0^4;
@@ -638,7 +638,7 @@ line level    source
   31      =3  #define set_GF0     PCON    |= SET_BIT2 
   32      =3  #define set_PD      PCON    |= SET_BIT1
   33      =3  #define set_IDL     PCON    |= SET_BIT0
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 11  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 11  
 
   34      =3                              
   35      =3  #define clr_SMOD    PCON    &= ~SET_BIT7
@@ -702,7 +702,7 @@ line level    source
   93      =3  #define clr_T1M     CKCON   &= ~SET_BIT4
   94      =3  #define clr_T0M     CKCON   &= ~SET_BIT3
   95      =3  #define clr_CLOEN   CKCON   &= ~SET_BIT1
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 12  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 12  
 
   96      =3  
   97      =3  //**** WKCON  8FH ****
@@ -766,7 +766,7 @@ line level    source
  155      =3  #define set_CAP0LS1 CAPCON1 |= SET_BIT1
  156      =3  #define set_CAP0LS0 CAPCON1 |= SET_BIT0
  157      =3  
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 13  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 13  
 
  158      =3  #define clr_CAP2LS1 CAPCON1 &= ~SET_BIT5
  159      =3  #define clr_CAP2LS0 CAPCON1 &= ~SET_BIT4
@@ -830,7 +830,7 @@ line level    source
  217      =3  #define clr_RI      RI    = 0
  218      =3  
  219      =3  //**** SBUF   99H ****
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 14  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 14  
 
  220      =3  //**** SBUF_1 9AH ****
  221      =3  
@@ -894,7 +894,7 @@ line level    source
  279      =3  #define set_BODEN   BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;BODCON0|=SET_BIT7;EA=BIT_TMP
  280      =3  #define set_BOV1    BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;BODCON0|=SET_BIT5;EA=BIT_TMP
  281      =3  #define set_BOV0    BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;BODCON0|=SET_BIT4;EA=BIT_TMP
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 15  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 15  
 
  282      =3  #define set_BOF     BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;BODCON0|=SET_BIT3;EA=BIT_TMP
  283      =3  #define set_BORST   BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;BODCON0|=SET_BIT2;EA=BIT_TMP
@@ -958,7 +958,7 @@ line level    source
  341      =3  #define set_WPS0    BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON|=SET_BIT0;EA=BIT_TMP;
  342      =3          
  343      =3  #define clr_WDTEN   BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON&=~SET_BIT7;EA=BIT_TMP;
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 16  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 16  
 
  344      =3  #define clr_WDCLR   BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON&=~SET_BIT6;EA=BIT_TMP;
  345      =3  #define clr_WDTF    BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;WDCON&=~SET_BIT5;EA=BIT_TMP;
@@ -1022,7 +1022,7 @@ line level    source
  399      =3  #define set_P0M1_7  P0M1    |= SET_BIT7
  400      =3  #define set_P0M1_6  P0M1    |= SET_BIT6
  401      =3  #define set_P0M1_5  P0M1    |= SET_BIT5 
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 17  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 17  
 
  402      =3  #define set_P0M1_4  P0M1    |= SET_BIT4
  403      =3  #define set_P0M1_3  P0M1    |= SET_BIT3
@@ -1086,7 +1086,7 @@ line level    source
  445      =3  
  446      =3  #define clr_P0M2_7  P0M2    &= ~SET_BIT7
  447      =3  #define clr_P0M2_6  P0M2    &= ~SET_BIT6
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 18  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 18  
 
  448      =3  #define clr_P0M2_5  P0M2    &= ~SET_BIT5
  449      =3  #define clr_P0M2_4  P0M2    &= ~SET_BIT4
@@ -1150,7 +1150,7 @@ line level    source
  491      =3  #define clr_P1M1_2  P1M1  &= ~SET_BIT2
  492      =3  #define clr_P1M1_1  P1M1  &= ~SET_BIT1
  493      =3  #define clr_P1M1_0  P1M1  &= ~SET_BIT0
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 19  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 19  
 
  494      =3  
  495      =3  //**** P1S B3H PAGE1 **** SFRS must set as 1 to modify this register  
@@ -1214,7 +1214,7 @@ line level    source
              -TMP
  534      =3  #define clr_P1SR_6    BIT_TMP=EA;TA=0xAA;TA=0x55;SFRS=0x01;P1SR&=~SET_BIT6;TA=0xAA;TA=0x55;SFRS=0x00;EA=BIT_
              -TMP
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 20  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 20  
 
  535      =3  #define clr_P1SR_5    BIT_TMP=EA;TA=0xAA;TA=0x55;SFRS=0x01;P1SR&=~SET_BIT5;TA=0xAA;TA=0x55;SFRS=0x00;EA=BIT_
              -TMP
@@ -1278,7 +1278,7 @@ line level    source
  578      =3  #define set_PADC    PADC     = 1
  579      =3  #define set_PBOD    PBOD     = 1
  580      =3  #define set_PS      PS       = 1
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 21  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 21  
 
  581      =3  #define set_PT1     PT1      = 1
  582      =3  #define set_PX1     PX1      = 1
@@ -1342,7 +1342,7 @@ line level    source
  640      =3  #define set_T3PS0   T3CON   |= SET_BIT0
  641      =3                              
  642      =3  #define clr_SMOD_1  T3CON   &= ~SET_BIT7
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 22  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 22  
 
  643      =3  #define clr_SMOD0_1 T3CON   &= ~SET_BIT6
  644      =3  #define clr_BRCK    T3CON   &= ~SET_BIT5
@@ -1406,7 +1406,7 @@ line level    source
  694      =3  
  695      =3  //**** RCMP2H CAH ****
  696      =3  //**** RCMP2L CBH ****
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 23  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 23  
 
  697      =3  //**** TL2    CCH PAGE0 ****
  698      =3  //**** PWM4L  CCH PAGE1 **** SFRS must set as 1 to modify this register  
@@ -1470,7 +1470,7 @@ line level    source
  756      =3  #define clr_FBD3    FBD     &= ~SET_BIT3
  757      =3  #define clr_FBD2    FBD     &= ~SET_BIT2
  758      =3  #define clr_FBD1    FBD     &= ~SET_BIT1
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 24  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 24  
 
  759      =3  #define clr_FBD0    FBD     &= ~SET_BIT0
  760      =3  
@@ -1534,7 +1534,7 @@ line level    source
  818      =3  #define set_ADCEX   ADCCON1  |= SET_BIT1
  819      =3  #define set_ADCEN   ADCCON1  |= SET_BIT0
  820      =3  
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 25  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 25  
 
  821      =3  #define clr_STADCPX ADCCON1  &= ~SET_BIT6
  822      =3  #define clr_ETGTYP1 ADCCON1  &= ~SET_BIT3
@@ -1598,7 +1598,7 @@ line level    source
  880      =3  #define clr_PIPS0   PICON   &= ~SET_BIT0
  881      =3  
  882      =3  //**** PINEN    EAH **** 
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 26  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 26  
 
  883      =3  #define set_PINEN7  PINEN   |= SET_BIT7
  884      =3  #define set_PINEN6  PINEN   |= SET_BIT6
@@ -1662,7 +1662,7 @@ line level    source
  942      =3  //**** EIP  EFH ****                      
  943      =3  #define set_PT2     EIP     |= SET_BIT7
  944      =3  #define set_PSPI    EIP     |= SET_BIT6
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 27  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 27  
 
  945      =3  #define set_PFB     EIP     |= SET_BIT5
  946      =3  #define set_PWDT    EIP     |= SET_BIT4
@@ -1726,7 +1726,7 @@ line level    source
 1004      =3  #define clr_SPIEN   SPCR    &= ~SET_BIT6
 1005      =3  #define clr_LSBFE   SPCR    &= ~SET_BIT5
 1006      =3  #define clr_MSTR    SPCR    &= ~SET_BIT4
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 28  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 28  
 
 1007      =3  #define clr_CPOL    SPCR    &= ~SET_BIT3
 1008      =3  #define clr_CPHA    SPCR    &= ~SET_BIT2
@@ -1790,7 +1790,7 @@ line level    source
 1062      =3                              
 1063      =3  #define clr_PT2H    EIPH    &= ~SET_BIT7
 1064      =3  #define clr_PSPIH   EIPH    &= ~SET_BIT6
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 29  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 29  
 
 1065      =3  #define clr_PFBH    EIPH    &= ~SET_BIT5
 1066      =3  #define clr_PWDTH   EIPH    &= ~SET_BIT4
@@ -1854,7 +1854,7 @@ line level    source
 1124      =3  #define set_PMD1    PMD     |= SET_BIT1
 1125      =3  #define set_PMD0    PMD     |= SET_BIT0
 1126      =3                              
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 30  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 30  
 
 1127      =3  #define clr_PMD7    PMD     &= ~SET_BIT7
 1128      =3  #define clr_PMD6    PMD     &= ~SET_BIT6
@@ -1918,7 +1918,7 @@ line level    source
    2      =4  INTRINS.H
    3      =4  
    4      =4  Intrinsic functions for C51.
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 31  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 31  
 
    5      =4  Copyright (c) 1988-2004 Keil Elektronik GmbH and Keil Software, Inc.
    6      =4  All rights reserved.
@@ -1982,7 +1982,7 @@ line level    source
            =4 extern int puts (const char *);
            =4 
            =4 #pragma RESTORE
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 32  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 32  
 
            =4 
            =4 #endif
@@ -2046,7 +2046,7 @@ line level    source
   65      =3  #define PASS            0
   66      =3  
   67      =3  /*****************************************************************************************
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 33  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 33  
 
   68      =3  * For GPIO INIT setting 
   69      =3  *****************************************************************************************/
@@ -2110,7 +2110,7 @@ line level    source
  127      =3  #define P01_OpenDrain_Mode    P0M1|=SET_BIT1;P0M2|=SET_BIT1
  128      =3  #define P02_OpenDrain_Mode    P0M1|=SET_BIT2;P0M2|=SET_BIT2
  129      =3  #define P03_OpenDrain_Mode    P0M1|=SET_BIT3;P0M2|=SET_BIT3
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 34  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 34  
 
  130      =3  #define P04_OpenDrain_Mode    P0M1|=SET_BIT4;P0M2|=SET_BIT4
  131      =3  #define P05_OpenDrain_Mode    P0M1|=SET_BIT5;P0M2|=SET_BIT5
@@ -2174,7 +2174,7 @@ line level    source
  189      =3  /*****************************************************************************
  190      =3   Enable each bit rasing edge trig mode
  191      =3  *****************************************************************************/
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 35  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 35  
 
  192      =3  #define   Enable_BIT7_RasingEdge_Trig     PICON|=0x80;PINEN&=0x7F;PIPEN|=0x80
  193      =3  #define   Enable_BIT6_RasingEdge_Trig     PICON|=0x80;PINEN&=0xBF;PIPEN|=0x40
@@ -2238,7 +2238,7 @@ line level    source
            =3     #define TIMER_DIV4_VALUE_10us       65536-50      //50*4/20000000 = 10 uS,    Timer Clock = Fsys/4
            =3     #define TIMER_DIV4_VALUE_1ms        65536-5000    //5000*4/20000000 = 1 mS,   Timer Clock = Fsys/4
            =3 #endif
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 36  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 36  
 
  251      =3  #ifdef FOSC_221184    // if Fsys = 22.1184 MHz 
            =3     #define TIMER_DIV12_VALUE_10us      65536-18        //18*12/22118400 = 10 uS,       // Timer divider = 12
@@ -2302,7 +2302,7 @@ line level    source
  310      =3  #define IC0_P12_CAP0_FallingEdge_Capture    CAPCON1&=0xFC;CAPCON3&=0xF0;CAPCON0|=SET_BIT4;CAPCON2|=SET_BIT4
  311      =3  #define IC1_P11_CAP0_FallingEdge_Capture    CAPCON1&=0xFC;CAPCON3&=0xF0;CAPCON3|=0x01;CAPCON0|=SET_BIT4;CAPC
              -ON2|=SET_BIT4
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 37  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 37  
 
  312      =3  #define IC2_P10_CAP0_FallingEdge_Capture    CAPCON1&=0xFC;CAPCON3&=0xF0;CAPCON3|=0x02;CAPCON0|=SET_BIT4;CAPC
              -ON2|=SET_BIT4
@@ -2366,7 +2366,7 @@ line level    source
              -=SET_BIT4;CAPCON2|=SET_BIT4;
  345      =3  #define IC3_P04_CAP0_RisingEdge_Capture     CAPCON1&=0xFC;CAPCON1|=0x01;CAPCON3&=0xF0;CAPCON3|=0x04;CAPCON0|
              -=SET_BIT4;CAPCON2|=SET_BIT4;
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 38  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 38  
 
  346      =3  #define IC4_P01_CAP0_RisingEdge_Capture     CAPCON1&=0xFC;CAPCON1|=0x01;CAPCON3&=0xF0;CAPCON3|=0x05;CAPCON0|
              -=SET_BIT4;CAPCON2|=SET_BIT4;
@@ -2430,7 +2430,7 @@ line level    source
              -SET_BIT4;CAPCON2|=SET_BIT4
  378      =3  #define IC5_P03_CAP0_BothEdge_Capture       CAPCON1&=0xFC;CAPCON1|=0x02;CAPCON3&=0xF0;CAPCON3|=0x06;CAPCON0|=
              -SET_BIT4;CAPCON2|=SET_BIT4
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 39  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 39  
 
  379      =3  #define IC6_P05_CAP0_BothEdge_Capture       CAPCON1&=0xFC;CAPCON1|=0x02;CAPCON3&=0xF0;CAPCON3|=0x07;CAPCON0|=
              -SET_BIT4;CAPCON2|=SET_BIT4
@@ -2494,7 +2494,7 @@ line level    source
  418      =3  #define   PWM_CLOCK_DIV_64        PWMCON1|=0x06;PWMCON1&=0xFE
  419      =3  #define   PWM_CLOCK_DIV_128       PWMCON1|=0x07
  420      =3  //--------- PWM I/O select define ------------------------------
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 40  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 40  
 
  421      =3  #define   PWM5_P15_OUTPUT_ENABLE    BIT_TMP=EA;EA=0;TA=0xAA;TA=0x55;SFRS|=0x01;PIOCON1|=0x20;TA=0xAA;TA=0x55;
              -SFRS&=0xFE;EA=BIT_TMP       //P1.5 as PWM5 output enable
@@ -2558,7 +2558,7 @@ line level    source
  470      =3  #define   PWM_CENTRAL_POINT_INT   BIT_TMP=EA;TA=0xAA;TA=0x55;SFRS=0x01;PWMINTC|=0x20;PWMCON0&=0xEF;TA=0xAA;T
              -A=0x55;SFRS=0x00;EA=BIT_TMP
  471      =3  #define   PWM_PERIOD_END_INT      BIT_TMP=EA;TA=0xAA;TA=0x55;SFRS=0x01;PWMINTC|=0x30;TA=0xAA;TA=0x55;SFRS=0x00
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 41  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 41  
 
              -;EA=BIT_TMP
  472      =3  //--------- PWM interrupt pin select ---------------------------
@@ -2622,7 +2622,7 @@ line level    source
              -;ADCCON1|=SET_BIT1
  507      =3  #define PWM0_END_TRIG_ADC           ADCCON0&=~SET_BIT5;ADCCON0&=~SET_BIT4;ADCCON1|=SET_BIT3;ADCCON1|=SET_BIT2;A
              -DCCON1|=SET_BIT1
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 42  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 42  
 
  508      =3  #define PWM2_END_TRIG_ADC           ADCCON0&=~SET_BIT5;ADCCON0|=SET_BIT4;ADCCON1|=SET_BIT3;ADCCON1|=SET_BIT2;AD
              -CCON1|=SET_BIT1
@@ -2686,7 +2686,7 @@ line level    source
            =4 /* C++ support */
            =4 #ifdef __cplusplus
            =4 extern "C" {
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 43  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 43  
 
            =4 #endif
            =4 
@@ -2750,7 +2750,7 @@ line level    source
   31      =4  extern unsigned char os_wait2           (unsigned char typ,
   32      =4                                           unsigned char ticks);
   33      =4  
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 44  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 44  
 
   34      =4  extern unsigned char os_send_signal     (unsigned char task_id);
   35      =4  extern unsigned char os_clear_signal    (unsigned char task_id);
@@ -2814,7 +2814,7 @@ line level    source
   15      =3  
   16      =3  /*-- includes ----------------------------------------------------------------*/
   17      =3  #include "../includes/_sys_std.h"
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 45  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 45  
 
    1      =4  /**
    2      =4    ******************************************************************************
@@ -2878,7 +2878,7 @@ line level    source
            =4 
            =4 #ifndef  _IN_LINE_
            =4   #define  _IN_LINE_   inline
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 46  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 46  
 
            =4 #endif
            =4 
@@ -2942,7 +2942,7 @@ line level    source
   43      =3  
   44      =3  
   45      =3  /*-- functions ---------------------------------------------------------------*/
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 47  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 47  
 
   46      =3  extern    void            ring_buff_create(RingBuffObj* obj, rb_depth_t depth, \
   47      =3                                             rb_data_type* ptBuffer);
@@ -3006,7 +3006,7 @@ line level    source
   41      =1  
   42      =1  
   43      =1  #endif   /* PRINT_H */
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 48  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 48  
 
   44      =1  
   45      =1  /*---------------------- end of file -----------------------------------------*/
@@ -3070,7 +3070,7 @@ line level    source
   84   1      
   85   1        set_ES;           /* Enable Uart interrupt. */
   86   1        set_EA;           /* Enable global interrupt */ 
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 49  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 49  
 
   87   1      }
   88          
@@ -3134,9 +3134,9 @@ line level    source
  146   1      
  147   1        while(1)
  148   1        {
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 50  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 50  
 
- 149   2          os_switch_task();
+ 149   2          
  150   2        }
  151   1      }
  152          
@@ -3146,7 +3146,7 @@ line level    source
  156          
  157          
  158          /*---------------------- end of file -----------------------------------------*/
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 51  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 51  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -3209,7 +3209,7 @@ TH1. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008DH  1
 TR1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008EH  1
 _print_rx_callback_register. . . . . .  PUBLIC   CODE   PROC     0000H  -----
   func . . . . . . . . . . . . . . . .  * REG *  DATA   PTR      0001H  3
-C51 COMPILER V9.00   PRINT                                                                 06/13/2020 14:37:38 PAGE 52  
+C51 COMPILER V9.00   PRINT                                                                 06/13/2020 16:28:01 PAGE 52  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -3219,7 +3219,6 @@ ADCCON0. . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E8H  1
 I2CON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C0H  1
 T2CON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C8H  1
 T3CON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00C4H  1
-os_switch_task . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
 CKCON. . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008EH  1
 rb_data_type . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
 va_list. . . . . . . . . . . . . . . .  TYPEDEF  -----  PTR      -----  3
@@ -3230,7 +3229,7 @@ PrintRxCallbackFunc. . . . . . . . . .  TYPEDEF  -----  PTR      -----  3
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    176    ----
+   CODE SIZE        =    173    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

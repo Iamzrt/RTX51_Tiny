@@ -142,8 +142,6 @@ void   led_task(void)	 _task_   LED_TASK_PRIORITY
 	{
 	  led_task_timer_schedule();
 	  led_task_logic_schedule();  
-		
-		os_switch_task(); 
 	}
 }
 
