@@ -1,9 +1,16 @@
+"..\obj\hal_clk.obj",
+"..\obj\hal_core.obj",
+"..\obj\hal_gpio.obj",
+"..\obj\hal_uart.obj",
+"..\obj\hal_wtd.obj",
+"..\obj\hal_adc.obj",
+"..\obj\hal_timer.obj",
 "..\obj\Conf_tny.obj",
-"..\obj\ring_buffer.obj",
+"..\obj\msg.obj",
 "..\obj\button.obj",
 "..\obj\led.obj",
+"..\obj\bms.obj",
 "..\obj\system.obj",
-"..\obj\print.obj",
 "..\obj\console.obj" 
 TO "..\obj\simpleBMS" Rtx51Tiny 
 PRINT(".\simpleBMS.m51") RAMSIZE(256) 

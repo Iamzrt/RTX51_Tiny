@@ -1,1 +1,1 @@
-"..\..\user\console.c" BROWSE DEBUG OBJECTEXTEND LISTINCLUDE SYMBOLS PRINT(.\console.lst) TABS (2) OBJECT(..\obj\console.obj)
+"..\..\user\console.c" LARGE BROWSE DEBUG OBJECTEXTEND LISTINCLUDE SYMBOLS PRINT(.\console.lst) TABS (2) OBJECT(..\obj\console.obj)

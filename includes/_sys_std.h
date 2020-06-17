@@ -32,6 +32,7 @@ typedef         unsigned int            u16_t;
 typedef         unsigned long           u32_t;
 
 
+
 #define   		XDATA		 xdata
 #define   		IDATA		 idata
 #define   		BDATA		 bdata
@@ -46,6 +47,7 @@ typedef         unsigned long           u32_t;
 /* 把宏参数连接在一起 */
 #define     _CONNECT_MACRO(x,y)         x##y
 #define     CONNECT_MACRO(x,y)          _CONNECT_MACRO(x,y)
+
 
 
 /* 状态类型 */

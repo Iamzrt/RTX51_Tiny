@@ -12,27 +12,30 @@
   */
 /*-- includes ----------------------------------------------------------------*/
 #include "./system.h"
-#include "./led.h"
-#include "./button.h"
-#include "./print.h"
-#include "./console.h"
+
 
 
 
 /*-- defined -----------------------------------------------------------------*/
 #define      TIME_MS(x)                 (x)
 
+#define      SYS_POWER_PORT		          PORT0
+#define      SYS_POWER_PIN							PIN3
+#define      SYS_POWER_MODE							PP_MODE
+
 
 /*-- private variables -------------------------------------------------------*/
-static  bit    BIT_TMP;
 
 static  volatile   tick_size_t DATA _sysTickCnt = 0;
 
 static   tick_size_t XDATA systemTaskBaseTr = 0; 
 
 
+#define  SYS_BROADCAST_TASK_LEN   15
+static   msg_size_t  XDATA	 sysBroadcastTask[SYS_BROADCAST_TASK_LEN];
+static   MsgDef      XDATA   sysBroadcastMsg;
+
 /*-- functions ---------------------------------------------------------------*/
-static    void    mcu_clk_init(void);
 
 static    void    system_task_timer_schedule(void);
 static    void    system_task_logic_schedule(void);
@@ -65,50 +68,14 @@ u8_t   get_systick(void)
 
 
 /**           
-  * @brief          
-  * @param    
-  * @return  
-  * @note
-  */
-void  mcu_reset(void)
-{
-  TA = 0xAA;
-  TA = 0x55;
-  set_SWRST;
-}
-
-
-/**           
   * @brief            
   * @param    
   * @return  
   * @note
   */
-void   mcu_wdt_init(void)
+MsgDef*  get_system_broadcast_handle(void)
 {
-#if   WDT_ENABLE
-  TA=0xAA; 
-  TA=0x55; 
-  WDCON |= 0x07;				 /* Setting WDT prescale,1.638 s */
-
-  set_WDTR;              /* WDT run */
-  set_WDCLR;             /* Clear WDT timer	*/
-  set_EWDT;				       /* Enable wdt interrupt. */
-#endif
-}
-
-
-/**           
-  * @brief            
-  * @param    
-  * @return  
-  * @note
-  */
-void   mcu_wdt_feed(void)
-{
-#if   WDT_ENABLE
-  set_WDCLR;
-#endif
+  return &sysBroadcastMsg;
 }
 
 /**           
@@ -117,32 +84,21 @@ void   mcu_wdt_feed(void)
   * @return  
   * @note
   */
-void   mcu_gpio_all_deinit(void)
+void  system_power_on(void)
 {
-  Set_All_GPIO_Quasi_Mode;
+  mcu_gpio_write(SYS_POWER_PORT, SYS_POWER_PIN, IO_HIGH);
 }
-
 
 /**           
-  * @brief   HIRC enable         
+  * @brief            
   * @param    
   * @return  
-  * @note	   MCU power on system clock is HIRC (16 MHz).
-             Please keep P3.0 HIGH before you want to modify Fsys to LIRC.
+  * @note
   */
-static   void  mcu_clk_init(void)
+void  system_power_off(void)
 {
-  clr_EA;				                    /* disable interrupts*/
-
-  set_HIRCEN;                       /* HIRC 16MHz */
-  while((CKSWT&SET_BIT5)==0);				/* check ready */
-  clr_OSC1;
-  clr_OSC0;
-  while((CKEN&SET_BIT0)==1);				/* check system clock switching OK or NG */
-
-	set_EA;                           /* enable interrupts*/
+  mcu_gpio_write(SYS_POWER_PORT, SYS_POWER_PIN, IO_LOW);
 }
-
 
 /**           
   * @brief            
@@ -167,7 +123,23 @@ static  void  system_task_timer_schedule(void)
   */
 static  void  system_task_logic_schedule(void)
 {		 
-  mcu_wdt_feed();	
+	XDATA MsgDef* msgHandle;
+
+	mcu_wdt_feed();
+
+	msgHandle = get_system_broadcast_handle();
+	
+	if(msg_check(msgHandle, SYSTEM_TASK_PRIORITY, SYS_RESET) == MSG_MATCH)
+	{
+	  //LOG("[SYS]reset anser\r\n");
+	}	
+	
+	if(msg_check(msgHandle, SYSTEM_TASK_PRIORITY, SYS_SLEEP) == MSG_MATCH)
+	{
+	  //LOG("[SYS]sleep anser\r\n");
+	} 
+
+	 
 }
 
 /**           
@@ -178,28 +150,38 @@ static  void  system_task_logic_schedule(void)
   */
 void  system_task (void)  _task_   SYSTEM_TASK_PRIORITY
 {
-  mcu_clk_init();
-	mcu_gpio_all_deinit();
+  mcu_clk_init(0);
+	mcu_gpio_set_all_default();
+	mcu_gpio_set_mode(SYS_POWER_PORT, SYS_POWER_PIN, SYS_POWER_MODE);
 
-	mcu_wdt_init();
+#if     LOG_ENABLE
+  mcu_uart0_init(115200);
+#endif
+  
+	mcu_wdt_start();
 	mcu_wdt_feed();
 
+	/* Create user task. */
 	os_create_task(BUTTON_TASK_PRIORITY);
 	os_create_task(LED_TASK_PRIORITY);
-
-#if  LOG_ENABLE
-	os_create_task(PRINT_TASK_PRIORITY);
-#endif
+	os_create_task(BMS_TASK_PRIORITY);
 
 #if  CONSOLE_ENABLE
 	os_create_task(CONSOLE_TASK_PRIORITY);
 #endif
 
+	system_power_on();
 
+	/* Task message queue create. */
+	msg_create(&sysBroadcastMsg, sysBroadcastTask, SYS_BROADCAST_TASK_LEN);
+
+	/* System task run. */
 	while(1)
 	{
 	  system_task_timer_schedule();
 		system_task_logic_schedule();
+
+    os_switch_task();
 	}
 }
 

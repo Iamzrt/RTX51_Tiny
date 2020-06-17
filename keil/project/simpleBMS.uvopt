@@ -157,37 +157,156 @@
   </Target>
 
   <Group>
-    <GroupName>common</GroupName>
+    <GroupName>hal</GroupName>
     <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
       <GroupNumber>1</GroupNumber>
       <FileNumber>1</FileNumber>
-      <FileType>2</FileType>
+      <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>26</ColumnNumber>
+      <ColumnNumber>8</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>19</TopLine>
-      <CurrentLine>32</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\common\Conf_tny.A51</PathWithFileName>
-      <FilenameWithoutPath>Conf_tny.A51</FilenameWithoutPath>
+      <PathWithFileName>..\..\mcu\hal_clk.c</PathWithFileName>
+      <FilenameWithoutPath>hal_clk.c</FilenameWithoutPath>
     </File>
     <File>
       <GroupNumber>1</GroupNumber>
       <FileNumber>2</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>32</ColumnNumber>
+      <ColumnNumber>22</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>91</TopLine>
-      <CurrentLine>91</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\..\mcu\hal_core.c</PathWithFileName>
+      <FilenameWithoutPath>hal_core.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>3</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>9</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>76</TopLine>
+      <CurrentLine>93</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\..\mcu\hal_gpio.c</PathWithFileName>
+      <FilenameWithoutPath>hal_gpio.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>4</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\..\mcu\hal_uart.c</PathWithFileName>
+      <FilenameWithoutPath>hal_uart.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>5</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>62</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\..\mcu\hal_wtd.c</PathWithFileName>
+      <FilenameWithoutPath>hal_wtd.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>6</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\..\mcu\hal_adc.c</PathWithFileName>
+      <FilenameWithoutPath>hal_adc.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>1</GroupNumber>
+      <FileNumber>0</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>34</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\..\mcu\hal_timer.c</PathWithFileName>
+      <FilenameWithoutPath>hal_timer.c</FilenameWithoutPath>
+    </File>
+  </Group>
+
+  <Group>
+    <GroupName>common</GroupName>
+    <tvExp>1</tvExp>
+    <tvExpOptDlg>0</tvExpOptDlg>
+    <cbSel>0</cbSel>
+    <File>
+      <GroupNumber>2</GroupNumber>
+      <FileNumber>7</FileNumber>
+      <FileType>2</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>0</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\..\common\Conf_tny.A51</PathWithFileName>
+      <FilenameWithoutPath>Conf_tny.A51</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>2</GroupNumber>
+      <FileNumber>8</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>57</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\common\ring_buffer.c</PathWithFileName>
       <FilenameWithoutPath>ring_buffer.c</FilenameWithoutPath>
+    </File>
+    <File>
+      <GroupNumber>2</GroupNumber>
+      <FileNumber>0</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <Focus>0</Focus>
+      <ColumnNumber>64</ColumnNumber>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\..\common\msg.c</PathWithFileName>
+      <FilenameWithoutPath>msg.c</FilenameWithoutPath>
     </File>
   </Group>
 
@@ -197,71 +316,71 @@
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <File>
-      <GroupNumber>2</GroupNumber>
-      <FileNumber>3</FileNumber>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>9</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>43</ColumnNumber>
+      <ColumnNumber>4</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>103</TopLine>
-      <CurrentLine>116</CurrentLine>
+      <TopLine>199</TopLine>
+      <CurrentLine>205</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\user\button.c</PathWithFileName>
       <FilenameWithoutPath>button.c</FilenameWithoutPath>
     </File>
     <File>
-      <GroupNumber>2</GroupNumber>
-      <FileNumber>4</FileNumber>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>10</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>31</ColumnNumber>
+      <ColumnNumber>0</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>128</TopLine>
-      <CurrentLine>144</CurrentLine>
+      <TopLine>124</TopLine>
+      <CurrentLine>126</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\user\led.c</PathWithFileName>
       <FilenameWithoutPath>led.c</FilenameWithoutPath>
     </File>
     <File>
-      <GroupNumber>2</GroupNumber>
-      <FileNumber>5</FileNumber>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>11</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>47</ColumnNumber>
+      <ColumnNumber>29</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>182</TopLine>
-      <CurrentLine>195</CurrentLine>
+      <TopLine>98</TopLine>
+      <CurrentLine>107</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\user\system.c</PathWithFileName>
-      <FilenameWithoutPath>system.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\user\bms.c</PathWithFileName>
+      <FilenameWithoutPath>bms.c</FilenameWithoutPath>
     </File>
     <File>
-      <GroupNumber>2</GroupNumber>
-      <FileNumber>6</FileNumber>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>12</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
       <ColumnNumber>5</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>124</TopLine>
-      <CurrentLine>148</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\user\print.c</PathWithFileName>
-      <FilenameWithoutPath>print.c</FilenameWithoutPath>
+      <PathWithFileName>..\..\user\system.c</PathWithFileName>
+      <FilenameWithoutPath>system.c</FilenameWithoutPath>
     </File>
     <File>
-      <GroupNumber>2</GroupNumber>
-      <FileNumber>7</FileNumber>
+      <GroupNumber>3</GroupNumber>
+      <FileNumber>13</FileNumber>
       <FileType>1</FileType>
       <tvExp>0</tvExp>
       <Focus>0</Focus>
-      <ColumnNumber>41</ColumnNumber>
+      <ColumnNumber>45</ColumnNumber>
       <tvExpOptDlg>0</tvExpOptDlg>
-      <TopLine>172</TopLine>
-      <CurrentLine>197</CurrentLine>
+      <TopLine>0</TopLine>
+      <CurrentLine>0</CurrentLine>
       <bDave2>0</bDave2>
       <PathWithFileName>..\..\user\console.c</PathWithFileName>
       <FilenameWithoutPath>console.c</FilenameWithoutPath>
@@ -269,9 +388,87 @@
   </Group>
 
   <AlienFiles>
-    <PathWithFilename>D:\PROGRAM FILES\KEILC51\FILES\C51\INC\RTX51TNY.H</PathWithFilename>
-    <TopLine>6</TopLine>
-    <CurrentLine>21</CurrentLine>
+    <PathWithFilename>F:\share\open_source\RTX51_Tiny\USER\BUTTON.H</PathWithFilename>
+    <TopLine>10</TopLine>
+    <CurrentLine>34</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>F:\share\open_source\RTX51_Tiny\MCU\HAL_GPIO.H</PathWithFilename>
+    <TopLine>43</TopLine>
+    <CurrentLine>49</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>F:\share\open_source\RTX51_Tiny\user\led.h</PathWithFilename>
+    <TopLine>17</TopLine>
+    <CurrentLine>17</CurrentLine>
+    <Constant>0</Constant>
+    <WindowPosition>
+      <length>0</length>
+      <flags>0</flags>
+      <showCmd>0</showCmd>
+      <MinPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MinPosition>
+      <MaxPosition>
+        <xPos>0</xPos>
+        <yPos>0</yPos>
+      </MaxPosition>
+      <NormalPosition>
+        <Top>0</Top>
+        <Left>0</Left>
+        <Right>0</Right>
+        <Bottom>0</Bottom>
+      </NormalPosition>
+    </WindowPosition>
+  </AlienFiles>
+
+  <AlienFiles>
+    <PathWithFilename>F:\share\open_source\RTX51_Tiny\INCLUDES\_SYS_CONFIG.H</PathWithFilename>
+    <TopLine>10</TopLine>
+    <CurrentLine>29</CurrentLine>
     <Constant>0</Constant>
     <WindowPosition>
       <length>0</length>
@@ -1635,49 +1832,55 @@
     <ActiveMDIGroup>0</ActiveMDIGroup>
     <MDIGroup>
       <Size>100</Size>
-      <ActiveTab>6</ActiveTab>
+      <ActiveTab>5</ActiveTab>
       <Documents>
         <Doc>
-          <Name>..\..\common\Conf_tny.A51</Name>
-          <ColumnNumber>26</ColumnNumber>
-          <TopLine>19</TopLine>
-          <CurrentLine>32</CurrentLine>
+          <Name>..\..\user\button.c</Name>
+          <ColumnNumber>4</ColumnNumber>
+          <TopLine>199</TopLine>
+          <CurrentLine>205</CurrentLine>
         </Doc>
         <Doc>
-          <Name>..\..\user\button.c</Name>
-          <ColumnNumber>43</ColumnNumber>
-          <TopLine>103</TopLine>
-          <CurrentLine>116</CurrentLine>
+          <Name>..\..\USER\./BUTTON.H</Name>
+          <ColumnNumber>14</ColumnNumber>
+          <TopLine>10</TopLine>
+          <CurrentLine>34</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\..\mcu\hal_gpio.c</Name>
+          <ColumnNumber>9</ColumnNumber>
+          <TopLine>76</TopLine>
+          <CurrentLine>93</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\..\MCU\./HAL_GPIO.H</Name>
+          <ColumnNumber>8</ColumnNumber>
+          <TopLine>43</TopLine>
+          <CurrentLine>49</CurrentLine>
         </Doc>
         <Doc>
           <Name>..\..\user\led.c</Name>
-          <ColumnNumber>31</ColumnNumber>
-          <TopLine>128</TopLine>
-          <CurrentLine>144</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>..\..\user\system.c</Name>
-          <ColumnNumber>47</ColumnNumber>
-          <TopLine>182</TopLine>
-          <CurrentLine>195</CurrentLine>
-        </Doc>
-        <Doc>
-          <Name>..\..\user\print.c</Name>
-          <ColumnNumber>5</ColumnNumber>
+          <ColumnNumber>0</ColumnNumber>
           <TopLine>124</TopLine>
-          <CurrentLine>148</CurrentLine>
+          <CurrentLine>126</CurrentLine>
         </Doc>
         <Doc>
-          <Name>..\..\user\console.c</Name>
-          <ColumnNumber>41</ColumnNumber>
-          <TopLine>172</TopLine>
-          <CurrentLine>197</CurrentLine>
+          <Name>..\..\user\bms.c</Name>
+          <ColumnNumber>29</ColumnNumber>
+          <TopLine>98</TopLine>
+          <CurrentLine>107</CurrentLine>
         </Doc>
         <Doc>
-          <Name>D:\PROGRAM FILES\KEILC51\FILES\C51\INC\RTX51TNY.H</Name>
-          <ColumnNumber>53</ColumnNumber>
-          <TopLine>6</TopLine>
-          <CurrentLine>21</CurrentLine>
+          <Name>..\..\USER\./LED.H</Name>
+          <ColumnNumber>0</ColumnNumber>
+          <TopLine>17</TopLine>
+          <CurrentLine>17</CurrentLine>
+        </Doc>
+        <Doc>
+          <Name>..\..\MCU\../INCLUDES/_SYS_CONFIG.H</Name>
+          <ColumnNumber>7</ColumnNumber>
+          <TopLine>10</TopLine>
+          <CurrentLine>29</CurrentLine>
         </Doc>
       </Documents>
     </MDIGroup>

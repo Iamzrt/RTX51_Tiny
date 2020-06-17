@@ -33,7 +33,6 @@ typedef  enum
 {
   LED_OFF = 0,
 	LED_ON,
-	LED_TOGGLE,
 }LedWrType;
 
 

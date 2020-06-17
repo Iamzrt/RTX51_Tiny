@@ -1,4 +1,4 @@
-/**
+															/**
   ******************************************************************************
   * @file    
   * @author  
@@ -10,36 +10,24 @@
   * 
   ******************************************************************************
   */
-#ifndef    PRINT_H
-#define    PRINT_H
+#ifndef    HAL_WTD_H
+#define    HAL_WTD_H
 
 
 /*-- includes  ---------------------------------------------------------------*/
-#include "./system.h"
+#include "../includes/_sys_config.h"
 
 
 
 /*-- defined  ----------------------------------------------------------------*/
 
 
-/*< Log configuration. >*/
-#if   LOG_ENABLE
-  #define         LOG              printf 
-#else 
-  #define         LOG 
-#endif 
-
-
-
-typedef   void  (*PrintRxCallbackFunc)(u8_t dat);
-
-
 
 /*-- functions  ---------------------------------------------------------------*/
-extern   void     print_rx_callback_register(PrintRxCallbackFunc  func);
-extern   void     my_printf(char * c, ...);
+extern     void           mcu_wdt_start(void);
+extern     void           mcu_wdt_feed(void);
 
 
-#endif   /* PRINT_H */
+#endif   /* HAL_WTD_H */
 
 /*---------------------- end of file -----------------------------------------*/

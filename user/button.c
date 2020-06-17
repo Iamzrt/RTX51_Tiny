@@ -12,44 +12,30 @@
   */
 /*-- includes ----------------------------------------------------------------*/
 #include "./button.h"
-#include "./led.h"
 
 
 /*-- defined -----------------------------------------------------------------*/
 #define        TIME_MS(x)                 (x)
 
 
-
-#define        IO_BTN1_MODE()     		      P30_Input_Mode
-
-
-/*< User defined. Max button = 8. 0: not use. >*/
-#define        GET_BTN1_STATE()                 P30
-#define        GET_BTN2_STATE()                 0
-#define        GET_BTN3_STATE()                 0
-#define        GET_BTN4_STATE()                 0
-#define        GET_BTN5_STATE()                 0
-#define        GET_BTN6_STATE()                 0
-#define        GET_BTN7_STATE()                 0
-#define        GET_BTN8_STATE()                 0
+#define        BTN_PORT		                 PORT3
+#define        BTN_PIN								     PIN0
+#define        BTN_MODE                    INPUT_MODE
 
 
-
-typedef   struct
+typedef  enum
 {
-  u8_t    currState;
-  u8_t    lastState;
-  u8_t    trigDown;
-	u8_t    trigUp;
-	u8_t    prevTrig;
-}BtnDetectDef;
+  BTN_CHECK_STATE0 = (u8_t)0,
+	BTN_CHECK_STATE1,
+	BTN_CHECK_STATE2,
+	BTN_CHECK_STATE3
+}BtnCheckStateEnum;
 
 
 /*-- private variables -------------------------------------------------------*/
 static   tick_size_t  XDATA  buttonTaskBaseTr = 0;
 
-static   BtnDetectDef  XDATA    buttonList;
-
+static   ButtonState   buttonState = BTN_UP;
 
 
 /*-- functions ---------------------------------------------------------------*/
@@ -57,30 +43,141 @@ static    void    button_task_timer_schedule(void);
 static    void    button_task_logic_schedule(void);
 
 
-/**           
-  * @brief            
-  * @param    
+
+/** @function  
+  * @brief   
+  * @param    	
   * @return  
-  * @note
-  */ 
-static  void  read_button_status(BtnDetectDef* ptBtn, u8_t  buttonArray)
+  */
+ButtonState  button_read(void)
 {
-  ptBtn->lastState = ptBtn->currState;
-	ptBtn->currState = buttonArray^0xff;			/* reverse */
-	
-	if(ptBtn->lastState ^ ptBtn->currState)
-	{
-	  /* Filt pulse. */
-	  return;
-	} 
-	else
-	{
-	  ptBtn->trigDown = ptBtn->currState & (ptBtn->currState ^ ptBtn->prevTrig); /* button down, trig once. */
-	  //ptBtn->trigUp = ptBtn->prevTrig & (ptBtn->currState ^ ptBtn->prevTrig);	   /* button up, trig once. */
-	  ptBtn->prevTrig = ptBtn->currState;
-	}                            
+  return buttonState;
 }
 
+
+/** @function  
+  * @brief   
+  * @param    	
+  * @return  
+  */
+static   ButtonState  button_check_state(void)
+{
+	static   u8_t   XDATA buttonStep = 0;
+	static   u32_t  XDATA buttonTimeCnt = 0;
+	ButtonState  XDATA result = BTN_UP;
+	GpioLevel   XDATA   ioState;
+	
+	ioState = mcu_gpio_read(BTN_PORT, BTN_PIN);  
+	
+	switch(buttonStep)
+	{
+		case BTN_CHECK_STATE0:
+		{
+			if(ioState == IO_LOW)
+			{
+				/* When the button is pressed, the status transitions to the status of button elimination and confirmation. */
+				buttonTimeCnt = 0;
+				buttonStep = BTN_CHECK_STATE1; 			
+			}
+		}break;
+			
+		case BTN_CHECK_STATE1:
+		{
+			if(ioState == IO_LOW)
+			{
+				/* The button is still pressed. Filt finish, start the timer.  */
+				buttonTimeCnt = 0;
+				buttonStep = BTN_CHECK_STATE2;
+			}
+			else
+			{
+				/* The button has been lifted and returned to the initial state of the button. */
+				buttonStep = BTN_CHECK_STATE0;
+			}
+		}break;  
+			
+		case BTN_CHECK_STATE2:
+		{
+			if(ioState == IO_HIGH) 
+			{
+				/* The button is lifted to create a click operation. */
+				result = BTN_DOWN;  
+				buttonStep = BTN_CHECK_STATE0;  
+			}
+			else if((++buttonTimeCnt) >= 100)  /* 2000ms */
+			{
+				/* Press the button again and the time exceeds xx ms. */
+				result = BTN_HOLD;  
+				buttonStep = BTN_CHECK_STATE3;   /* Switch to wait for button release. */
+			}
+		}break;
+			
+		case BTN_CHECK_STATE3: 
+		{
+			/* Waiting for button release. */
+			if(ioState == IO_HIGH)  
+			{
+				buttonStep = BTN_CHECK_STATE0;  
+			}
+		}break;
+	}
+	
+	return result;
+}
+
+
+/** @function  
+  * @brief   
+  * @param    	
+  * @return  
+  */
+static  ButtonState  button_identify(void)
+{
+	static u8_t  XDATA buttonStep = BTN_CHECK_STATE0;
+	static u32_t XDATA buttonTimeCnt = 0;
+	ButtonState XDATA  result = BTN_UP;
+	ButtonState XDATA  state;
+	
+	state = button_check_state();
+	
+	switch(buttonStep)
+	{
+		case BTN_CHECK_STATE0:
+		{
+			if(state == BTN_DOWN)
+			{
+				/* The first click, do not return, to the next state to determine whether there will be a double click. */
+				buttonTimeCnt = 0;  
+				buttonStep = BTN_CHECK_STATE1;
+			}
+			else 
+			{
+				/* For buttonless, long press, return the original event. */
+				result = state; 
+			}
+		}break;
+			
+		case BTN_CHECK_STATE1:
+		{
+			if(state == BTN_DOWN)  
+			{
+				result = BTN_DOUBLE;  
+				buttonStep = BTN_CHECK_STATE0;				
+			}
+			else if((++buttonTimeCnt) >= 25)  /* 500ms */
+			{					
+        /* Click event does not occur again within 500ms, return click event. */				
+				result = BTN_DOWN;  
+				buttonStep = BTN_CHECK_STATE0;         			
+			}
+		}break;
+		
+		default:
+			break;
+	}
+	
+	return result;
+}
 
 /**           
   * @brief            
@@ -90,77 +187,9 @@ static  void  read_button_status(BtnDetectDef* ptBtn, u8_t  buttonArray)
   */
 static  void  button_task_timer_schedule(void)
 {
-  u8_t XDATA  buttonArray = 0; 
-	u8_t XDATA  ioState = 0;
-
 	TASK_TIMER_BEGIN(buttonTaskBaseTr, TIME_MS(20));
 
-	/* Read IO state. */
-	ioState = GET_BTN1_STATE();
-	buttonArray |= (ioState << 0);
-	ioState = GET_BTN2_STATE();
-	buttonArray |= (ioState << 1);
-	ioState = GET_BTN3_STATE();
-	buttonArray |= (ioState << 2);
-	ioState = GET_BTN4_STATE();
-	buttonArray |= (ioState << 3);
-	ioState = GET_BTN5_STATE();
-	buttonArray |= (ioState << 4);
-	ioState = GET_BTN6_STATE();
-	buttonArray |= (ioState << 5);
-	ioState = GET_BTN7_STATE();
-	buttonArray |= (ioState << 6);
-	ioState = GET_BTN8_STATE();
-	buttonArray |= (ioState << 7);
-  read_button_status(&buttonList, buttonArray);
-
-	/* Button 1 trig action. */
-	if(buttonList.trigDown & (1<<0)) 
-	{
-	 	led_write(LED1, LED_TOGGLE);
-	}
-
-	/* Button 2 trig action. */
-	if(buttonList.trigDown & (1<<1)) 
-	{
-	  
-	}
-
-	/* Button 3 trig action. */
-	if(buttonList.trigDown & (1<<2)) 
-	{
-	  
-	}
-
-  /* Button 4 trig action. */
-	if(buttonList.trigDown & (1<<3)) 
-	{
-	  
-	}
-
-	/* Button 5 trig action. */
-	if(buttonList.trigDown & (1<<4)) 
-	{
-
-	}
-
-	/* Button 6 trig action. */
-	if(buttonList.trigDown & (1<<5)) 
-	{
-
-	}
-
-	/* Button 7 trig action. */
-	if(buttonList.trigDown & (1<<6)) 
-	{
-
-	}
-
-	/* Button 8 trig action. */
-	if(buttonList.trigDown & (1<<7)) 
-	{
-
-	}
+	buttonState = button_identify();
 
 	TASK_TIMER_END(buttonTaskBaseTr);
 }
@@ -174,8 +203,6 @@ static  void  button_task_timer_schedule(void)
   */
 static  void  button_task_logic_schedule(void)
 {		 
-	
-
 
 }
 
@@ -188,13 +215,14 @@ static  void  button_task_logic_schedule(void)
   */
 void   button_task(void)	 _task_   BUTTON_TASK_PRIORITY
 {  
-  /* Button pin configuration. */
-  IO_BTN1_MODE();
+  mcu_gpio_set_mode(BTN_PORT, BTN_PIN, BTN_MODE);	
 
   while(1)
 	{
     button_task_timer_schedule();
-		button_task_logic_schedule();
+		button_task_logic_schedule();	
+
+		os_switch_task();
 	}
 }
 

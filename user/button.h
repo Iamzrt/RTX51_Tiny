@@ -18,11 +18,19 @@
 #include "./system.h"
 
 
+/*-- defined  ----------------------------------------------------------------*/
+typedef enum
+{
+  BTN_UP             = 0,    
+  BTN_DOWN,                  
+  BTN_HOLD,   
+  BTN_DOUBLE,	
+}ButtonState;
 
 
 
 /*-- functions  ---------------------------------------------------------------*/
-
+extern   ButtonState  button_read(void);
 
 
 #endif   /* BUTTON_H */

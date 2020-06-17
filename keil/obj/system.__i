@@ -1,0 +1,1 @@
+"..\..\user\system.c" LARGE BROWSE DEBUG OBJECTEXTEND LISTINCLUDE SYMBOLS PRINT(.\system.lst) TABS (2) OBJECT(..\obj\system.obj)

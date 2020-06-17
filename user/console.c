@@ -13,8 +13,6 @@
 /*-- includes ----------------------------------------------------------------*/
 #include <string.h>
 #include "./console.h"
-#include "./print.h"
-#include "../common/ring_buffer.h"
 
 
 
@@ -25,7 +23,7 @@
 /*-- defined -----------------------------------------------------------------*/
 #define      CONSOLE_LOG(x)								 LOG("-->"); LOG(x)
 
-#define      RX_BUFFER_MAX_SIZE				     64
+#define      RX_BUFFER_MAX_SIZE				     128
 
 
 typedef  struct
@@ -52,13 +50,13 @@ static   void   console_buffer_in(u8_t dat);
 /*< Add user commands. >*/
 static    void    help(void);
 static    void    reset(void);
-static    void    time(void);
+static    void    sleep(void);
 
 ConsoleItemDef  CODE cmdList[] = 
 {
-  { "?HELP",      "--Lists all user commands",       help              },
-  { "?RESET", 		"--Reset system",                  reset             },
-	{ "?TIME", 	    "--Show the system time",          time              },
+  { "?HELP",            "--Lists all user commands",       help              },
+  { "?RESET",           "--Reset system",                  reset             },
+	{ "?SLEEP",           "--System goto sleep",             sleep             },
 };
 
 #define   CONSOLE_CMD_SIZE   sizeof(cmdList)/sizeof(ConsoleItemDef)
@@ -84,19 +82,7 @@ static   void   console_buffer_in(u8_t dat)
   * @return  
   * @note
   */
-static  void  console_task_timer_schedule(void)
-{
-
-}
-
-
-/**           
-  * @brief            
-  * @param    
-  * @return  
-  * @note
-  */
-static  void  console_task_logic_schedule(void)
+static  void  console_analysis(void)
 {
   rb_depth_t XDATA remain = 0;
 	u8_t XDATA step = 0;
@@ -145,7 +131,44 @@ static  void  console_task_logic_schedule(void)
 				  break;
 			} 		
 		} 	
-	}  
+	} 
+}
+
+/**           
+  * @brief            
+  * @param    
+  * @return  
+  * @note
+  */
+static  void  console_task_timer_schedule(void)
+{
+
+}
+
+
+/**           
+  * @brief            
+  * @param    
+  * @return  
+  * @note
+  */
+static  void  console_task_logic_schedule(void)
+{
+  XDATA MsgDef* msgHandle;
+
+  console_analysis();
+	
+	msgHandle = get_system_broadcast_handle();
+	
+	if(msg_check(msgHandle, CONSOLE_TASK_PRIORITY, SYS_RESET) == MSG_MATCH)
+	{
+	  //LOG("-->reset anser\r\n");
+	}	
+	
+	if(msg_check(msgHandle, CONSOLE_TASK_PRIORITY, SYS_SLEEP) == MSG_MATCH)
+	{
+	  //LOG("-->sleep anser\r\n");
+	}   
 }
 
 /**           
@@ -161,7 +184,7 @@ void  console_task (void)  _task_   CONSOLE_TASK_PRIORITY
 	consoleDealObj.dealCnt  = 0;
 	consoleDealObj.dealBuff = conDealBuff;
 
-	print_rx_callback_register(console_buffer_in);
+	uart0_rx_callback_register(console_buffer_in);
 
   while(1)
 	{
@@ -186,13 +209,21 @@ static  void  help(void)
 }
 
 static  void  reset(void)
-{
- 
+{				
+	XDATA MsgDef* msgHandle;
+
+	msgHandle = get_system_broadcast_handle();
+  msg_broadcast(msgHandle, SYS_RESET);
+	LOG("-->reset notify\r\n");
 }
 
-static  void  time(void)
-{
+static  void  sleep(void)
+{	
+  XDATA MsgDef*  msgHandle;
 
+	msgHandle = get_system_broadcast_handle();
+  msg_broadcast(msgHandle, SYS_SLEEP);
+  LOG("-->sleep notify\r\n");
 }
 
 #endif   /* endif CONSOLE_ENABLE */

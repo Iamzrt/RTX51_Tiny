@@ -1,0 +1,1979 @@
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 1   
+
+
+C51 COMPILER V9.00, COMPILATION OF MODULE BMS
+OBJECT MODULE PLACED IN ..\obj\bms.obj
+COMPILER INVOKED BY: D:\Program Files\KEILC51\files\C51\BIN\C51.EXE ..\..\user\bms.c LARGE BROWSE DEBUG OBJECTEXTEND LIS
+                    -TINCLUDE SYMBOLS PRINT(.\bms.lst) TABS(2) OBJECT(..\obj\bms.obj)
+
+line level    source
+
+   1          /**
+   2            ******************************************************************************
+   3            * @file    
+   4            * @author  
+   5            * @version 
+   6            * @date   
+   7            * @brief   
+   8            ******************************************************************************  
+   9            * 
+  10            * 
+  11            ******************************************************************************
+  12            */
+  13          /*-- includes ----------------------------------------------------------------*/
+  14          #include "./bms.h"
+   1      =1  /**
+   2      =1    ******************************************************************************
+   3      =1    * @file    
+   4      =1    * @author  
+   5      =1    * @version 
+   6      =1    * @date   
+   7      =1    * @brief   
+   8      =1    ******************************************************************************  
+   9      =1    * 
+  10      =1    * 
+  11      =1    ******************************************************************************
+  12      =1    */
+  13      =1  #ifndef    BMS_H
+  14      =1  #define    BMS_H
+  15      =1  
+  16      =1  
+  17      =1  /*-- includes  ---------------------------------------------------------------*/
+  18      =1  #include "./system.h"
+   1      =2  /**
+   2      =2    ******************************************************************************
+   3      =2    * @file    
+   4      =2    * @author  
+   5      =2    * @version 
+   6      =2    * @date   
+   7      =2    * @brief   
+   8      =2    ******************************************************************************  
+   9      =2    * 
+  10      =2    * 
+  11      =2    ******************************************************************************
+  12      =2    */
+  13      =2  #ifndef    SYSTEM_H
+  14      =2  #define    SYSTEM_H
+  15      =2  
+  16      =2  
+  17      =2  /*-- includes  ---------------------------------------------------------------*/
+  18      =2  #include <stdio.h>
+   1      =3  /*--------------------------------------------------------------------------
+   2      =3  STDIO.H
+   3      =3  
+   4      =3  Prototypes for standard I/O functions.
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 2   
+
+   5      =3  Copyright (c) 1988-2002 Keil Elektronik GmbH and Keil Software, Inc.
+   6      =3  All rights reserved.
+   7      =3  --------------------------------------------------------------------------*/
+   8      =3  
+   9      =3  #ifndef __STDIO_H__
+  10      =3  #define __STDIO_H__
+  11      =3  
+  12      =3  #ifndef EOF
+  13      =3   #define EOF -1
+  14      =3  #endif
+  15      =3  
+  16      =3  #ifndef NULL
+  17      =3   #define NULL ((void *) 0)
+  18      =3  #endif
+  19      =3  
+  20      =3  #ifndef _SIZE_T
+  21      =3   #define _SIZE_T
+  22      =3   typedef unsigned int size_t;
+  23      =3  #endif
+  24      =3  
+  25      =3  #pragma SAVE
+  26      =3  #pragma REGPARMS
+  27      =3  extern char _getkey (void);
+  28      =3  extern char getchar (void);
+  29      =3  extern char ungetchar (char);
+  30      =3  extern char putchar (char);
+  31      =3  extern int printf   (const char *, ...);
+  32      =3  extern int sprintf  (char *, const char *, ...);
+  33      =3  extern int vprintf  (const char *, char *);
+  34      =3  extern int vsprintf (char *, const char *, char *);
+  35      =3  extern char *gets (char *, int n);
+  36      =3  extern int scanf (const char *, ...);
+  37      =3  extern int sscanf (char *, const char *, ...);
+  38      =3  extern int puts (const char *);
+  39      =3  
+  40      =3  #pragma RESTORE
+  41      =3  
+  42      =3  #endif
+  43      =3  
+  19      =2  
+  20      =2  #include "../includes/_sys_config.h"
+   1      =3  /**
+   2      =3    ******************************************************************************
+   3      =3    * @file    
+   4      =3    * @author  
+   5      =3    * @version 
+   6      =3    * @date   
+   7      =3    * @brief   
+   8      =3    ******************************************************************************  
+   9      =3    * 
+  10      =3    * 
+  11      =3    ******************************************************************************
+  12      =3    */
+  13      =3  #ifndef    _SYS_CONFIG_H
+  14      =3  #define    _SYS_CONFIG_H
+  15      =3  
+  16      =3  
+  17      =3  /* C++ support */
+  18      =3  #ifdef __cplusplus
+           =3 extern "C" {
+           =3 #endif
+  21      =3  
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 3   
+
+  22      =3  
+  23      =3  #include "./_sys_std.h"
+   1      =4  /**
+   2      =4    ******************************************************************************
+   3      =4    * @file    
+   4      =4    * @author  
+   5      =4    * @version 
+   6      =4    * @date   
+   7      =4    * @brief   
+   8      =4    ******************************************************************************  
+   9      =4    * 
+  10      =4    * 
+  11      =4    ******************************************************************************
+  12      =4    */
+  13      =4  #ifndef  _SYS_STD_H
+  14      =4  #define  _SYS_STD_H
+  15      =4  
+  16      =4  
+  17      =4  /* C++支持 */
+  18      =4  #ifdef __cplusplus
+           =4 extern "C" {
+           =4 #endif
+  21      =4   
+  22      =4  
+  23      =4  
+  24      =4  /*!< Signed integer types  */
+  25      =4  typedef         signed char             s8_t;
+  26      =4  typedef         signed int              s16_t;
+  27      =4  typedef         signed long             s32_t;
+  28      =4  
+  29      =4  /*!< Unsigned integer types  */
+  30      =4  typedef         unsigned char           u8_t;
+  31      =4  typedef         unsigned int            u16_t;
+  32      =4  typedef         unsigned long           u32_t;
+  33      =4  
+  34      =4  
+  35      =4  
+  36      =4  #define       XDATA    xdata
+  37      =4  #define       IDATA    idata
+  38      =4  #define       BDATA    bdata
+  39      =4  #define       DATA     data
+  40      =4  #define       CODE     code
+  41      =4  
+  42      =4  
+  43      =4  /* 把宏参数变为一个字符串 */
+  44      =4  #define     _STRING(x)                  #x
+  45      =4  #define     STRING(x)                   _STRING(x)
+  46      =4  
+  47      =4  /* 把宏参数连接在一起 */
+  48      =4  #define     _CONNECT_MACRO(x,y)         x##y
+  49      =4  #define     CONNECT_MACRO(x,y)          _CONNECT_MACRO(x,y)
+  50      =4  
+  51      =4  
+  52      =4  
+  53      =4  /* 状态类型 */
+  54      =4  typedef  enum
+  55      =4  {
+  56      =4    OPERATE_OK  = 0,
+  57      =4    OPERATE_BUSY,
+  58      =4    OPERATE_TIMEOUT,
+  59      =4    OPERATE_FAIL,
+  60      =4  }OpsStatus;
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 4   
+
+  61      =4  
+  62      =4  
+  63      =4  #ifndef  _IN_LINE_
+  64      =4    #define  _IN_LINE_   inline
+  65      =4  #endif
+  66      =4  
+  67      =4  #ifndef   BOOL
+  68      =4    #define   BOOL      bool
+  69      =4  #endif
+  70      =4  
+  71      =4  #ifndef   NULL
+           =4   #define   NULL     (void*)0
+           =4 #endif
+  74      =4  
+  75      =4  
+  76      =4  #ifndef  TRUE
+  77      =4    #define   TRUE    1
+  78      =4  #endif
+  79      =4  
+  80      =4  #ifndef  FALSE
+  81      =4    #define   FALSE    0
+  82      =4  #endif
+  83      =4  
+  84      =4  /* 纯虚函数关键字 */
+  85      =4  #ifndef   VIRTUAL
+  86      =4    #define   VIRTUAL
+  87      =4  #endif
+  88      =4  
+  89      =4  
+  90      =4  
+  91      =4  
+  92      =4  #ifdef __cplusplus
+           =4 }
+           =4 #endif
+  95      =4  
+  96      =4  #endif    /* _SYS_STD_H */
+  97      =4  
+  98      =4  /*------------------ end of file ---------------------------------------------*/
+  24      =3  
+  25      =3  
+  26      =3  /*< Configure the watchdog function.  0: disable; 1:enable. >*/
+  27      =3  #define     WDT_ENABLE                                 1
+  28      =3  
+  29      =3  /*< Log output configuration. 0: disable; 1:enable. >*/
+  30      =3  #define     LOG_ENABLE                                 1
+  31      =3  
+  32      =3  /*< Console configuration. 0: disable; 1:enable. >*/
+  33      =3  #define     CONSOLE_ENABLE                             0
+  34      =3  
+  35      =3  
+  36      =3  
+  37      =3  
+  38      =3  /* C++ support */
+  39      =3  #ifdef __cplusplus
+           =3 }
+           =3 #endif
+  42      =3  
+  43      =3  
+  44      =3  #endif   /* _SYS_CONFIG_H */
+  45      =3  
+  46      =3  /*---------------------- end of file -----------------------------------------*/
+  21      =2  #include "../mcu/hal_core.h"
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 5   
+
+   1      =3                                  /**
+   2      =3    ******************************************************************************
+   3      =3    * @file    
+   4      =3    * @author  
+   5      =3    * @version 
+   6      =3    * @date   
+   7      =3    * @brief   
+   8      =3    ******************************************************************************  
+   9      =3    * 
+  10      =3    * 
+  11      =3    ******************************************************************************
+  12      =3    */
+  13      =3  #ifndef    HAL_CORE_H
+  14      =3  #define    HAL_CORE_H
+  15      =3  
+  16      =3  
+  17      =3  /*-- includes  ---------------------------------------------------------------*/
+  18      =3  #include "../includes/_sys_config.h"
+   1      =4  /**
+   2      =4    ******************************************************************************
+   3      =4    * @file    
+   4      =4    * @author  
+   5      =4    * @version 
+   6      =4    * @date   
+   7      =4    * @brief   
+   8      =4    ******************************************************************************  
+   9      =4    * 
+  10      =4    * 
+  11      =4    ******************************************************************************
+  12      =4    */
+  13      =4  #ifndef    _SYS_CONFIG_H
+           =4 #define    _SYS_CONFIG_H
+           =4 
+           =4 
+           =4 /* C++ support */
+           =4 #ifdef __cplusplus
+           =4 extern "C" {
+           =4 #endif
+           =4 
+           =4 
+           =4 #include "./_sys_std.h"
+           =4 
+           =4 
+           =4 /*< Configure the watchdog function.  0: disable; 1:enable. >*/
+           =4 #define     WDT_ENABLE                                 1
+           =4 
+           =4 /*< Log output configuration. 0: disable; 1:enable. >*/
+           =4 #define     LOG_ENABLE                                 1
+           =4 
+           =4 /*< Console configuration. 0: disable; 1:enable. >*/
+           =4 #define     CONSOLE_ENABLE                             0
+           =4 
+           =4 
+           =4 
+           =4 
+           =4 /* C++ support */
+           =4 #ifdef __cplusplus
+           =4 }
+           =4 #endif
+           =4 
+           =4 
+           =4 #endif   /* _SYS_CONFIG_H */
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 6   
+
+  45      =4  
+  46      =4  /*---------------------- end of file -----------------------------------------*/
+  19      =3  
+  20      =3  #include "./hal_clk.h"
+   1      =4  /**
+   2      =4    ******************************************************************************
+   3      =4    * @file    
+   4      =4    * @author  
+   5      =4    * @version 
+   6      =4    * @date   
+   7      =4    * @brief   
+   8      =4    ******************************************************************************  
+   9      =4    * 
+  10      =4    * 
+  11      =4    ******************************************************************************
+  12      =4    */
+  13      =4  #ifndef    HAL_CLK_H
+  14      =4  #define    HAL_CLK_H
+  15      =4  
+  16      =4  
+  17      =4  /*-- includes  ---------------------------------------------------------------*/
+  18      =4  #include "../includes/_sys_config.h"
+   1      =5  /**
+   2      =5    ******************************************************************************
+   3      =5    * @file    
+   4      =5    * @author  
+   5      =5    * @version 
+   6      =5    * @date   
+   7      =5    * @brief   
+   8      =5    ******************************************************************************  
+   9      =5    * 
+  10      =5    * 
+  11      =5    ******************************************************************************
+  12      =5    */
+  13      =5  #ifndef    _SYS_CONFIG_H
+           =5 #define    _SYS_CONFIG_H
+           =5 
+           =5 
+           =5 /* C++ support */
+           =5 #ifdef __cplusplus
+           =5 extern "C" {
+           =5 #endif
+           =5 
+           =5 
+           =5 #include "./_sys_std.h"
+           =5 
+           =5 
+           =5 /*< Configure the watchdog function.  0: disable; 1:enable. >*/
+           =5 #define     WDT_ENABLE                                 1
+           =5 
+           =5 /*< Log output configuration. 0: disable; 1:enable. >*/
+           =5 #define     LOG_ENABLE                                 1
+           =5 
+           =5 /*< Console configuration. 0: disable; 1:enable. >*/
+           =5 #define     CONSOLE_ENABLE                             0
+           =5 
+           =5 
+           =5 
+           =5 
+           =5 /* C++ support */
+           =5 #ifdef __cplusplus
+           =5 }
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 7   
+
+           =5 #endif
+           =5 
+           =5 
+           =5 #endif   /* _SYS_CONFIG_H */
+  45      =5  
+  46      =5  /*---------------------- end of file -----------------------------------------*/
+  19      =4  
+  20      =4  
+  21      =4  
+  22      =4  /*-- defined  ----------------------------------------------------------------*/
+  23      =4  
+  24      =4  
+  25      =4  
+  26      =4  /*-- functions  ---------------------------------------------------------------*/
+  27      =4  extern   void    mcu_clk_init(u32_t freq);
+  28      =4  
+  29      =4  
+  30      =4  #endif   /* HAL_CLK_H */
+  31      =4  
+  32      =4  /*---------------------- end of file -----------------------------------------*/
+  21      =3  #include "./hal_adc.h"
+   1      =4  /**
+   2      =4    ******************************************************************************
+   3      =4    * @file    
+   4      =4    * @author  
+   5      =4    * @version 
+   6      =4    * @date   
+   7      =4    * @brief   
+   8      =4    ******************************************************************************  
+   9      =4    * 
+  10      =4    * 
+  11      =4    ******************************************************************************
+  12      =4    */
+  13      =4  #ifndef    HAL_ADC_H
+  14      =4  #define    HAL_ADC_H
+  15      =4  
+  16      =4  
+  17      =4  /*-- includes  ---------------------------------------------------------------*/
+  18      =4  #include "../includes/_sys_config.h"
+   1      =5  /**
+   2      =5    ******************************************************************************
+   3      =5    * @file    
+   4      =5    * @author  
+   5      =5    * @version 
+   6      =5    * @date   
+   7      =5    * @brief   
+   8      =5    ******************************************************************************  
+   9      =5    * 
+  10      =5    * 
+  11      =5    ******************************************************************************
+  12      =5    */
+  13      =5  #ifndef    _SYS_CONFIG_H
+           =5 #define    _SYS_CONFIG_H
+           =5 
+           =5 
+           =5 /* C++ support */
+           =5 #ifdef __cplusplus
+           =5 extern "C" {
+           =5 #endif
+           =5 
+           =5 
+           =5 #include "./_sys_std.h"
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 8   
+
+           =5 
+           =5 
+           =5 /*< Configure the watchdog function.  0: disable; 1:enable. >*/
+           =5 #define     WDT_ENABLE                                 1
+           =5 
+           =5 /*< Log output configuration. 0: disable; 1:enable. >*/
+           =5 #define     LOG_ENABLE                                 1
+           =5 
+           =5 /*< Console configuration. 0: disable; 1:enable. >*/
+           =5 #define     CONSOLE_ENABLE                             0
+           =5 
+           =5 
+           =5 
+           =5 
+           =5 /* C++ support */
+           =5 #ifdef __cplusplus
+           =5 }
+           =5 #endif
+           =5 
+           =5 
+           =5 #endif   /* _SYS_CONFIG_H */
+  45      =5  
+  46      =5  /*---------------------- end of file -----------------------------------------*/
+  19      =4  
+  20      =4  
+  21      =4  
+  22      =4  /*-- defined  ----------------------------------------------------------------*/
+  23      =4  #define      ADC_FULL_SCALE         (u32_t)4095
+  24      =4  
+  25      =4  
+  26      =4  typedef  enum
+  27      =4  {
+  28      =4    ADC_CH0 = (u8_t)0,
+  29      =4    ADC_CH1,
+  30      =4    ADC_CH2,
+  31      =4    ADC_CH3,
+  32      =4    ADC_CH4,
+  33      =4    ADC_CH5,
+  34      =4    ADC_CH6,
+  35      =4    ADC_CH7,
+  36      =4    ADC_BANDGAP,
+  37      =4  }AdcChannelEnum;
+  38      =4  
+  39      =4  
+  40      =4  
+  41      =4  
+  42      =4  /*-- functions  ---------------------------------------------------------------*/
+  43      =4  extern   u32_t   mcu_adc_read_bandgap_volt(void);
+  44      =4  extern   u32_t   mcu_adc_get(AdcChannelEnum ch);
+  45      =4  
+  46      =4  
+  47      =4  
+  48      =4  
+  49      =4  #endif   /* HAL_ADC_H */
+  50      =4  
+  51      =4  /*---------------------- end of file -----------------------------------------*/
+  22      =3  #include "./hal_gpio.h"
+   1      =4  /**
+   2      =4    ******************************************************************************
+   3      =4    * @file    
+   4      =4    * @author  
+   5      =4    * @version 
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 9   
+
+   6      =4    * @date   
+   7      =4    * @brief   
+   8      =4    ******************************************************************************  
+   9      =4    * 
+  10      =4    * 
+  11      =4    ******************************************************************************
+  12      =4    */
+  13      =4  #ifndef    HAL_GPIO_H
+  14      =4  #define    HAL_GPIO_H
+  15      =4  
+  16      =4  
+  17      =4  /*-- includes  ---------------------------------------------------------------*/
+  18      =4  #include "../includes/_sys_config.h"
+   1      =5  /**
+   2      =5    ******************************************************************************
+   3      =5    * @file    
+   4      =5    * @author  
+   5      =5    * @version 
+   6      =5    * @date   
+   7      =5    * @brief   
+   8      =5    ******************************************************************************  
+   9      =5    * 
+  10      =5    * 
+  11      =5    ******************************************************************************
+  12      =5    */
+  13      =5  #ifndef    _SYS_CONFIG_H
+           =5 #define    _SYS_CONFIG_H
+           =5 
+           =5 
+           =5 /* C++ support */
+           =5 #ifdef __cplusplus
+           =5 extern "C" {
+           =5 #endif
+           =5 
+           =5 
+           =5 #include "./_sys_std.h"
+           =5 
+           =5 
+           =5 /*< Configure the watchdog function.  0: disable; 1:enable. >*/
+           =5 #define     WDT_ENABLE                                 1
+           =5 
+           =5 /*< Log output configuration. 0: disable; 1:enable. >*/
+           =5 #define     LOG_ENABLE                                 1
+           =5 
+           =5 /*< Console configuration. 0: disable; 1:enable. >*/
+           =5 #define     CONSOLE_ENABLE                             0
+           =5 
+           =5 
+           =5 
+           =5 
+           =5 /* C++ support */
+           =5 #ifdef __cplusplus
+           =5 }
+           =5 #endif
+           =5 
+           =5 
+           =5 #endif   /* _SYS_CONFIG_H */
+  45      =5  
+  46      =5  /*---------------------- end of file -----------------------------------------*/
+  19      =4  
+  20      =4  
+  21      =4  
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 10  
+
+  22      =4  /*-- defined  ----------------------------------------------------------------*/
+  23      =4  /*< IO defined. >*/
+  24      =4  typedef  enum
+  25      =4  {
+  26      =4    PORT0 = 0,
+  27      =4    PORT1,
+  28      =4    PORT2,
+  29      =4    PORT3,
+  30      =4  }GpioPort;
+  31      =4  
+  32      =4  typedef  enum
+  33      =4  {
+  34      =4    PIN0 = 0,
+  35      =4    PIN1,
+  36      =4    PIN2,
+  37      =4    PIN3,
+  38      =4    PIN4,
+  39      =4    PIN5,
+  40      =4    PIN6,
+  41      =4    PIN7
+  42      =4  }GpioPin;
+  43      =4  
+  44      =4  
+  45      =4  /*< IO level defined. >*/
+  46      =4  typedef  enum
+  47      =4  {
+  48      =4    IO_LOW = 0,
+  49      =4    IO_HIGH,
+  50      =4  }GpioLevel;
+  51      =4  
+  52      =4  
+  53      =4  /*< IO mode defined. >*/
+  54      =4  typedef  enum
+  55      =4  {
+  56      =4    QUASI_MODE,
+  57      =4    PP_MODE,
+  58      =4    INPUT_MODE,
+  59      =4    OD_MODE,
+  60      =4  }GpioMode;
+  61      =4  
+  62      =4  
+  63      =4  /*< IO interrupt trig type defined. >*/
+  64      =4  typedef  enum
+  65      =4  {
+  66      =4    LEVEL_TRIG,
+  67      =4    EDGE_TRIG,
+  68      =4  }GpioTrig;
+  69      =4  
+  70      =4  
+  71      =4  /*< IO interrupt phase type defined. >*/
+  72      =4  typedef  enum
+  73      =4  {
+  74      =4    RISING_H_TRIG,
+  75      =4    FALLING_L_TRIG,
+  76      =4  }GpioTrigPhase;
+  77      =4  
+  78      =4  
+  79      =4  /*-- functions  ---------------------------------------------------------------*/
+  80      =4  extern     void           mcu_gpio_set_all_default(void);
+  81      =4  
+  82      =4  extern     void           mcu_gpio_write(GpioPort port, GpioPin pin, \
+  83      =4                                           GpioLevel level);
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 11  
+
+  84      =4  extern     GpioLevel      mcu_gpio_read(GpioPort port, GpioPin pin);
+  85      =4  extern     void           mcu_gpio_set_mode(GpioPort port, GpioPin pin, \
+  86      =4                                              GpioMode mode);
+  87      =4  
+  88      =4  
+  89      =4  #endif   /* HAL_GPIO_H */
+  90      =4  
+  91      =4  /*---------------------- end of file -----------------------------------------*/
+  23      =3  #include "./hal_uart.h"
+   1      =4                                /**
+   2      =4    ******************************************************************************
+   3      =4    * @file    
+   4      =4    * @author  
+   5      =4    * @version 
+   6      =4    * @date   
+   7      =4    * @brief   
+   8      =4    ******************************************************************************  
+   9      =4    * 
+  10      =4    * 
+  11      =4    ******************************************************************************
+  12      =4    */
+  13      =4  #ifndef    HAL_UART_H
+  14      =4  #define    HAL_UART_H
+  15      =4  
+  16      =4  
+  17      =4  /*-- includes  ---------------------------------------------------------------*/
+  18      =4  #include "../includes/_sys_config.h"
+   1      =5  /**
+   2      =5    ******************************************************************************
+   3      =5    * @file    
+   4      =5    * @author  
+   5      =5    * @version 
+   6      =5    * @date   
+   7      =5    * @brief   
+   8      =5    ******************************************************************************  
+   9      =5    * 
+  10      =5    * 
+  11      =5    ******************************************************************************
+  12      =5    */
+  13      =5  #ifndef    _SYS_CONFIG_H
+           =5 #define    _SYS_CONFIG_H
+           =5 
+           =5 
+           =5 /* C++ support */
+           =5 #ifdef __cplusplus
+           =5 extern "C" {
+           =5 #endif
+           =5 
+           =5 
+           =5 #include "./_sys_std.h"
+           =5 
+           =5 
+           =5 /*< Configure the watchdog function.  0: disable; 1:enable. >*/
+           =5 #define     WDT_ENABLE                                 1
+           =5 
+           =5 /*< Log output configuration. 0: disable; 1:enable. >*/
+           =5 #define     LOG_ENABLE                                 1
+           =5 
+           =5 /*< Console configuration. 0: disable; 1:enable. >*/
+           =5 #define     CONSOLE_ENABLE                             0
+           =5 
+           =5 
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 12  
+
+           =5 
+           =5 
+           =5 /* C++ support */
+           =5 #ifdef __cplusplus
+           =5 }
+           =5 #endif
+           =5 
+           =5 
+           =5 #endif   /* _SYS_CONFIG_H */
+  45      =5  
+  46      =5  /*---------------------- end of file -----------------------------------------*/
+  19      =4  
+  20      =4  
+  21      =4  
+  22      =4  /*-- defined  ----------------------------------------------------------------*/
+  23      =4  typedef   void  (*Uart0tRxCallbackPt)(u8_t dat);
+  24      =4  
+  25      =4  
+  26      =4  /*-- functions  ---------------------------------------------------------------*/
+  27      =4  extern   void   mcu_uart0_init(u32_t u32Baudrate);
+  28      =4  extern   void   uart0_rx_callback_register(Uart0tRxCallbackPt  func);
+  29      =4  
+  30      =4  
+  31      =4  #endif   /* HAL_UART_H */
+  32      =4  
+  33      =4  /*---------------------- end of file -----------------------------------------*/
+  24      =3  #include "./hal_wtd.h"
+   1      =4                                /**
+   2      =4    ******************************************************************************
+   3      =4    * @file    
+   4      =4    * @author  
+   5      =4    * @version 
+   6      =4    * @date   
+   7      =4    * @brief   
+   8      =4    ******************************************************************************  
+   9      =4    * 
+  10      =4    * 
+  11      =4    ******************************************************************************
+  12      =4    */
+  13      =4  #ifndef    HAL_WTD_H
+  14      =4  #define    HAL_WTD_H
+  15      =4  
+  16      =4  
+  17      =4  /*-- includes  ---------------------------------------------------------------*/
+  18      =4  #include "../includes/_sys_config.h"
+   1      =5  /**
+   2      =5    ******************************************************************************
+   3      =5    * @file    
+   4      =5    * @author  
+   5      =5    * @version 
+   6      =5    * @date   
+   7      =5    * @brief   
+   8      =5    ******************************************************************************  
+   9      =5    * 
+  10      =5    * 
+  11      =5    ******************************************************************************
+  12      =5    */
+  13      =5  #ifndef    _SYS_CONFIG_H
+           =5 #define    _SYS_CONFIG_H
+           =5 
+           =5 
+           =5 /* C++ support */
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 13  
+
+           =5 #ifdef __cplusplus
+           =5 extern "C" {
+           =5 #endif
+           =5 
+           =5 
+           =5 #include "./_sys_std.h"
+           =5 
+           =5 
+           =5 /*< Configure the watchdog function.  0: disable; 1:enable. >*/
+           =5 #define     WDT_ENABLE                                 1
+           =5 
+           =5 /*< Log output configuration. 0: disable; 1:enable. >*/
+           =5 #define     LOG_ENABLE                                 1
+           =5 
+           =5 /*< Console configuration. 0: disable; 1:enable. >*/
+           =5 #define     CONSOLE_ENABLE                             0
+           =5 
+           =5 
+           =5 
+           =5 
+           =5 /* C++ support */
+           =5 #ifdef __cplusplus
+           =5 }
+           =5 #endif
+           =5 
+           =5 
+           =5 #endif   /* _SYS_CONFIG_H */
+  45      =5  
+  46      =5  /*---------------------- end of file -----------------------------------------*/
+  19      =4  
+  20      =4  
+  21      =4  
+  22      =4  /*-- defined  ----------------------------------------------------------------*/
+  23      =4  
+  24      =4  
+  25      =4  
+  26      =4  /*-- functions  ---------------------------------------------------------------*/
+  27      =4  extern     void           mcu_wdt_start(void);
+  28      =4  extern     void           mcu_wdt_feed(void);
+  29      =4  
+  30      =4  
+  31      =4  #endif   /* HAL_WTD_H */
+  32      =4  
+  33      =4  /*---------------------- end of file -----------------------------------------*/
+  25      =3  #include "./hal_timer.h"
+   1      =4  /**
+   2      =4    ******************************************************************************
+   3      =4    * @file    
+   4      =4    * @author  
+   5      =4    * @version 
+   6      =4    * @date   
+   7      =4    * @brief   
+   8      =4    ******************************************************************************  
+   9      =4    * 
+  10      =4    * 
+  11      =4    ******************************************************************************
+  12      =4    */
+  13      =4  #ifndef    HAL_TIMER_H
+  14      =4  #define    HAL_TIMER_H
+  15      =4  
+  16      =4  
+  17      =4  /*-- includes  ---------------------------------------------------------------*/
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 14  
+
+  18      =4  #include "../includes/_sys_config.h"
+   1      =5  /**
+   2      =5    ******************************************************************************
+   3      =5    * @file    
+   4      =5    * @author  
+   5      =5    * @version 
+   6      =5    * @date   
+   7      =5    * @brief   
+   8      =5    ******************************************************************************  
+   9      =5    * 
+  10      =5    * 
+  11      =5    ******************************************************************************
+  12      =5    */
+  13      =5  #ifndef    _SYS_CONFIG_H
+           =5 #define    _SYS_CONFIG_H
+           =5 
+           =5 
+           =5 /* C++ support */
+           =5 #ifdef __cplusplus
+           =5 extern "C" {
+           =5 #endif
+           =5 
+           =5 
+           =5 #include "./_sys_std.h"
+           =5 
+           =5 
+           =5 /*< Configure the watchdog function.  0: disable; 1:enable. >*/
+           =5 #define     WDT_ENABLE                                 1
+           =5 
+           =5 /*< Log output configuration. 0: disable; 1:enable. >*/
+           =5 #define     LOG_ENABLE                                 1
+           =5 
+           =5 /*< Console configuration. 0: disable; 1:enable. >*/
+           =5 #define     CONSOLE_ENABLE                             0
+           =5 
+           =5 
+           =5 
+           =5 
+           =5 /* C++ support */
+           =5 #ifdef __cplusplus
+           =5 }
+           =5 #endif
+           =5 
+           =5 
+           =5 #endif   /* _SYS_CONFIG_H */
+  45      =5  
+  46      =5  /*---------------------- end of file -----------------------------------------*/
+  19      =4  
+  20      =4  
+  21      =4  
+  22      =4  /*-- defined  ----------------------------------------------------------------*/
+  23      =4  typedef  enum
+  24      =4  {
+  25      =4    TIMER0,
+  26      =4    TIMER1,
+  27      =4    TIMER2,
+  28      =4    TIMER3,
+  29      =4  }HwTrDef;
+  30      =4  
+  31      =4  
+  32      =4  /*-- functions  ---------------------------------------------------------------*/
+  33      =4  extern   void   hal_timer_disable_interrupt(HwTrDef tr);
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 15  
+
+  34      =4  extern   void   hal_timer_stop(HwTrDef tr);
+  35      =4  
+  36      =4  
+  37      =4  #endif   /* HAL_TIMER_H */
+  38      =4  
+  39      =4  /*---------------------- end of file -----------------------------------------*/
+  26      =3  
+  27      =3  /*-- defined  ----------------------------------------------------------------*/
+  28      =3  
+  29      =3  
+  30      =3  
+  31      =3  
+  32      =3  
+  33      =3  /*-- functions  ---------------------------------------------------------------*/
+  34      =3  extern     void           mcu_reset(void);
+  35      =3  extern     void           mcu_power_down(void);
+  36      =3  
+  37      =3  
+  38      =3  
+  39      =3  
+  40      =3  #endif   /* HAL_CORE_H */
+  41      =3  
+  42      =3  /*---------------------- end of file -----------------------------------------*/
+  22      =2  
+  23      =2  #include "../common/task_def.h"
+   1      =3  /**
+   2      =3    ******************************************************************************
+   3      =3    * @file    
+   4      =3    * @author  
+   5      =3    * @version 
+   6      =3    * @date   
+   7      =3    * @brief   os_switch_task()   
+   8      =3                --When TIMESHARING=0, it must call this function to switch task.
+   9      =3    ******************************************************************************  
+  10      =3    * 
+  11      =3    * 
+  12      =3    ******************************************************************************
+  13      =3    */
+  14      =3  #ifndef    TASK_DEF_H
+  15      =3  #define    TASK_DEF_H
+  16      =3  
+  17      =3  
+  18      =3  /*-- includes  ---------------------------------------------------------------*/
+  19      =3  #include "../includes/_sys_config.h"
+   1      =4  /**
+   2      =4    ******************************************************************************
+   3      =4    * @file    
+   4      =4    * @author  
+   5      =4    * @version 
+   6      =4    * @date   
+   7      =4    * @brief   
+   8      =4    ******************************************************************************  
+   9      =4    * 
+  10      =4    * 
+  11      =4    ******************************************************************************
+  12      =4    */
+  13      =4  #ifndef    _SYS_CONFIG_H
+           =4 #define    _SYS_CONFIG_H
+           =4 
+           =4 
+           =4 /* C++ support */
+           =4 #ifdef __cplusplus
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 16  
+
+           =4 extern "C" {
+           =4 #endif
+           =4 
+           =4 
+           =4 #include "./_sys_std.h"
+           =4 
+           =4 
+           =4 /*< Configure the watchdog function.  0: disable; 1:enable. >*/
+           =4 #define     WDT_ENABLE                                 1
+           =4 
+           =4 /*< Log output configuration. 0: disable; 1:enable. >*/
+           =4 #define     LOG_ENABLE                                 1
+           =4 
+           =4 /*< Console configuration. 0: disable; 1:enable. >*/
+           =4 #define     CONSOLE_ENABLE                             0
+           =4 
+           =4 
+           =4 
+           =4 
+           =4 /* C++ support */
+           =4 #ifdef __cplusplus
+           =4 }
+           =4 #endif
+           =4 
+           =4 
+           =4 #endif   /* _SYS_CONFIG_H */
+  45      =4  
+  46      =4  /*---------------------- end of file -----------------------------------------*/
+  20      =3  
+  21      =3  #include <rtx51tny.h>
+   1      =4  /*--------------------------------------------------------------------------
+   2      =4  RTX51TNY.H
+   3      =4  
+   4      =4  Prototypes for RTX51 Tiny Real-Time Operating System Version 2.02
+   5      =4  Copyright (c) 1988-2002 Keil Elektronik GmbH and Keil Software, Inc.
+   6      =4  All rights reserved.
+   7      =4  --------------------------------------------------------------------------*/
+   8      =4  
+   9      =4  #ifndef __RTX51TNY_H__
+  10      =4  #define __RTX51TNY_H__
+  11      =4  
+  12      =4  
+  13      =4  /* constants for os_wait function */
+  14      =4  #define K_SIG      0x01              /* Wait for Signal   */
+  15      =4  #define K_TMO      0x02              /* Wait for Timeout  */
+  16      =4  #define K_IVL      0x80              /* Wait for Interval */
+  17      =4  
+  18      =4  /* function return values */
+  19      =4  #define NOT_OK     0xFF              /* Parameter Error */
+  20      =4  #define TMO_EVENT  0x08              /* Timeout Event   */
+  21      =4  #define SIG_EVENT  0x04              /* Signal  Event   */
+  22      =4  #define RDY_EVENT  0x80              /* Ready   Event   */
+  23      =4  
+  24      =4  extern unsigned char os_create_task     (unsigned char task_id);
+  25      =4  extern unsigned char os_delete_task     (unsigned char task_id);
+  26      =4  
+  27      =4  extern unsigned char os_wait            (unsigned char typ, 
+  28      =4                                           unsigned char ticks,
+  29      =4                                           unsigned int dummy);
+  30      =4  extern unsigned char os_wait1           (unsigned char typ);
+  31      =4  extern unsigned char os_wait2           (unsigned char typ,
+  32      =4                                           unsigned char ticks);
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 17  
+
+  33      =4  
+  34      =4  extern unsigned char os_send_signal     (unsigned char task_id);
+  35      =4  extern unsigned char os_clear_signal    (unsigned char task_id);
+  36      =4  extern unsigned char isr_send_signal    (unsigned char task_id);
+  37      =4  
+  38      =4  extern void          os_set_ready       (unsigned char task_id);
+  39      =4  extern void          isr_set_ready      (unsigned char task_id);
+  40      =4  
+  41      =4  extern unsigned char os_running_task_id (void);
+  42      =4  extern unsigned char os_switch_task     (void); 
+  43      =4  
+  44      =4  extern void          os_reset_interval  (unsigned char ticks);
+  45      =4  
+  46      =4  #endif
+  22      =3  
+  23      =3  
+  24      =3  /*-- defined  ----------------------------------------------------------------*/
+  25      =3  /*< User defined. >*/
+  26      =3  #define      GET_SYS_TICK()                   get_systick()
+  27      =3  
+  28      =3  
+  29      =3  
+  30      =3  /*< Task run period. >*/
+  31      =3  #define      TASK_PERIOD                      TIMESHARING
+  32      =3  
+  33      =3  
+  34      =3  
+  35      =3  /*< Task timer defined. >*/
+  36      =3  #define      TASK_TIMER_BEGIN(tick, period)                                    \
+  37      =3               do{                                                               \
+  38      =3                   if((GET_SYS_TICK()-tick) >= period)                           \
+  39      =3                   {                                                             \
+  40      =3                     tick = GET_SYS_TICK();                                       
+  41      =3  
+  42      =3  #define      TASK_TIMER_END(tick)                                              \ 
+  43      =3                   }                                                             \                
+  44      =3               }while(0)
+  45      =3  
+  46      =3  
+  47      =3  
+  48      =3  
+  49      =3  
+  50      =3  #endif   /* MAIN_H */
+  51      =3  
+  52      =3  /*---------------------- end of file -----------------------------------------*/
+  24      =2  #include "../common/ring_buffer.h"
+   1      =3  /**
+   2      =3    ******************************************************************************
+   3      =3    * @file    
+   4      =3    * @author  
+   5      =3    * @version 
+   6      =3    * @date   
+   7      =3    * @brief   
+   8      =3    ******************************************************************************  
+   9      =3    * 
+  10      =3    * 
+  11      =3    ******************************************************************************
+  12      =3    */
+  13      =3  #ifndef  RING_BUFFER_H
+  14      =3  #define  RING_BUFFER_H
+  15      =3  
+  16      =3  /*-- includes ----------------------------------------------------------------*/
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 18  
+
+  17      =3  #include "../includes/_sys_std.h"
+   1      =4  /**
+   2      =4    ******************************************************************************
+   3      =4    * @file    
+   4      =4    * @author  
+   5      =4    * @version 
+   6      =4    * @date   
+   7      =4    * @brief   
+   8      =4    ******************************************************************************  
+   9      =4    * 
+  10      =4    * 
+  11      =4    ******************************************************************************
+  12      =4    */
+  13      =4  #ifndef  _SYS_STD_H
+           =4 #define  _SYS_STD_H
+           =4 
+           =4 
+           =4 /* C++支持 */
+           =4 #ifdef __cplusplus
+           =4 extern "C" {
+           =4 #endif
+           =4  
+           =4 
+           =4 
+           =4 /*!< Signed integer types  */
+           =4 typedef         signed char             s8_t;
+           =4 typedef         signed int              s16_t;
+           =4 typedef         signed long             s32_t;
+           =4 
+           =4 /*!< Unsigned integer types  */
+           =4 typedef         unsigned char           u8_t;
+           =4 typedef         unsigned int            u16_t;
+           =4 typedef         unsigned long           u32_t;
+           =4 
+           =4 
+           =4 
+           =4 #define       XDATA    xdata
+           =4 #define       IDATA    idata
+           =4 #define       BDATA    bdata
+           =4 #define       DATA     data
+           =4 #define       CODE     code
+           =4 
+           =4 
+           =4 /* 把宏参数变为一个字符串 */
+           =4 #define     _STRING(x)                  #x
+           =4 #define     STRING(x)                   _STRING(x)
+           =4 
+           =4 /* 把宏参数连接在一起 */
+           =4 #define     _CONNECT_MACRO(x,y)         x##y
+           =4 #define     CONNECT_MACRO(x,y)          _CONNECT_MACRO(x,y)
+           =4 
+           =4 
+           =4 
+           =4 /* 状态类型 */
+           =4 typedef  enum
+           =4 {
+           =4   OPERATE_OK  = 0,
+           =4   OPERATE_BUSY,
+           =4   OPERATE_TIMEOUT,
+           =4   OPERATE_FAIL,
+           =4 }OpsStatus;
+           =4 
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 19  
+
+           =4 
+           =4 #ifndef  _IN_LINE_
+           =4   #define  _IN_LINE_   inline
+           =4 #endif
+           =4 
+           =4 #ifndef   BOOL
+           =4   #define   BOOL      bool
+           =4 #endif
+           =4 
+           =4 #ifndef   NULL
+           =4   #define   NULL     (void*)0
+           =4 #endif
+           =4 
+           =4 
+           =4 #ifndef  TRUE
+           =4   #define   TRUE    1
+           =4 #endif
+           =4 
+           =4 #ifndef  FALSE
+           =4   #define   FALSE    0
+           =4 #endif
+           =4 
+           =4 /* 纯虚函数关键字 */
+           =4 #ifndef   VIRTUAL
+           =4   #define   VIRTUAL
+           =4 #endif
+           =4 
+           =4 
+           =4 
+           =4 
+           =4 #ifdef __cplusplus
+           =4 }
+           =4 #endif
+           =4 
+           =4 #endif    /* _SYS_STD_H */
+  97      =4  
+  98      =4  /*------------------ end of file ---------------------------------------------*/
+  18      =3  
+  19      =3  
+  20      =3  /*-- defined -----------------------------------------------------------------*/
+  21      =3  
+  22      =3  
+  23      =3  
+  24      =3  
+  25      =3  /*-- typedef -----------------------------------------------------------------*/
+  26      =3  typedef    u8_t     rb_depth_t;
+  27      =3  typedef    u8_t     rb_data_type;
+  28      =3  
+  29      =3  
+  30      =3  //struct  RingBuffStruct;
+  31      =3  
+  32      =3  struct  RingBuffStruct  
+  33      =3  {
+  34      =3    rb_depth_t      posPut;    /* The current location of the ring buffer. */
+  35      =3    rb_depth_t      posGet;    /* The current fetch position of the buffer. */
+  36      =3    rb_depth_t      depth;     /* The total number of elements in the ring buffer. */
+  37      =3    rb_depth_t      remain;
+  38      =3    
+  39      =3    rb_data_type*   ptBuffer;  /* Ring buffer pointer. */
+  40      =3  };
+  41      =3  
+  42      =3  typedef  struct  RingBuffStruct  RingBuffObj;
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 20  
+
+  43      =3  
+  44      =3  
+  45      =3  /*-- functions ---------------------------------------------------------------*/
+  46      =3  extern    void            ring_buff_create(RingBuffObj* obj, rb_depth_t depth, \
+  47      =3                                             rb_data_type* ptBuffer);
+  48      =3  extern    rb_depth_t      check_ring_buff(RingBuffObj* thiz);
+  49      =3  extern    rb_data_type    get_ring_buff_data(RingBuffObj* thiz);
+  50      =3  extern    void            put_ring_buff_data(RingBuffObj* thiz, rb_data_type dat);
+  51      =3  
+  52      =3  
+  53      =3  #endif    /* RING_BUFFER_H */
+  54      =3  
+  55      =3  /*------------------ end of file ---------------------------------------------*/
+  25      =2  #include "../common/msg.h"
+   1      =3  /**
+   2      =3    ******************************************************************************
+   3      =3    * @file    
+   4      =3    * @author  
+   5      =3    * @version 
+   6      =3    * @date   
+   7      =3    * @brief   
+   8      =3    ******************************************************************************  
+   9      =3    * 
+  10      =3    * 
+  11      =3    ******************************************************************************
+  12      =3    */
+  13      =3  #ifndef  MSG_H
+  14      =3  #define  MSG_H
+  15      =3  
+  16      =3  /*-- includes ----------------------------------------------------------------*/
+  17      =3  #include "../includes/_sys_std.h"
+   1      =4  /**
+   2      =4    ******************************************************************************
+   3      =4    * @file    
+   4      =4    * @author  
+   5      =4    * @version 
+   6      =4    * @date   
+   7      =4    * @brief   
+   8      =4    ******************************************************************************  
+   9      =4    * 
+  10      =4    * 
+  11      =4    ******************************************************************************
+  12      =4    */
+  13      =4  #ifndef  _SYS_STD_H
+           =4 #define  _SYS_STD_H
+           =4 
+           =4 
+           =4 /* C++支持 */
+           =4 #ifdef __cplusplus
+           =4 extern "C" {
+           =4 #endif
+           =4  
+           =4 
+           =4 
+           =4 /*!< Signed integer types  */
+           =4 typedef         signed char             s8_t;
+           =4 typedef         signed int              s16_t;
+           =4 typedef         signed long             s32_t;
+           =4 
+           =4 /*!< Unsigned integer types  */
+           =4 typedef         unsigned char           u8_t;
+           =4 typedef         unsigned int            u16_t;
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 21  
+
+           =4 typedef         unsigned long           u32_t;
+           =4 
+           =4 
+           =4 
+           =4 #define       XDATA    xdata
+           =4 #define       IDATA    idata
+           =4 #define       BDATA    bdata
+           =4 #define       DATA     data
+           =4 #define       CODE     code
+           =4 
+           =4 
+           =4 /* 把宏参数变为一个字符串 */
+           =4 #define     _STRING(x)                  #x
+           =4 #define     STRING(x)                   _STRING(x)
+           =4 
+           =4 /* 把宏参数连接在一起 */
+           =4 #define     _CONNECT_MACRO(x,y)         x##y
+           =4 #define     CONNECT_MACRO(x,y)          _CONNECT_MACRO(x,y)
+           =4 
+           =4 
+           =4 
+           =4 /* 状态类型 */
+           =4 typedef  enum
+           =4 {
+           =4   OPERATE_OK  = 0,
+           =4   OPERATE_BUSY,
+           =4   OPERATE_TIMEOUT,
+           =4   OPERATE_FAIL,
+           =4 }OpsStatus;
+           =4 
+           =4 
+           =4 #ifndef  _IN_LINE_
+           =4   #define  _IN_LINE_   inline
+           =4 #endif
+           =4 
+           =4 #ifndef   BOOL
+           =4   #define   BOOL      bool
+           =4 #endif
+           =4 
+           =4 #ifndef   NULL
+           =4   #define   NULL     (void*)0
+           =4 #endif
+           =4 
+           =4 
+           =4 #ifndef  TRUE
+           =4   #define   TRUE    1
+           =4 #endif
+           =4 
+           =4 #ifndef  FALSE
+           =4   #define   FALSE    0
+           =4 #endif
+           =4 
+           =4 /* 纯虚函数关键字 */
+           =4 #ifndef   VIRTUAL
+           =4   #define   VIRTUAL
+           =4 #endif
+           =4 
+           =4 
+           =4 
+           =4 
+           =4 #ifdef __cplusplus
+           =4 }
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 22  
+
+           =4 #endif
+           =4 
+           =4 #endif    /* _SYS_STD_H */
+  97      =4  
+  98      =4  /*------------------ end of file ---------------------------------------------*/
+  18      =3  
+  19      =3  
+  20      =3  /*-- defined -----------------------------------------------------------------*/
+  21      =3  
+  22      =3  
+  23      =3  typedef   u8_t   msg_size_t;
+  24      =3  typedef   u8_t   msg_len_t;
+  25      =3  
+  26      =3  typedef  enum
+  27      =3  {
+  28      =3    MSG_MIS_MATCH,
+  29      =3    MSG_MATCH,
+  30      =3  }MsgMatch;
+  31      =3  
+  32      =3  typedef  struct
+  33      =3  {
+  34      =3    msg_len_t     len;
+  35      =3    msg_size_t*   array;  
+  36      =3  }MsgDef;
+  37      =3  
+  38      =3  #define          NO_MSG_DEF     (msg_size_t)0
+  39      =3  
+  40      =3  /*-- functions ---------------------------------------------------------------*/
+  41      =3  extern s8_t        msg_create(MsgDef* obj, msg_size_t* array, msg_len_t len);
+  42      =3  
+  43      =3  extern void        msg_broadcast(MsgDef* obj, msg_size_t msg);  
+  44      =3                                    
+  45      =3  extern MsgMatch    msg_check(MsgDef* obj, msg_len_t index, msg_size_t msg);
+  46      =3  
+  47      =3  
+  48      =3  
+  49      =3  #endif    /* MSG_H */
+  50      =3  
+  51      =3  /*------------------ end of file ---------------------------------------------*/
+  26      =2  
+  27      =2  
+  28      =2  
+  29      =2  /*-- defined  ----------------------------------------------------------------*/
+  30      =2  typedef      u8_t                             tick_size_t;
+  31      =2  
+  32      =2  
+  33      =2  #define      SYSTEM_TASK_PRIORITY             0
+  34      =2  #define      BUTTON_TASK_PRIORITY             1
+  35      =2  #define      LED_TASK_PRIORITY                2
+  36      =2  #define      BMS_TASK_PRIORITY                3
+  37      =2  #define      CONSOLE_TASK_PRIORITY            4
+  38      =2  
+  39      =2  
+  40      =2  typedef  enum
+  41      =2  {
+  42      =2    SYS_RESET         = (msg_size_t)1,
+  43      =2    SYS_POWER_DOWN    = (msg_size_t)2,
+  44      =2    SYS_IDLE          = (msg_size_t)3,
+  45      =2    SYS_SLEEP         = (msg_size_t)4,
+  46      =2  }SysMsgType;
+  47      =2  
+  48      =2  
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 23  
+
+  49      =2  /*< Log configuration. >*/
+  50      =2  /** 
+  51      =2    %bd              十进制有符号整数(signed char)
+  52      =2    %bu              十进制无符号整数(unsigned char)
+  53      =2    %lu              十进制无符号整数(unsigned long)
+  54      =2    %f               浮点数
+  55      =2    %s               字符串
+  56      =2    %c               单个字符
+  57      =2    %p               指针的值
+  58      =2    %e               指数形式的浮点数
+  59      =2    %x, %X           无符号以十六进制表示的整数
+  60      =2    %0               无符号以八进制表示的整数
+  61      =2    %g               自动选择合适的表示法
+  62      =2    %lf              表示输出double浮点数
+  63      =2    */
+  64      =2  #if   LOG_ENABLE
+  65      =2    #define         LOG              printf 
+  66      =2  #else 
+           =2   #define         LOG 
+           =2 #endif 
+  69      =2  
+  70      =2  
+  71      =2  
+  72      =2  /*-- functions  ---------------------------------------------------------------*/
+  73      =2  extern     tick_size_t    get_systick(void);
+  74      =2  extern     MsgDef*        get_system_broadcast_handle(void);
+  75      =2  
+  76      =2  extern     void           system_power_on(void);
+  77      =2  extern     void           system_power_off(void);
+  78      =2  
+  79      =2  
+  80      =2  #endif   /* SYSTEM_H */
+  81      =2  
+  82      =2  /*---------------------- end of file -----------------------------------------*/
+  19      =1  
+  20      =1  
+  21      =1  
+  22      =1  /*-- defined  ----------------------------------------------------------------*/
+  23      =1  
+  24      =1  
+  25      =1  
+  26      =1  
+  27      =1  /*-- functions  ---------------------------------------------------------------*/
+  28      =1  
+  29      =1  
+  30      =1  
+  31      =1  #endif   /* BMS_H */
+  32      =1  
+  33      =1  /*---------------------- end of file -----------------------------------------*/
+  15          #include "./led.h"
+   1      =1  /**
+   2      =1    ******************************************************************************
+   3      =1    * @file    
+   4      =1    * @author  
+   5      =1    * @version 
+   6      =1    * @date   
+   7      =1    * @brief   
+   8      =1    ******************************************************************************  
+   9      =1    * 
+  10      =1    * 
+  11      =1    ******************************************************************************
+  12      =1    */
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 24  
+
+  13      =1  #ifndef    LED_H
+  14      =1  #define    LED_H
+  15      =1  
+  16      =1  
+  17      =1  /*-- includes  ---------------------------------------------------------------*/
+  18      =1  #include "./system.h"
+   1      =2  /**
+   2      =2    ******************************************************************************
+   3      =2    * @file    
+   4      =2    * @author  
+   5      =2    * @version 
+   6      =2    * @date   
+   7      =2    * @brief   
+   8      =2    ******************************************************************************  
+   9      =2    * 
+  10      =2    * 
+  11      =2    ******************************************************************************
+  12      =2    */
+  13      =2  #ifndef    SYSTEM_H
+           =2 #define    SYSTEM_H
+           =2 
+           =2 
+           =2 /*-- includes  ---------------------------------------------------------------*/
+           =2 #include <stdio.h>
+           =2 
+           =2 #include "../includes/_sys_config.h"
+           =2 #include "../mcu/hal_core.h"
+           =2 
+           =2 #include "../common/task_def.h"
+           =2 #include "../common/ring_buffer.h"
+           =2 #include "../common/msg.h"
+           =2 
+           =2 
+           =2 
+           =2 /*-- defined  ----------------------------------------------------------------*/
+           =2 typedef      u8_t                             tick_size_t;
+           =2 
+           =2 
+           =2 #define      SYSTEM_TASK_PRIORITY             0
+           =2 #define      BUTTON_TASK_PRIORITY             1
+           =2 #define      LED_TASK_PRIORITY                2
+           =2 #define      BMS_TASK_PRIORITY                3
+           =2 #define      CONSOLE_TASK_PRIORITY            4
+           =2 
+           =2 
+           =2 typedef  enum
+           =2 {
+           =2   SYS_RESET         = (msg_size_t)1,
+           =2   SYS_POWER_DOWN    = (msg_size_t)2,
+           =2   SYS_IDLE          = (msg_size_t)3,
+           =2   SYS_SLEEP         = (msg_size_t)4,
+           =2 }SysMsgType;
+           =2 
+           =2 
+           =2 /*< Log configuration. >*/
+           =2 /** 
+           =2   %bd              十进制有符号整数(signed char)
+           =2   %bu              十进制无符号整数(unsigned char)
+           =2   %lu              十进制无符号整数(unsigned long)
+           =2   %f               浮点数
+           =2   %s               字符串
+           =2   %c               单个字符
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 25  
+
+           =2   %p               指针的值
+           =2   %e               指数形式的浮点数
+           =2   %x, %X           无符号以十六进制表示的整数
+           =2   %0               无符号以八进制表示的整数
+           =2   %g               自动选择合适的表示法
+           =2   %lf              表示输出double浮点数
+           =2   */
+           =2 #if   LOG_ENABLE
+           =2   #define         LOG              printf 
+           =2 #else 
+           =2   #define         LOG 
+           =2 #endif 
+           =2 
+           =2 
+           =2 
+           =2 /*-- functions  ---------------------------------------------------------------*/
+           =2 extern     tick_size_t    get_systick(void);
+           =2 extern     MsgDef*        get_system_broadcast_handle(void);
+           =2 
+           =2 extern     void           system_power_on(void);
+           =2 extern     void           system_power_off(void);
+           =2 
+           =2 
+           =2 #endif   /* SYSTEM_H */
+  81      =2  
+  82      =2  /*---------------------- end of file -----------------------------------------*/
+  19      =1  
+  20      =1  
+  21      =1  
+  22      =1  /*-- defined  ----------------------------------------------------------------*/
+  23      =1  typedef  enum
+  24      =1  {
+  25      =1    LED1 = 0,
+  26      =1    LED2,
+  27      =1    LED3,
+  28      =1    LED4,
+  29      =1  }LedDef;
+  30      =1  
+  31      =1  
+  32      =1  typedef  enum
+  33      =1  {
+  34      =1    LED_OFF = 0,
+  35      =1    LED_ON,
+  36      =1  }LedWrType;
+  37      =1  
+  38      =1  
+  39      =1  /*-- functions  ---------------------------------------------------------------*/
+  40      =1  void   led_write(LedDef led, LedWrType wr);
+  41      =1  
+  42      =1  
+  43      =1  #endif   /* LED_H */
+  44      =1  
+  45      =1  /*---------------------- end of file -----------------------------------------*/
+  16          #include "./button.h"
+   1      =1  /**
+   2      =1    ******************************************************************************
+   3      =1    * @file    
+   4      =1    * @author  
+   5      =1    * @version 
+   6      =1    * @date   
+   7      =1    * @brief   
+   8      =1    ******************************************************************************  
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 26  
+
+   9      =1    * 
+  10      =1    * 
+  11      =1    ******************************************************************************
+  12      =1    */
+  13      =1  #ifndef    BUTTON_H
+  14      =1  #define    BUTTON_H
+  15      =1  
+  16      =1  
+  17      =1  /*-- includes  ---------------------------------------------------------------*/
+  18      =1  #include "./system.h"
+   1      =2  /**
+   2      =2    ******************************************************************************
+   3      =2    * @file    
+   4      =2    * @author  
+   5      =2    * @version 
+   6      =2    * @date   
+   7      =2    * @brief   
+   8      =2    ******************************************************************************  
+   9      =2    * 
+  10      =2    * 
+  11      =2    ******************************************************************************
+  12      =2    */
+  13      =2  #ifndef    SYSTEM_H
+           =2 #define    SYSTEM_H
+           =2 
+           =2 
+           =2 /*-- includes  ---------------------------------------------------------------*/
+           =2 #include <stdio.h>
+           =2 
+           =2 #include "../includes/_sys_config.h"
+           =2 #include "../mcu/hal_core.h"
+           =2 
+           =2 #include "../common/task_def.h"
+           =2 #include "../common/ring_buffer.h"
+           =2 #include "../common/msg.h"
+           =2 
+           =2 
+           =2 
+           =2 /*-- defined  ----------------------------------------------------------------*/
+           =2 typedef      u8_t                             tick_size_t;
+           =2 
+           =2 
+           =2 #define      SYSTEM_TASK_PRIORITY             0
+           =2 #define      BUTTON_TASK_PRIORITY             1
+           =2 #define      LED_TASK_PRIORITY                2
+           =2 #define      BMS_TASK_PRIORITY                3
+           =2 #define      CONSOLE_TASK_PRIORITY            4
+           =2 
+           =2 
+           =2 typedef  enum
+           =2 {
+           =2   SYS_RESET         = (msg_size_t)1,
+           =2   SYS_POWER_DOWN    = (msg_size_t)2,
+           =2   SYS_IDLE          = (msg_size_t)3,
+           =2   SYS_SLEEP         = (msg_size_t)4,
+           =2 }SysMsgType;
+           =2 
+           =2 
+           =2 /*< Log configuration. >*/
+           =2 /** 
+           =2   %bd              十进制有符号整数(signed char)
+           =2   %bu              十进制无符号整数(unsigned char)
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 27  
+
+           =2   %lu              十进制无符号整数(unsigned long)
+           =2   %f               浮点数
+           =2   %s               字符串
+           =2   %c               单个字符
+           =2   %p               指针的值
+           =2   %e               指数形式的浮点数
+           =2   %x, %X           无符号以十六进制表示的整数
+           =2   %0               无符号以八进制表示的整数
+           =2   %g               自动选择合适的表示法
+           =2   %lf              表示输出double浮点数
+           =2   */
+           =2 #if   LOG_ENABLE
+           =2   #define         LOG              printf 
+           =2 #else 
+           =2   #define         LOG 
+           =2 #endif 
+           =2 
+           =2 
+           =2 
+           =2 /*-- functions  ---------------------------------------------------------------*/
+           =2 extern     tick_size_t    get_systick(void);
+           =2 extern     MsgDef*        get_system_broadcast_handle(void);
+           =2 
+           =2 extern     void           system_power_on(void);
+           =2 extern     void           system_power_off(void);
+           =2 
+           =2 
+           =2 #endif   /* SYSTEM_H */
+  81      =2  
+  82      =2  /*---------------------- end of file -----------------------------------------*/
+  19      =1  
+  20      =1  
+  21      =1  /*-- defined  ----------------------------------------------------------------*/
+  22      =1  typedef enum
+  23      =1  {
+  24      =1    BTN_UP             = 0,    
+  25      =1    BTN_DOWN,                  
+  26      =1    BTN_HOLD,   
+  27      =1    BTN_DOUBLE, 
+  28      =1  }ButtonState;
+  29      =1  
+  30      =1  
+  31      =1  
+  32      =1  /*-- functions  ---------------------------------------------------------------*/
+  33      =1  extern   ButtonState  button_read(void);
+  34      =1  
+  35      =1  
+  36      =1  #endif   /* BUTTON_H */
+  37      =1  
+  38      =1  /*---------------------- end of file -----------------------------------------*/
+  17          
+  18          /*-- defined -----------------------------------------------------------------*/
+  19          #define        TIME_MS(x)                 (x)
+  20          
+  21          
+  22          #define        VPACK_RES_SCALE                   (u32_t)13
+  23          #define        VPACK_COMPENSION                  0 //(u32_t)300  /* mV  */
+  24          
+  25          
+  26          typedef  struct
+  27          {
+  28            u8_t      readDataInv;
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 28  
+
+  29          }BmsTime;
+  30          
+  31          
+  32          typedef  struct
+  33          {
+  34            u32_t     bandgapVolt;
+  35            u32_t     mcuVdd;
+  36            u32_t     battVolt;
+  37          }BmsData;
+  38          
+  39          
+  40          /*-- private variables -------------------------------------------------------*/
+  41          static   tick_size_t XDATA bmsTaskBaseTr = 0;
+  42          
+  43          static  ButtonState  XDATA btnState = BTN_UP;
+  44          
+  45          static   BmsTime  XDATA  bmsTime;
+  46          static   BmsData  XDATA  bmsData;
+  47          
+  48          /*-- functions ---------------------------------------------------------------*/
+  49          static    void    bms_task_timer_schedule(void);
+  50          static    void    bms_task_logic_schedule(void);
+  51          
+  52          
+  53          
+  54          
+  55          /**           
+  56            * @brief            
+  57            * @param    
+  58            * @return  
+  59            * @note
+  60            */
+  61          static  void  bms_task_timer_schedule(void)
+  62          {
+  63   1        TASK_TIMER_BEGIN(bmsTaskBaseTr, TIME_MS(20));
+  64   3      
+  65   3        if(bmsTime.readDataInv > 0)
+  66   3        {
+  67   4          bmsTime.readDataInv--;
+  68   4        }
+  69   3      
+  70   3        TASK_TIMER_END(bmsTaskBaseTr);
+  71   1      }
+  72          
+  73          
+  74          /**           
+  75            * @brief            
+  76            * @param    
+  77            * @return  
+  78            * @note
+  79            */
+  80          static  void  bms_task_logic_schedule(void)
+  81          {
+  82   1        XDATA u32_t  adcTmp = 0;
+  83   1        
+  84   1        btnState = button_read();
+  85   1      
+  86   1        if(bmsTime.readDataInv == 0)
+  87   1        {
+  88   2          bmsTime.readDataInv = 25;
+  89   2      
+  90   2          adcTmp = mcu_adc_get(ADC_BANDGAP);
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 29  
+
+  91   2          bmsData.mcuVdd = (ADC_FULL_SCALE*bmsData.bandgapVolt/adcTmp);
+  92   2      
+  93   2          adcTmp = mcu_adc_get(ADC_CH5);   
+  94   2          bmsData.battVolt = VPACK_COMPENSION +(bmsData.mcuVdd*adcTmp*VPACK_RES_SCALE)/ADC_FULL_SCALE;
+  95   2      
+  96   2          LOG("VDD=%lu mV, Bat=%lu mV\r\n", bmsData.mcuVdd, bmsData.battVolt);
+  97   2        }
+  98   1      }
+  99          
+ 100          
+ 101          /**           
+ 102            * @brief            
+ 103            * @param    
+ 104            * @return  
+ 105            * @note
+ 106            */
+ 107          void   bms_task(void)  _task_   BMS_TASK_PRIORITY
+ 108          {
+ 109   1        bmsData.bandgapVolt = mcu_adc_read_bandgap_volt();
+ 110   1      
+ 111   1        while(1)
+ 112   1        {
+ 113   2          bms_task_timer_schedule();
+ 114   2          bms_task_logic_schedule(); 
+ 115   2      
+ 116   2          os_switch_task();
+ 117   2        }
+ 118   1      }
+ 119          
+ 120          
+ 121          
+ 122          
+ 123          /*---------------------- end of file -----------------------------------------*/
+ 124          
+ 125          
+ 126          
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 30  
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
+bms_task_logic_schedule. . . . . . . .  STATIC   CODE   PROC     0000H  -----
+  adcTmp . . . . . . . . . . . . . . .  AUTO     XDATA  U_LONG   0000H  4
+BTN_DOWN . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+SYS_IDLE . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+s8_t . . . . . . . . . . . . . . . . .  TYPEDEF  -----  CHAR     -----  1
+MSG_MIS_MATCH. . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+u8_t . . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+BTN_DOUBLE . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+ButtonState. . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+LedWrType. . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+LED1 . . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+LED2 . . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+LED3 . . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+LED4 . . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+SYS_POWER_DOWN . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+QUASI_MODE . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+GpioLevel. . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+OPERATE_OK . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+SysMsgType . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+RISING_H_TRIG. . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+OPERATE_FAIL . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+bms_task_timer_schedule. . . . . . . .  STATIC   CODE   PROC     0000H  -----
+LED_OFF. . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+LEVEL_TRIG . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+size_t . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
+_printf. . . . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+HwTrDef. . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+PIN0 . . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+MsgMatch . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+GpioMode . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+INPUT_MODE . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+PIN1 . . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+ADC_BANDGAP. . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+OD_MODE. . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+IO_HIGH. . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+PIN2 . . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+PIN3 . . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+PIN4 . . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+PIN5 . . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+PIN6 . . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+OPERATE_TIMEOUT. . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+bmsTaskBaseTr. . . . . . . . . . . . .  STATIC   XDATA  U_CHAR   0000H  1
+button_read. . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+GpioTrigPhase. . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+PIN7 . . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+BmsData. . . . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  12
+  bandgapVolt. . . . . . . . . . . . .  MEMBER   -----  U_LONG   0000H  4
+  mcuVdd . . . . . . . . . . . . . . .  MEMBER   -----  U_LONG   0004H  4
+  battVolt . . . . . . . . . . . . . .  MEMBER   -----  U_LONG   0008H  4
+tick_size_t. . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+RingBuffStruct . . . . . . . . . . . .  * TAG *  -----  STRUCT   -----  7
+  posPut . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
+  posGet . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
+  depth. . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
+  remain . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0003H  1
+  ptBuffer . . . . . . . . . . . . . .  MEMBER   -----  PTR      0004H  3
+rb_depth_t . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 31  
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
+LedDef . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+PP_MODE. . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+GpioTrig . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+mcu_adc_read_bandgap_volt. . . . . . .  EXTERN   CODE   PROC     -----  -----
+s32_t. . . . . . . . . . . . . . . . .  TYPEDEF  -----  LONG     -----  4
+EDGE_TRIG. . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+u32_t. . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_LONG   -----  4
+s16_t. . . . . . . . . . . . . . . . .  TYPEDEF  -----  INT      -----  2
+get_systick. . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+u16_t. . . . . . . . . . . . . . . . .  TYPEDEF  -----  U_INT    -----  2
+TIMER0 . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+TIMER1 . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+BmsTime. . . . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  1
+  readDataInv. . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
+RingBuffObj. . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  7
+  posPut . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
+  posGet . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0001H  1
+  depth. . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0002H  1
+  remain . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0003H  1
+  ptBuffer . . . . . . . . . . . . . .  MEMBER   -----  PTR      0004H  3
+TIMER2 . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+TIMER3 . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+MSG_MATCH. . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+OPERATE_BUSY . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+MsgDef . . . . . . . . . . . . . . . .  TYPEDEF  -----  STRUCT   -----  4
+  len. . . . . . . . . . . . . . . . .  MEMBER   -----  U_CHAR   0000H  1
+  array. . . . . . . . . . . . . . . .  MEMBER   -----  PTR      0001H  3
+GpioPort . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+GpioPin. . . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+msg_size_t . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+OpsStatus. . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+msg_len_t. . . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+bmsData. . . . . . . . . . . . . . . .  STATIC   XDATA  STRUCT   0001H  12
+FALLING_L_TRIG . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+btnState . . . . . . . . . . . . . . .  STATIC   XDATA  U_CHAR   000DH  1
+LED_ON . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+bmsTime. . . . . . . . . . . . . . . .  STATIC   XDATA  STRUCT   000EH  1
+bms_task . . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+SYS_SLEEP. . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+AdcChannelEnum . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+ADC_CH0. . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+SYS_RESET. . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+ADC_CH1. . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+ADC_CH2. . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+Uart0tRxCallbackPt . . . . . . . . . .  TYPEDEF  -----  PTR      -----  3
+ADC_CH3. . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+ADC_CH4. . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+ADC_CH5. . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+BTN_UP . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+ADC_CH6. . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+IO_LOW . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+ADC_CH7. . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+BTN_HOLD . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+os_switch_task . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+_mcu_adc_get . . . . . . . . . . . . .  EXTERN   CODE   PROC     -----  -----
+rb_data_type . . . . . . . . . . . . .  TYPEDEF  -----  U_CHAR   -----  1
+PORT0. . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+C51 COMPILER V9.00   BMS                                                                   06/17/2020 12:01:30 PAGE 32  
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
+PORT1. . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+PORT2. . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+PORT3. . . . . . . . . . . . . . . . .  E_CONST  -----  U_CHAR   -----  1
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    260    ----
+   CONSTANT SIZE    =     25    ----
+   XDATA SIZE       =     15       4
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -4,26 +4,20 @@
   * @author  
   * @version 
   * @date   
-  * @brief    
-              %bd              十进制有符号整数
-              %bu              十进制无符号整数
-              %f               浮点数
-              %s               字符串
-              %c               单个字符
-              %p               指针的值
-              %e               指数形式的浮点数
-              %x, %X           无符号以十六进制表示的整数
-              %0               无符号以八进制表示的整数
-              %g               自动选择合适的表示法
-			        %lf              表示输出double浮点数
+  * @brief   
   ******************************************************************************  
   * 
   * 
   ******************************************************************************
   */
 /*-- includes ----------------------------------------------------------------*/
-#include <stdarg.h>
-#include "./print.h"
+#include <stdio.h>
+
+#include "./lib/N76E003.h"
+#include "./lib/SFR_Macro.h"
+#include "./lib/Function_define.h"
+
+#include "./hal_uart.h"
 
 
 #if     LOG_ENABLE
@@ -32,13 +26,25 @@
 
 
 
-
 /*-- private variables -------------------------------------------------------*/
 static  bit    BIT_TMP;
 
-static    PrintRxCallbackFunc   rxCallbackPt = NULL;
+static    Uart0tRxCallbackPt   ptUart0RxFunc = NULL;
+
 
 /*-- functions ---------------------------------------------------------------*/
+
+
+/**           
+  * @brief            
+  * @param    
+  * @return  
+  * @note
+  */
+void   uart0_rx_callback_register(Uart0tRxCallbackPt  func)
+{
+  ptUart0RxFunc = func;
+}
 
 
 /**           
@@ -61,7 +67,7 @@ char putchar (char c)
   * @return  
   * @note
   */
-static  void  mcu_uart0_timer1(u32_t u32Baudrate)   
+void  mcu_uart0_init(u32_t u32Baudrate)   
 {
   clr_EA;
 
@@ -87,6 +93,7 @@ static  void  mcu_uart0_timer1(u32_t u32Baudrate)
 }
 
 
+
 /**           
   * @brief            
   * @param    
@@ -103,9 +110,9 @@ void  uart0_interrupt_ISR(void)  interrupt  4
     clr_RI;	
 
 		dat = SBUF;
-		if(rxCallbackPt)
+		if(ptUart0RxFunc)
 		{
-		  rxCallbackPt(dat);
+		  ptUart0RxFunc(dat);
 		}
 	}
 
@@ -118,41 +125,12 @@ void  uart0_interrupt_ISR(void)  interrupt  4
 #endif
 }
 
-
-
-/**           
-  * @brief            
-  * @param    
-  * @return  
-  * @note
-  */
-void   print_rx_callback_register(PrintRxCallbackFunc  func)
-{
-  rxCallbackPt = func;
-}
-
-
-/**           
-  * @brief            
-  * @param    
-  * @return  
-  * @note
-  */
-void  print_task (void)  _task_   PRINT_TASK_PRIORITY
-{
-#if     LOG_ENABLE
-  mcu_uart0_timer1(115200);
 #endif
 
-  while(1)
-	{
-	  
-	}
-}
-
-
-#endif   /* endif  LOG_ENABLE */
 
 
 
 /*---------------------- end of file -----------------------------------------*/
+
+
+
